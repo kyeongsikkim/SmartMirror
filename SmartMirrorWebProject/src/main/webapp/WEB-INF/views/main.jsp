@@ -28,6 +28,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/controller.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/map.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/weather.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>		
 		
 		<script type="text/javascript" src="<%=application.getContextPath()%>/resources/js/audio.js"></script>
     	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/audio.css" media="screen">

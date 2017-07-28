@@ -34,6 +34,9 @@ function checkScript(message) {
 			 openCamera();
 			 openSpeech("카메라");
 		 }
+	} else if(script.search("알람끄기") > -1) {
+		alarmStop();
+		annyangReset();
 	}
 }
 
@@ -47,13 +50,6 @@ function openSpeech(message) {
 function closeSpeech(message) {
 	annyang.pause();
 	var text = message + "를 종료합니다.";
-	speakText(text);
-	annyang.resume();
-}
-
-function errorSpeech(message) {
-	annyang.pause();
-	var text = message + "는 잘못된 명령어입니다.";
 	speakText(text);
 	annyang.resume();
 }
