@@ -191,4 +191,8 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
+	
+	public void test() {
+		
+	}
 }	
