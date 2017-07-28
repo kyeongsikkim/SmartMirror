@@ -48,13 +48,13 @@
 		<style>
 			body {
 				background-color: black;
-				
+				overflow: hidden;
 			}
 		</style>
 	</head>
 	<body>
 		<div>
-			<div class="row" style="margin-top:1vh;">
+			<div class="row" style="margin-top:0.5vh;">
 				<div class="col-md-3" style="padding-left:25px;padding-top:7px;">
 					<!-- weather -->
 					<div id="weather">

@@ -52,6 +52,7 @@ function closeSpeech(message) {
 	var text = message + "를 종료합니다.";
 	speakText(text);
 	annyang.resume();
+	$('#speech').html("");
 }
 
 function annyangReset() {
