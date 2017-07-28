@@ -144,7 +144,6 @@
 			
 			<div id="content" style="text-align: center;"></div>
 			<div id="speech"></div>
-			<div id="test"></div>
 		</div>
 	</body>
 </html>
