@@ -192,7 +192,11 @@ public class HomeController {
 		pw.close();
 	}
 	
+<<<<<<< HEAD
 	public void test2() {
+=======
+	public void test() {
+>>>>>>> origin/master
 		
 	}
 }	
