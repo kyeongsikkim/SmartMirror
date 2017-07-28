@@ -191,12 +191,4 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
-	
-<<<<<<< HEAD
-	public void test2() {
-=======
-	public void test() {
->>>>>>> origin/master
-		
-	}
 }	
