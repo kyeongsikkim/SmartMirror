@@ -192,7 +192,12 @@ public class HomeController {
 		pw.close();
 	}
 	
+
 	public void test2() {
+	
+	}
+	
+	public void test() {
 		
 	}
 }	
