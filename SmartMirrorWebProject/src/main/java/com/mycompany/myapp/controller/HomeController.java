@@ -2,17 +2,25 @@ package com.mycompany.myapp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
+import org.scribe.builder.ServiceBuilder;
+import org.scribe.builder.api.FlickrApi;
+import org.scribe.model.Token;
+import org.scribe.model.Verifier;
+import org.scribe.oauth.OAuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.flickr4java.flickr.FlickrException;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
 import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
@@ -26,7 +34,7 @@ import com.mycompany.myapp.util.RSSFeedParser;
 public class HomeController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
-	private List<FeedMessage> list;	
+	private List<FeedMessage> list;
 
 	@RequestMapping("/")
 	public String home() {
@@ -37,43 +45,43 @@ public class HomeController {
 	public String calander() {
 		return "calander";
 	}
-	
+
 	@RequestMapping("/map")
 	public String map() {
 		return "map";
 	}
-	
+
 	@RequestMapping("/camera")
 	public String camera() {
 		return "camera";
 	}
-	
+
 	@RequestMapping("/news")
 	public void news(HttpServletResponse response) throws IOException {
 		RSSFeedParser parser = new RSSFeedParser("https://news.google.com/news/rss/headlines?hl=ko&ned=kr");
 		Feed feed = parser.readFeed();
-		
-		if(list != null) {
+
+		if (list != null) {
 			list.clear();
 		}
 		list = feed.getMessages();
-		
+
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("titleList", list);
 		String json = jsonObject.toString();
-		
+
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		pw.write(json);
 		pw.flush();
 		pw.close();
 	}
-	
+
 	@RequestMapping("/weather")
 	public void weather(HttpServletResponse response) throws IOException {
-		String apiKey = "c6c80c71939d52853536a9186fbca948";
+		String apiKey = "04af17713fb5285e5352234c38f805b1";
 		JSONObject jsonObject = new JSONObject();
-		
+
 		ForecastIO fio = new ForecastIO(apiKey);
 		fio.setUnits(ForecastIO.UNITS_SI);
 		fio.setLang(ForecastIO.LANG_ENGLISH);
@@ -87,16 +95,16 @@ public class HomeController {
 		String icon = fdp.icon();
 		String summary = hourly.getSummary();
 		String iconR = icon.substring(1, icon.length() - 1);
-		
+
 		FIODaily daily = new FIODaily(fio);
 		double[] tempMax = new double[8];
 		double[] tempMin = new double[8];
 		String[] iconW = new String[8];
-		
+
 		Calendar cal = Calendar.getInstance();
 		String[] weekList = new String[7];
 		int now = cal.get(Calendar.DAY_OF_WEEK);
-		switch(now) {
+		switch (now) {
 		case Calendar.MONDAY:
 			weekList[0] = "Mon";
 			weekList[1] = "Tue";
@@ -161,7 +169,7 @@ public class HomeController {
 			weekList[6] = "Sat";
 			break;
 		}
-		
+
 		if (daily.days() < 0) {
 			jsonObject.put("icon", "No data available");
 		}
@@ -169,26 +177,45 @@ public class HomeController {
 			daily.getDay(i).setTimezone("Asia/Seoul");
 			tempMax[i] = daily.getDay(i).temperatureMax();
 			tempMin[i] = daily.getDay(i).temperatureMin();
-			iconW[i] = daily.getDay(i).icon().substring(1, daily.getDay(i).icon().length()-1);
+			iconW[i] = daily.getDay(i).icon().substring(1, daily.getDay(i).icon().length() - 1);
 		}
-		
+
 		jsonObject.put("temp", temp);
 		jsonObject.put("icon", iconR);
 		jsonObject.put("summary", summary);
 
-		for(int i = 1; i < 7; i++) {
-			jsonObject.put("tempMax"+i, tempMax[i]);
-			jsonObject.put("tempMin"+i, tempMin[i]);
-			jsonObject.put("iconW"+i, iconW[i]);
-			jsonObject.put("week"+i, weekList[i]);
+		for (int i = 1; i < 7; i++) {
+			jsonObject.put("tempMax" + i, tempMax[i]);
+			jsonObject.put("tempMin" + i, tempMin[i]);
+			jsonObject.put("iconW" + i, iconW[i]);
+			jsonObject.put("week" + i, weekList[i]);
 		}
-		
+
 		String json = jsonObject.toString();
-		
+
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		pw.write(json);
 		pw.flush();
 		pw.close();
 	}
-}	
+
+	@RequestMapping("/weather_detail")
+	public void weather_detail(Model model) throws URISyntaxException, FlickrException {
+		
+		OAuthService service = new ServiceBuilder()
+				.provider(FlickrApi.class)
+				.apiKey("6be332744386acc586f19874b1e74ccd")
+				.apiSecret("1364af0667c8b1bf")
+				.build();
+		
+		Token tokens = service.getRequestToken();
+		String token = tokens.getToken();
+		String secret = tokens.getSecret();
+
+		Token aToken = service.getAccessToken(tokens, new Verifier("215-950-638"));
+//		String accessToken = aToken.getToken();
+		LOGGER.info(token);
+//		LOGGER.info(accessToken);
+	}
+}

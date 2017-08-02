@@ -271,7 +271,7 @@ function weatherDefault() {
 function refresh() {
 	$.ajax({
 		type : "GET",
-		url : "/SmartMirrorProject/weather",
+		url : "/SmartMirrorWebProject/weather",
 		error : function() {
 			alert('error');
 		},
@@ -303,7 +303,7 @@ function refresh() {
 function drawIcon() {
 	$.ajax({
 		type : "GET",
-		url : "/SmartMirrorProject/weather",
+		url : "/SmartMirrorWebProject/weather",
 		error : function() {
 			alert('error');
 		},
@@ -312,6 +312,7 @@ function drawIcon() {
 				"color" : "white"
 			});
 			
+			console.log("pass");
 			switch(data.icon) {
 			case "rain":
 				icons.add(document.getElementById("icon"), Skycons.RAIN);

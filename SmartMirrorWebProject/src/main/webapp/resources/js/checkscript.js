@@ -37,12 +37,27 @@ function checkScript(message) {
 	} else if(script.search("알람끄기") > -1) {
 		alarmStop();
 		annyangReset();
+	} else if(script.search("유튜브") > -1) {
+		var youtubeInfo = script.replace("유튜브", "");
+		if(youtubeInfo=="끄기") {
+			close();
+			closeSpeech("유튜브");
+		}
+		console.log(youtubeInfo);
+		defineRequest(youtubeInfo);
 	}
 }
 
 function openSpeech(message) {
 	annyang.pause();
 	var text = message + " 정보입니다.";
+	speakText(text);
+	annyang.resume();
+}
+
+function openYoutube(message) {
+	annyanh.pause();
+	var text = message + " 영상입니다.";
 	speakText(text);
 	annyang.resume();
 }
