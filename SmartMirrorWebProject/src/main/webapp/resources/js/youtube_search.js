@@ -15,7 +15,7 @@ function initClient() {
 	gapi.client
 			.init(
 					{
-						'clientId' : '383922736441-cdmm1q4ir1fiujbcifafo3in2in02sig.apps.googleusercontent.com',
+						'clientId' : '624631592981-0f9fvj3kptqvebl2pequ8q7u29l6cdee.apps.googleusercontent.com',
 						'discoveryDocs' : [ 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest' ],
 						'scope' : 'https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner'
 					}).then(
@@ -32,7 +32,7 @@ function initClient() {
 						// in.)
 						setSigninStatus();
 
-						// handleAuthClick(event);
+						//handleAuthClick(event);
 					});
 }
 
@@ -102,12 +102,9 @@ function removeEmptyParams(params) {
 
 function executeRequest(request) {
 	request.execute(function(response) {
+		console.log(response);
 		$('#videoID').html(response.items[0].id.videoId);
-		$('#video').attr(
-				'src',
-				'//www.youtube.com/embed/'
-						+ response.items[0].id.videoId
-						+ '?autoplay=1&loop=1')
+		$('#video').attr('src','//www.youtube.com/embed/'+response.items[0].id.videoId+'?autoplay=1')
 	});
 }
 
@@ -135,14 +132,14 @@ function buildApiRequest(requestMethod, path, params,
 
 /** *** END BOILERPLATE CODE **** */
 
-function defineRequest(youtubeInfo) {
+function defineRequest(youtubeCommand) {
 	// See full sample for buildApiRequest() code, which is not
 	// specific to a particular youtube or youtube method.
 
 	buildApiRequest('GET', '/youtube/v3/search', {
 		'maxResults' : '1',
 		'part' : 'snippet',
-		'q' : youtubeInfo,
+		'q' : youtubeCommand,
 		'type' : 'video'
 	});
 }

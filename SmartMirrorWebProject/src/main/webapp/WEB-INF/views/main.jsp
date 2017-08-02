@@ -15,6 +15,7 @@
 		<link href="<%=application.getContextPath()%>/resources/css/map.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/weather.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/help.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/calendar.css" rel="stylesheet" type="text/css" />
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
@@ -31,7 +32,8 @@
 		<script src="<%=application.getContextPath()%>/resources/js/controller.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/map.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/weather.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>		
+		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>	
+		<script src="<%=application.getContextPath()%>/resources/js/calendar.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script>
 		<%-- <script src="<%=application.getContextPath()%>/resources/js/youtube.js" type="text/javascript"></script> --%>
 		

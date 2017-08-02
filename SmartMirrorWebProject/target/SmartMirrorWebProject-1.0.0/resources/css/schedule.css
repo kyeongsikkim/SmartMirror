@@ -1,0 +1,15 @@
+#schedule {
+	color :white;
+	padding: 0.5vw;
+	text-align: right;
+	font-size: 1.2vw;
+	/*height: 20vh;*/
+}
+
+#scheduleheader {
+	padding: 0 0.5vw;
+	font-size: 2.2vw;
+	color: white;
+	text-align: right;
+	margin-top: 30px;
+}
