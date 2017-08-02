@@ -16,7 +16,6 @@
 		<link href="<%=application.getContextPath()%>/resources/css/weather.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/help.css" rel="stylesheet" type="text/css" />
 		
-		<script>var youtubeID='';</script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
 		<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
@@ -150,10 +149,8 @@
 			<div id=help>"사용 가능한 명령어"라고 말해보세요</div>
 			
 			<div id="content" style="text-align: center;">
-				<iframe id="video" width="640" height="360" frameborder="0" allowfullscreen autoplay></iframe>
 			</div>
 			<div id="speech"></div>
-
 		</div>
 	</body>
 </html>

@@ -42,9 +42,10 @@ function checkScript(message) {
 		if(youtubeInfo=="끄기") {
 			close();
 			closeSpeech("유튜브");
+		} else {
+			openYoutube();
+			defineRequest(youtubeInfo);
 		}
-		console.log(youtubeInfo);
-		defineRequest(youtubeInfo);
 	}
 }
 

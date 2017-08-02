@@ -9,18 +9,18 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
-import org.scribe.builder.ServiceBuilder;
-import org.scribe.builder.api.FlickrApi;
-import org.scribe.model.Token;
-import org.scribe.model.Verifier;
-import org.scribe.oauth.OAuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
+import com.flickr4java.flickr.REST;
+import com.flickr4java.flickr.photos.Photo;
+import com.flickr4java.flickr.photos.PhotoList;
+import com.flickr4java.flickr.photos.SearchParameters;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
 import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
@@ -199,23 +199,27 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
+	@RequestMapping("/youtube")
+	public String youtube() {
+		return "youtube";
+	}
 
 	@RequestMapping("/weather_detail")
-	public void weather_detail(Model model) throws URISyntaxException, FlickrException {
+	public String weather_detail(Model model) throws URISyntaxException, FlickrException {
+	
+//		OAuthService service = new ServiceBuilder()
+//				.provider(FlickrApi.class)
+//				.apiKey("6be332744386acc586f19874b1e74ccd")
+//				.apiSecret("1364af0667c8b1bf")
+//				.build();
+//		
+//		Token tokens = service.getRequestToken();
+//		String token = tokens.getToken();
+//		String secret = tokens.getSecret();
+//
+//		LOGGER.info(token);
 		
-		OAuthService service = new ServiceBuilder()
-				.provider(FlickrApi.class)
-				.apiKey("6be332744386acc586f19874b1e74ccd")
-				.apiSecret("1364af0667c8b1bf")
-				.build();
 		
-		Token tokens = service.getRequestToken();
-		String token = tokens.getToken();
-		String secret = tokens.getSecret();
-
-		Token aToken = service.getAccessToken(tokens, new Verifier("215-950-638"));
-//		String accessToken = aToken.getToken();
-		LOGGER.info(token);
-//		LOGGER.info(accessToken);
+		return "weather";
 	}
 }

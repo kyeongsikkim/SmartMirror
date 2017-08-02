@@ -41,6 +41,28 @@ function openCamera() {
 	  });
 }
 
+function openYoutube() {
+	$.ajax({
+		type: "GET",
+		url: "/SmartMirrorWebProject/youtube",
+		dataType: "text",
+		success: function(data) {
+			$('#content').html(data);
+		}
+	});
+}
+
+function openWeather() {
+	$.ajax({
+		type: "GET",
+		url: "/SmartMirrorWebProject/weather_detail",
+		dataType: "text",
+		success: function(data) {
+			$('#content').html(data);
+		}
+	});
+}
+
 function close() {
 	$('#content').empty();
 }
