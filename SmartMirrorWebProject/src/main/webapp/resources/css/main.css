@@ -1,0 +1,44 @@
+body {
+	background-color: black;
+	overflow: hidden;
+	padding: 0 15px;
+}
+
+.row {
+	margin-top: 20px;	
+}
+
+.col-xs-4 {
+	margin: 0px;
+	padding: 0px;
+}
+
+.col-xs-2 {
+	margin: 0px;
+	padding: 0px;
+}
+
+.col-xs-6 {
+	margin: 0px;
+	padding: 0px;
+}
+
+#help {
+	width: 100%;
+	color: white;
+	font-size: 2vh;
+	text-align: center;
+	margin-top: 15px;
+}
+
+#speech {
+	width: 100%;
+	color: white;
+	font-size: 1vh;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#content {
+	margin-top: 50px;
+}

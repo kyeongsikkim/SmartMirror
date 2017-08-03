@@ -1,0 +1,17 @@
+#command {
+	display: inline-block;
+	color: white;
+}
+
+#command table {
+	text-align: center;
+}
+
+#command table td.title {
+	font-size: 28px;
+}
+
+#command table td {
+	font-size: 18px;
+	padding: 15px 10px;
+}

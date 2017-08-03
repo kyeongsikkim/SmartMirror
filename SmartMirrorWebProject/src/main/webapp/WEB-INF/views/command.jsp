@@ -1,10 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
-<div style="display: inline-block; color: white; font-size: 24px;">
+<div id="command" style="display: inline-block; color: white; font-size: 24px;">
 	<table style="text-align: center;">
 		<tr style="font-size: 32px;">
-			<td>키워드</td>
-			<td>명령어</td>
+			<td class="title">키워드</td>
+			<td class="title">명령어</td>
 		</tr>
 		<tr>
 			<td>지도</td>
@@ -17,6 +17,10 @@
 		<tr>
 			<td>카메라</td>
 			<td>카머라켜기 / 카메라끄기</td>
+		</tr>
+		<tr>
+			<td>동영상</td>
+			<td>동영상켜기 / 동영상끄기 / OOO동영상</td>
 		</tr>
 		<tr>
 			<td>영화정보</td>

@@ -1,8 +1,10 @@
 function checkScript(message) {
-	
+	//remove blank
 	script = message.replace( / /gi ,"");
+	
 	$("#help").html("");
 	
+	//supportable command check
 	if(script.search("사용가능한명령어") > -1) {
 		annyang.pause();
 		openCommand();
@@ -74,7 +76,7 @@ function checkScript(message) {
 	else if(script.search("영화") > -1) {
 		var movieCommand = script.replace("영화","");
 		if(movieCommand == "정보") {
-			showBoxOffice();
+			openBoxOffice();
 			openSpeech("영화");
 		} else if(movieCommand == "정보끄기") {
 			close();
@@ -92,39 +94,46 @@ function checkScript(message) {
 	//youtube command check
 	else if(script.search("동영상") > -1) {
 		var youtubeCommand = script.replace("동영상", "");
-		if(youtubeCommand=="끄기") {
+		if(youtubeCommand =="끄기") {
 			close();
 			closeSpeech("동영상");
+		} else if(youtubeCommand == "켜기") {
+			annyangReset();
+			openYoutube();
+			defineRequest("");
 		} else {
 			annyangReset();
 			openYoutube();
 			defineRequest(youtubeCommand);
 		}
 	}
-	//unsupportable command
-//	else {
-//		speakText("지원하지 않는 명령어입니다");
-//		$("#help").html("\"사용 가능한 명령어\"라고 말해보세요.");
-//		annyangReset();
-//	}
+	//close check
+	else if(script.search("끄기") > -1) {
+		annyang.pause();
+		var text = "종료합니다.";
+		speakText(text);
+		annyang.resume();
+		
+		$('#speech').html("");
+	}
 }
-
+//speakText when open content
 function openSpeech(message) {
 	annyang.pause();
 	var text = message + " 정보입니다.";
 	speakText(text);
 	annyang.resume();
 }
-
+//speakText when close content
 function closeSpeech(message) {
 	annyang.pause();
 	var text = message + "를 종료합니다.";
 	speakText(text);
 	annyang.resume();
+	
 	$('#speech').html("");
-	$("#help").html("\"사용 가능한 명령어\"라고 말해보세요.");
 }
-
+//annyang stabilization
 function annyangReset() {
 	annyang.pause();
 	annyang.resume();

@@ -1,54 +1,62 @@
-#currentWeather {
-	color: white;
-	font-size: 2vw;
-	vertical-align: middle;
+#weather table {
+	width: 100%;
 }
 
-#weekdaysWeather {
-	font-size: 1.6vw;
-	color: white;
-	padding-left: 8px;
+.iconcell {
+	width:30%;
+	text-align:center;
+}
+
+.currentTd {
+	text-align: right;
+	margin: 0px;
+	padding: 0 0 0 20px;
 }
 
 #weatherLocation {
-	text-align:right;
 	color: white;
-	font-size: 2.4vw;
+	font-size: 3vw;
 	margin: 0px;
-	padding-right: 5px;
-}
-
-#weatherHeader {
-	font-size: 2.2vw;
-	color: white;
-	margin-top: 35px;
-	padding-left:8px;
-}
-
-#icon {
-	display: inline;
-	margin-left: 5px;
+	padding: 0px;
 }
 
 #temperature {
+	display: inline;
 	text-align: right;
 	color: white;
-	display: inline;
-	font-size: 4.5vw;
-	padding-left: 20px;
+	font-size: 6.5vw;
 }
 
 #summary {
 	color: white;
+	font-size: 2.8vw;
+	padding-left: 10px;
+}
+
+#weatherHeader {
+	color: white;
+	font-size: 3vw;
+	margin-top: 30px;
+	padding-left:10px;
+}
+
+/*weather, Headline, Schedule icon*/
+.headericon {
+	display: inline;
+	width: 20px;
+	height: 20px;
+}
+
+#weekdaysWeather {
+	color: white;
 	font-size: 2.2vw;
-	padding-left: 15px;
+	padding-left: 10px;
 }
 
-td {
-	padding: 5px;
+#weekdaysWeather table td {
+	padding: 0 5px;
 }
 
-.currentTd {
+#icon {
 	margin: 0px;
-	padding: 0px;
 }

@@ -1,5 +1,0 @@
-$.ajax({
-	url: "",
-	data: "json",
-	
-});

@@ -14,8 +14,9 @@
 		<link href="<%=application.getContextPath()%>/resources/css/schedule.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/map.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/weather.css" rel="stylesheet" type="text/css" />
-		<link href="<%=application.getContextPath()%>/resources/css/help.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/calendar.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/command.css" rel="stylesheet" type="text/css" />
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
@@ -35,11 +36,11 @@
 		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/calendar.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script>
-		<%-- <script src="<%=application.getContextPath()%>/resources/js/youtube.js" type="text/javascript"></script> --%>
 		
-		<script type="text/javascript" src="<%=application.getContextPath()%>/resources/js/audio.js"></script>
-    	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/audio.css" media="screen">
-		<!-- Rss execute -->
+		<!-- <script type="text/javascript" src="<%=application.getContextPath()%>/resources/js/audio.js"></script>
+    	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/audio.css" media="screen"> -->
+    	
+		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
 				//News Setting
@@ -51,29 +52,22 @@
 				setInterval(drawIcon, 1200000);
 			});
 		</script>
-		<!-- Style -->
-		<style>
-			body {
-				background-color: black;
-				/* overflow: hidden; */
-			}
-		</style>
 	</head>
 	<body>
 		<div>
-			<div class="row" style="margin-top:0.5vh;">
-				<div class="col-md-3" style="padding-left:25px;padding-top:7px;">
+			<div class="row">
+				<div class="col-xs-4">
 					<!-- weather -->
 					<div id="weather">
 						<table>
 							<tr>
-								<td><canvas id="icon" width="180px" height="180px"></canvas></td>
-								<td class="currentTd"><div id="weatherLocation">Seoul</div><div id="temperature"></div></td>
+								<td class="iconcell"><canvas id="icon" width="110" height="110"></canvas></td>
+								<td class="currentTd"><div id="weatherLocation">Seoul　</div><div id="temperature"></div></td>
 							</tr>
 						</table>
 					</div>
 					<div id="summary"></div>
-					<p id="weatherHeader"><img src="<%=application.getContextPath()%>/resources/images/weather.png" style="display:inline;width:2vw;height:2vw;"/> Weekly Weather</p>
+					<p id="weatherHeader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/weather.png"/> Weekly Weather</p>
 					<div id="weekdaysWeather">
 						<table>
 							<tr></tr>
@@ -122,8 +116,8 @@
 						</table>
 					</div>
 				</div>
-				<div class="col-md-4"></div>
-				<div class="col-md-5">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-6">
 					<!-- clock -->
 					<div class="clock">
 						<div id="Date"></div>
@@ -135,23 +129,22 @@
 						</ul>
 					</div>
 					<!-- rssfeed -->
-					<p id="rssheader"><img src="<%=application.getContextPath()%>/resources/images/newspaper.png" style="display:inline;width:2vw;height:2vw;margin:0.3vw 0.3vw 0.6vw 0.3vw;"/>Today's Headline</p>
+					<p id="rssheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/newspaper.png" /> Today's Headline</p>
 					<div id="rssfeed"></div>
 					<!-- schedule -->
-					<p id="scheduleheader"><img src="<%=application.getContextPath()%>/resources/images/calendar.png" style="display:inline;width:2vw;height:2vw;margin:0.3vw 0.3vw 0.6vw 0.3vw;"/>Schedule</p>
+					<p id="scheduleheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/calendar.png" /> Schedule</p>
 					<div id="schedule"></div>
 					<!-- audio -->
-			            <div id="audiobox">
-			                	<span class="left" id="npAction">Paused...</span>
-				                <span class="right" id="npTitle"></span><br/>
-			                    <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
-			            </div>
+		            <!-- <div id="audiobox">
+		                	<span class="left" id="npAction">Paused...</span>
+			                <span class="right" id="npTitle"></span><br/>
+		                    <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
+		            </div> -->
 				</div>
 			</div>
-			<div id=help>"사용 가능한 명령어"라고 말해보세요</div>
 			
-			<div id="content" style="text-align: center;">
-			</div>
+			<div id="help">"사용 가능한 명령어"라고 말해보세요</div>
+			<div id="content" style="text-align: center;"></div>
 			<div id="speech"></div>
 		</div>
 	</body>
