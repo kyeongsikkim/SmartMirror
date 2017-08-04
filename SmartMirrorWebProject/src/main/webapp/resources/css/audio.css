@@ -1,27 +1,3 @@
-#audiobox {
-	background-color: black;
-	padding-right: 10px;
-}
-
-#audio1 {
-	width: 100%;
-	margin-top: 10px;
-	color: red;
-}
-
-#npAction {
-	float: left;
-}
-
-#npTitle {
-	float: right;
-}
-
-
-audio {
-	color: white;
-}
-
 audio::-webkit-media-controls-panel {
 	background-color: black;
 }

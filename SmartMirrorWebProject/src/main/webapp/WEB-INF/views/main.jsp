@@ -17,6 +17,7 @@
 		<link href="<%=application.getContextPath()%>/resources/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/calendar.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/command.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/audio.css" rel="stylesheet" type="text/css" />
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
@@ -25,9 +26,8 @@
         onload="this.onload=function(){};handleClientLoad()" 
         onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/annyang.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/startannyang.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/speechtotext.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/responsivevoice.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/checkscript.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/clock.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/rssfeed.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/controller.js" type="text/javascript"></script>
@@ -36,10 +36,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/calendar.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script>
-		
-		<!-- <script type="text/javascript" src="<%=application.getContextPath()%>/resources/js/audio.js"></script>
-    	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/audio.css" media="screen"> -->
-    	
+		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
@@ -134,16 +131,10 @@
 					<!-- schedule -->
 					<p id="scheduleheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/calendar.png" /> Schedule</p>
 					<div id="schedule"></div>
-					<!-- audio -->
-		            <!-- <div id="audiobox">
-		                	<span class="left" id="npAction">Paused...</span>
-			                <span class="right" id="npTitle"></span><br/>
-		                    <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
-		            </div> -->
 				</div>
 			</div>
 			
-			<div id="help">"사용 가능한 명령어"라고 말해보세요</div>
+			<div id="help">"명령어"라고 말해보세요</div>
 			<div id="content" style="text-align: center;"></div>
 			<div id="speech"></div>
 		</div>

@@ -11,10 +11,6 @@ function initMap() {
       center: uluru
     });
     geocoder = new google.maps.Geocoder();
-    /*var marker = new google.maps.Marker({
-      position: uluru,
-      map: map
-    });*/
   }
 
 function setMap(data) {
@@ -57,8 +53,6 @@ function zoomReset() {
 	setZoom(currzoom, map);
 }
 
-
 function setZoom(zoom, resultsMap) {
 	resultsMap.setZoom(zoom);
 }
-
