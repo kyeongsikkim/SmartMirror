@@ -70,81 +70,6 @@ public class HomeController {
 		return "camera";
 	}
 
-	// @RequestMapping("/snapshot")
-	// public void snapshot(HttpServletResponse response) throws IOException {
-	// String filename = "photo" + new Date();
-	// String filepath = "/home/pi/Pictures" + filename;
-	// try {
-	// RPiCamera piCamera = new RPiCamera("/home/pi/Pictures");
-	//
-	// piCamera.setWidth(500).setHeight(500) // Set Camera to produce 500x500
-	// images.
-	// .setBrightness(75) // Adjust Camera's brightness setting.
-	// .setExposure(Exposure.AUTO) // Set Camera's exposure.
-	// .setTimeout(2) // Set Camera's timeout.
-	// .setAddRawBayer(true); // Add Raw Bayer data to image files created by
-	// Camera.
-	//
-	// piCamera.takeStill(filename);
-	// } catch (Exception e) {}
-	//
-	// JSONObject jsonObject = new JSONObject();
-	// jsonObject.put("filepath", filepath);
-	// String json = jsonObject.toString();
-	//
-	// response.setContentType("application/json; charset=UTF-8");
-	// PrintWriter pw = response.getWriter();
-	// pw.write(json);
-	// pw.flush();
-	// pw.close();
-	//
-	// }
-
-	// @RequestMapping("/movie")
-	// public String movie(Model model) {
-	// String key = "fce26a7debd17e9ccb600c2274cff463";
-	// KobisOpenAPIRestService service = new KobisOpenAPIRestService(key);
-	//
-	// SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-	// SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy / MM / dd");
-	// Calendar calendar = new GregorianCalendar();
-	// calendar.add(Calendar.DATE, -1);
-	// String strDate = sdf.format(calendar.getTime());
-	// String realDate = sdf2.format(new Date());
-	//
-	// model.addAttribute("date", realDate);
-	//
-	// try {
-	// String dailyBoxOffice = service.getDailyBoxOffice(true, strDate, "10",
-	// "", "", "");
-	// JSONObject jsonObject = new JSONObject(dailyBoxOffice);
-	// jsonObject = (JSONObject) jsonObject.get("boxOfficeResult");
-	// JSONArray jsonArray = (JSONArray) jsonObject.get("dailyBoxOfficeList");
-	//
-	// for(int i=0; i<10; i++) {
-	// jsonObject = jsonArray.getJSONObject(i);
-	//
-	// String rank = jsonObject.getString("rank");
-	// String movieName = jsonObject.getString("movieNm");
-	// String audiCnt = jsonObject.getString("audiCnt");
-	// String audiAcc = jsonObject.getString("audiAcc");
-	//
-	// model.addAttribute("rank"+i, rank);
-	// model.addAttribute("movieName"+i, movieName);
-	// model.addAttribute("audiCnt"+i, audiCnt);
-	// model.addAttribute("audiAcc"+i, audiAcc);
-	//
-	//// System.out.println("순위: " + rank + " / " + "제목: " + movieName + " / " +
-	// "오늘 관객 수: " + audiCnt + " / " + "누적 관객 수: " + audiAcc);
-	// }
-	//
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	//
-	// return "movie";
-	// }
-
 	@RequestMapping("/news")
 	public void news(HttpServletResponse response) throws IOException {
 		RSSFeedParser parser = new RSSFeedParser("https://news.google.com/news/rss/headlines?hl=ko&ned=kr");
@@ -288,4 +213,46 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
+//	@RequestMapping("/movie")
+//	public String movie(Model model) {
+//		String key = "fce26a7debd17e9ccb600c2274cff463";
+//		KobisOpenAPIRestService service = new KobisOpenAPIRestService(key);
+//		
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+//		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy / MM / dd");
+//		Calendar calendar = new GregorianCalendar();
+//		calendar.add(Calendar.DATE, -1);
+//		String strDate = sdf.format(calendar.getTime());
+//		String realDate = sdf2.format(new Date());
+//		
+//		model.addAttribute("date", realDate);
+//		
+//		try {
+//			String dailyBoxOffice = service.getDailyBoxOffice(true, strDate, "10", "", "", "");
+//			JSONObject jsonObject = new JSONObject(dailyBoxOffice);
+//			jsonObject = (JSONObject) jsonObject.get("boxOfficeResult");
+//			JSONArray jsonArray = (JSONArray) jsonObject.get("dailyBoxOfficeList");
+//			
+//			for(int i=0; i<10; i++) {
+//				jsonObject = jsonArray.getJSONObject(i);
+//				
+//				String rank = jsonObject.getString("rank");
+//				String movieName = jsonObject.getString("movieNm");
+//				String audiCnt = jsonObject.getString("audiCnt");
+//				String audiAcc = jsonObject.getString("audiAcc");
+//				
+//				model.addAttribute("rank"+i, rank);
+//				model.addAttribute("movieName"+i, movieName);
+//				model.addAttribute("audiCnt"+i, audiCnt);
+//				model.addAttribute("audiAcc"+i, audiAcc);
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return "movie";
+//	}
+	
 }
+

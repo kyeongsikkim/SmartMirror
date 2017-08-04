@@ -89,6 +89,11 @@ function openBoxOffice() {
 	});
 }
 
+function close() {
+		$('#content').empty(); 
+		$("#help").html("\"명령어\"라고 말해보세요.");
+}
+
 function openAnimation() {
 	var target = document.querySelector('#content');
 	var player = target.animate([
@@ -96,43 +101,11 @@ function openAnimation() {
 		  {opacity:1}
 		], 1000);
 }
-
-function closeAnimation() {
-	var target = document.querySelector('#content');
-	var player = target.animate([
-		  {opacity:1},
-		  {opacity:0}
-		], 1000);
-}
-//function snapshot() {
-//	$.ajax({
-//		type : "GET",
-//		url : "/SmartMirrorWebProject/snapshot",
-//		error : function() {
-//			alert('error');
-//		},
-//		success : function(data) {
-//			var modal = document.getElementById('myModal');
-//			$("#snapshot").attr("src", data.filepath);
-//			setTimeout(showModal, 1000);
 //
-//			setTimeout(closeModal, 3000);
-//		}
-//	});
+//function closeAnimation() {
+//var target = document.querySelector('#content');
+//var player = target.animate([
+//	  {opacity:1},
+//	  {opacity:0}
+//	], 1000);
 //}
-//
-//function showModal() {
-//	modal.style.display = "block";
-//}
-//
-//function closeModal() {
-//	modal.style.display = "none";
-//}
-
-function close() {
-	closeAnimation();
-	setTimeout( function(){ 
-		$('#content').empty(); 
-		$("#help").html("\"사용 가능한 명령어\"라고 말해보세요.");}
-	,1200);
-}
