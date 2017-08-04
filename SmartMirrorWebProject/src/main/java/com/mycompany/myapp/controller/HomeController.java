@@ -30,18 +30,7 @@ public class HomeController {
 	private List<FeedMessage> list;
 
 	@RequestMapping("/")
-	public String home(String name, String id, HttpServletResponse response) throws IOException {
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("name", name);
-		jsonObject.put("id", id);
-		String json = jsonObject.toString();
-
-		response.setContentType("application/json; charset=UTF-8");
-		PrintWriter pw = response.getWriter();
-		pw.write(json);
-		pw.flush();
-		pw.close();
-
+	public String home() throws IOException {
 		return "main";
 	}
 
@@ -70,6 +59,22 @@ public class HomeController {
 		return "camera";
 	}
 
+	@RequestMapping("/getid")
+	public void getId(String name, String id, HttpServletResponse response) throws IOException {
+		LOGGER.info(name);
+		LOGGER.info(id);
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("name", name);
+		jsonObject.put("id", id);
+		String json = jsonObject.toString();
+
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();
+	}
+	
 	@RequestMapping("/news")
 	public void news(HttpServletResponse response) throws IOException {
 		RSSFeedParser parser = new RSSFeedParser("https://news.google.com/news/rss/headlines?hl=ko&ned=kr");

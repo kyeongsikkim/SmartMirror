@@ -30,5 +30,9 @@
 			<td>알람</td>
 			<td>알람중지</td>
 		</tr>
+		<tr>
+			<td>기능 중지</td>
+			<td>중지</td>
+		</tr>
 	</table>
 </div>
