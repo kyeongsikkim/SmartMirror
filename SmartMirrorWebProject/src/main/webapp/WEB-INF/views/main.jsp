@@ -27,6 +27,7 @@
         onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/annyang.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/speechtotext.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/handlecommand.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/responsivevoice.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/clock.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/rssfeed.js" type="text/javascript"></script>
