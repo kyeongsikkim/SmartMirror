@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Google</string>
+    <string name="not_log_in" />
+    <string name="log_out">LOG OUT</string>
+    <string name="revoke">REVOKE</string>
+    <string name="not_close_session" />
+    <string name="not_revoke" />
+</resources>
