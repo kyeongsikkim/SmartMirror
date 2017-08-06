@@ -7,6 +7,17 @@ function handleCommand(command) {
 		console.log("지도");
 		speakText("지도를 보여드릴게요");
 		openMap();
+	} else if(command == "음악") {
+		console.log("음악");
+		speakText("음악을 들려드릴게요");
+		openAudio();
+		setAudio();
+	} else if(command == "재생") {
+		play();
+	} else if(command == "다음곡") {
+		next();
+	} else if(command == "일시정지") {
+		pause();
 	} else if(command == "달력") {
 		console.log("달력");
 		speakText("달력을 보여드릴게요");

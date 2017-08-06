@@ -48,7 +48,12 @@ public class HomeController {
 	public String command() {
 		return "command";
 	}
-
+	
+	@RequestMapping("/audio")
+	public String audio() {
+		return "audio";
+	}
+	
 	@RequestMapping("/youtube")
 	public String youtube() {
 		return "youtube";

@@ -1,3 +1,18 @@
+function openCommand() {
+	$.ajax({
+		type : "GET",
+		url : "/SmartMirrorWebProject/command",
+		dataType : "text",
+		error : function() {
+			alert('error');
+		},
+		success : function(data) {
+			openAnimation();
+			$('#content').html(data);
+		}
+	});
+}
+
 function openCalendar() {
 	$.ajax({
 		type : "GET",
@@ -30,10 +45,10 @@ function openMap() {
 	});
 }
 
-function openCommand() {
+function openAudio() {
 	$.ajax({
 		type : "GET",
-		url : "/SmartMirrorWebProject/command",
+		url : "/SmartMirrorWebProject/audio",
 		dataType : "text",
 		error : function() {
 			alert('error');
