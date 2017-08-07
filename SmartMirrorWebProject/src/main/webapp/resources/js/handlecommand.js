@@ -44,7 +44,7 @@ function handleCommand(command) {
 			console.log("유튜브");
 			speakText("유투브를 실행합니다");
 			openYoutubeList();
-			defineRequest(command);
+			youtubeSearch(command);
 			videoflag = true;
 		} else if(command == "날씨") {
 			console.log("날씨");
