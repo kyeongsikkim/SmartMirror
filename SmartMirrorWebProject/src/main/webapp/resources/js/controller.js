@@ -1,18 +1,3 @@
-function openCommand() {
-	$.ajax({
-		type : "GET",
-		url : "/SmartMirrorWebProject/command",
-		dataType : "text",
-		error : function() {
-			alert('error');
-		},
-		success : function(data) {
-			openAnimation();
-			$('#content').html(data);
-		}
-	});
-}
-
 function openCalendar() {
 	$.ajax({
 		type : "GET",
@@ -45,25 +30,10 @@ function openMap() {
 	});
 }
 
-function openAudio() {
+function openCommand() {
 	$.ajax({
 		type : "GET",
-		url : "/SmartMirrorWebProject/audio",
-		dataType : "text",
-		error : function() {
-			alert('error');
-		},
-		success : function(data) {
-			openAnimation();
-			$('#content').html(data);
-		}
-	});
-}
-
-function openYoutube() {
-	$.ajax({
-		type : "GET",
-		url : "/SmartMirrorWebProject/youtube",
+		url : "/SmartMirrorWebProject/command",
 		dataType : "text",
 		error : function() {
 			alert('error');
@@ -85,6 +55,39 @@ function openCamera() {
 		},
 		success : function(data) {
 			openAnimation();
+			$('#content').html(data);
+		}
+	});
+}
+
+function openYoutubeList() {
+	$.ajax({
+		type: "GET",
+		url: "/SmartMirrorWebProject/youtubevideolist",
+		dataType: "text",
+		success: function(data) {
+			$('#content').html(data);
+		}
+	});
+}
+
+function openVideo() {
+	$.ajax({
+		type: "GET",
+		url: "/SmartMirrorWebProject/video",
+		dataType: "text",
+		success: function(data) {
+			$('#content').html(data);
+		}
+	});
+}
+
+function openWeather() {
+	$.ajax({
+		type: "GET",
+		url: "/SmartMirrorWebProject/weather_View",
+		dataType: "text",
+		success: function(data) {
 			$('#content').html(data);
 		}
 	});

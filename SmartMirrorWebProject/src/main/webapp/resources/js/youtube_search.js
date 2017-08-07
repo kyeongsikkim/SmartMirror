@@ -1,5 +1,6 @@
 var GoogleAuth;
 var youtubeInfo;
+var request;
 
 function handleClientLoad() {
 	gapi.load('client:auth2', initClient);
@@ -12,27 +13,24 @@ function initClient() {
 	// 'scope' field specifies space-delimited list of access
 	// scopes
 
-	gapi.client
-			.init(
+	gapi.client.init(
 					{
-						'clientId' : '624631592981-0f9fvj3kptqvebl2pequ8q7u29l6cdee.apps.googleusercontent.com',
+						'clientId' : '383922736441-cdmm1q4ir1fiujbcifafo3in2in02sig.apps.googleusercontent.com',
 						'discoveryDocs' : [ 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest' ],
 						'scope' : 'https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner'
 					}).then(
 					function() {
-						GoogleAuth = gapi.auth2
-								.getAuthInstance();
+						GoogleAuth = gapi.auth2.getAuthInstance();
 
 						// Listen for sign-in state changes.
-						GoogleAuth.isSignedIn
-								.listen(updateSigninStatus);
+						GoogleAuth.isSignedIn.listen(updateSigninStatus);
 
 						// Handle initial sign-in state.
 						// (Determine if user is already signed
 						// in.)
 						setSigninStatus();
 
-						//handleAuthClick(event);
+						// handleAuthClick(event);
 					});
 }
 
@@ -43,8 +41,7 @@ function initClient() {
 
 function setSigninStatus() {
 	var user = GoogleAuth.currentUser.get();
-	isAuthorized = user
-			.hasGrantedScopes('https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner');
+	isAuthorized = user.hasGrantedScopes('https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner');
 	// Toggle button text and displayed statement based on
 	// current auth status.
 	if (isAuthorized) {
@@ -100,18 +97,34 @@ function removeEmptyParams(params) {
 	return params;
 }
 
+// Search
 function executeRequest(request) {
 	request.execute(function(response) {
 		console.log(response);
-		$('#videoID').html(response.items[0].id.videoId);
-		$('#video').attr('src','//www.youtube.com/embed/'+response.items[0].id.videoId+'?autoplay=1')
+		//$('#videoID').html(response.items[0].id.videoId);
+		$('#video1').attr('src','//www.youtube.com/embed/'+response.items[0].id.videoId+'?autoplay=0');
+		$('#title1').html(response.items[0].snippet.title);
+		$('#video2').attr('src','//www.youtube.com/embed/'+response.items[1].id.videoId+'?autoplay=0');
+		$('#title2').html(response.items[1].snippet.title);
+		$('#video3').attr('src','//www.youtube.com/embed/'+response.items[2].id.videoId+'?autoplay=0');
+		$('#title3').html(response.items[2].snippet.title);
+		$('#video4').attr('src','//www.youtube.com/embed/'+response.items[3].id.videoId+'?autoplay=0');
+		$('#title4').html(response.items[3].snippet.title);
+		$('#video5').attr('src','//www.youtube.com/embed/'+response.items[4].id.videoId+'?autoplay=0');
+		$('#title5').html(response.items[4].snippet.title);
+	});
+}
+
+//Play
+function playVideo(number) {
+	request.execute(function(response) {
+		$('#video').attr('src','//www.youtube.com/embed/'+response.items[number].id.videoId+'?autoplay=1&loop=1');		
 	});
 }
 
 function buildApiRequest(requestMethod, path, params,
 		properties) {
 	params = removeEmptyParams(params);
-	var request;
 	if (properties) {
 		var resource = createResource(properties);
 		request = gapi.client.request({
@@ -132,14 +145,14 @@ function buildApiRequest(requestMethod, path, params,
 
 /** *** END BOILERPLATE CODE **** */
 
-function defineRequest(youtubeCommand) {
+function defineRequest(youtubeInfo) {
 	// See full sample for buildApiRequest() code, which is not
 	// specific to a particular youtube or youtube method.
 
 	buildApiRequest('GET', '/youtube/v3/search', {
-		'maxResults' : '1',
+		'maxResults' : '5',
 		'part' : 'snippet',
-		'q' : youtubeCommand,
+		'q' : youtubeInfo,
 		'type' : 'video'
 	});
 }

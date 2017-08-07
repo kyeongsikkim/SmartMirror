@@ -37,6 +37,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/calendar.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script>
+ 		<script src="<%=application.getContextPath()%>/resources/js/weather_detail.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>

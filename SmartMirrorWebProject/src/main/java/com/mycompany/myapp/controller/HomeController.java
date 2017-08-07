@@ -2,23 +2,36 @@ package com.mycompany.myapp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
+import org.scribe.builder.ServiceBuilder;
+import org.scribe.builder.api.FlickrApi;
+import org.scribe.model.Token;
+import org.scribe.oauth.OAuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zalando.stups.tokens.AccessToken;
 
+import com.flickr4java.flickr.FlickrException;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
 import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
 import com.github.dvdme.ForecastIOLib.FIOHourly;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.errors.ApiException;
+import com.google.maps.model.GeocodingResult;
 import com.mycompany.myapp.util.Feed;
 import com.mycompany.myapp.util.FeedMessage;
 import com.mycompany.myapp.util.RSSFeedParser;
@@ -29,6 +42,12 @@ public class HomeController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 	private List<FeedMessage> list;
 
+	private String apiKey = "04af17713fb5285e5352234c38f805b1";
+	
+	GeoApiContext context = new GeoApiContext.Builder()
+			.apiKey("AIzaSyDoP8zx7GCoyI0BQixAfm-HGzsMldgk6kY")
+			.build();
+	
 	@RequestMapping("/")
 	public String home() throws IOException {
 		return "main";
@@ -48,20 +67,15 @@ public class HomeController {
 	public String command() {
 		return "command";
 	}
-	
-	@RequestMapping("/audio")
-	public String audio() {
-		return "audio";
-	}
-	
-	@RequestMapping("/youtube")
-	public String youtube() {
-		return "youtube";
-	}
 
 	@RequestMapping("/camera")
 	public String camera() {
 		return "camera";
+	}
+	
+	@RequestMapping("/weather_View")
+	public String weather_View() {
+		return "weather";
 	}
 
 	@RequestMapping("/getid")
@@ -102,18 +116,22 @@ public class HomeController {
 	}
 
 	@RequestMapping("/weather")
-	public void weather(HttpServletResponse response) throws IOException {
-		String apiKey = "c6c80c71939d52853536a9186fbca948";
+	public void weather(HttpServletResponse response) throws IOException, ApiException, InterruptedException {
+		
 		JSONObject jsonObject = new JSONObject();
 
+		GeocodingResult[] results = GeocodingApi.geocode(context, "서울").await();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String latitude = gson.toJson(results[0].geometry.location.lat);
+		String longitude = gson.toJson(results[0].geometry.location.lng);
+		
 		ForecastIO fio = new ForecastIO(apiKey);
 		fio.setUnits(ForecastIO.UNITS_SI);
 		fio.setLang(ForecastIO.LANG_ENGLISH);
-		fio.getForecast("37.56621515784935", "126.98049545288086");
+		fio.getForecast(latitude, longitude);
 
 		FIOCurrently currently = new FIOCurrently(fio);
 		FIOHourly hourly = new FIOHourly(fio);
-
 		FIODataPoint fdp = currently.get();
 		double temp = fdp.temperature();
 		String icon = fdp.icon();
@@ -223,6 +241,63 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
+	
+	@RequestMapping("/youtubevideolist")
+	public String youtube() {
+		return "youtubeplaylist";
+	}
+
+	@RequestMapping("/video")
+	public String video() {
+		return "video";
+	}
+	
+	@RequestMapping("/weather_detail")
+	public String weather_detail(String address, HttpServletResponse response) throws URISyntaxException, FlickrException, ApiException, InterruptedException, IOException {
+
+		JSONObject jsonObject = new JSONObject();
+		GeocodingResult[] results = GeocodingApi.geocode(context, address).await();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String lat = gson.toJson(results[0].geometry.location.lat);
+		String lng = gson.toJson(results[0].geometry.location.lng);
+		
+		ForecastIO fio = new ForecastIO(apiKey);
+		fio.setUnits(ForecastIO.UNITS_SI);
+		fio.setLang(ForecastIO.LANG_ENGLISH);
+		fio.getForecast(lat, lng);
+
+		FIOCurrently currently = new FIOCurrently(fio);
+		FIOHourly hourly = new FIOHourly(fio);
+		FIODataPoint fdp = currently.get();
+		double temp = fdp.temperature();
+		String icon = fdp.icon();
+		String summary = hourly.getSummary();
+		String iconR = icon.substring(1, icon.length() - 1);
+//		double tempMax = fdp.temperatureMax();
+//		double tempMin = fdp.temperatureMin();
+	
+		jsonObject.put("temp", temp);
+		jsonObject.put("icon", iconR);
+		jsonObject.put("summary", summary);
+//		jsonObject.put("tempMax", String.valueOf(tempMax));
+//		jsonObject.put("tempMin", String.valueOf(tempMin));
+		jsonObject.put("latitude", lat);
+		jsonObject.put("longitude", lng);
+
+		String json = jsonObject.toString();
+
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();
+		
+		LOGGER.info(lat);
+		LOGGER.info(lng);
+		
+		return "weather";
+	}
+	
 //	@RequestMapping("/movie")
 //	public String movie(Model model) {
 //		String key = "fce26a7debd17e9ccb600c2274cff463";
