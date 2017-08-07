@@ -15,7 +15,7 @@ $(function() {
 	});
 	annyang.addCallback("result", function(data){
 		//console.log("result");
-		var command = data[0];
+		var command = data[0].replace( / /gi ,"");
 		if(command == "아리아") {
 			//console.log("미러");
 			speakText("네 말씀하세요");

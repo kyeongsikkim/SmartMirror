@@ -9,16 +9,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
-import org.scribe.builder.ServiceBuilder;
-import org.scribe.builder.api.FlickrApi;
-import org.scribe.model.Token;
-import org.scribe.oauth.OAuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.zalando.stups.tokens.AccessToken;
 
 import com.flickr4java.flickr.FlickrException;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;

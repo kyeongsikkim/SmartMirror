@@ -1,3 +1,8 @@
+function close() {
+		$('#content').empty(); 
+		$("#help").html("\"명령어\"라고 말해보세요.");
+}
+
 function openCalendar() {
 	$.ajax({
 		type : "GET",
@@ -13,6 +18,7 @@ function openCalendar() {
 		}
 	});
 }
+
 
 function openMap() {
 	$.ajax({
@@ -107,11 +113,6 @@ function openBoxOffice() {
 	});
 }
 
-function close() {
-		$('#content').empty(); 
-		$("#help").html("\"명령어\"라고 말해보세요.");
-}
-
 function openAnimation() {
 	var target = document.querySelector('#content');
 	var player = target.animate([
@@ -119,7 +120,7 @@ function openAnimation() {
 		  {opacity:1}
 		], 1000);
 }
-//
+
 //function closeAnimation() {
 //var target = document.querySelector('#content');
 //var player = target.animate([
