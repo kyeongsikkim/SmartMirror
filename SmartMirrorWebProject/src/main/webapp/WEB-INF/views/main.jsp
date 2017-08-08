@@ -22,9 +22,7 @@
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
 		<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
-		<script async defer src="https://apis.google.com/js/api.js" 
-        onload="this.onload=function(){};handleClientLoad()" 
-        onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+
 		<script src="<%=application.getContextPath()%>/resources/js/annyang.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/speechtotext.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/handlecommand.js" type="text/javascript"></script>

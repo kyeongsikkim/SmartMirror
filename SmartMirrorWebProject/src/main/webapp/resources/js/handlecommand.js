@@ -43,8 +43,7 @@ function handleCommand(command) {
 		} else if(command == "유튜브") {
 			console.log("유튜브");
 			speakText("유투브를 실행합니다");
-			openYoutubeList();
-			youtubeSearch(command);
+			openYoutubeList(command);
 			videoflag = true;
 		} else if(command == "날씨") {
 			console.log("날씨");
@@ -102,24 +101,18 @@ function handleCommand(command) {
 	}
 	
 	if(videoflag) {
-		if(command == "1번") {
-			openVideo();
-			playVideo(0);
-		} else if(command == "2번") {
-			openVideo();
-			playVideo(1);
-		} else if(command == "3번") {
-			openVideo();
-			playVideo(2);
-		} else if(command == "4번") {
-			openVideo();
-			playVideo(3);
-		} else if(command == "5번") {
-			openVideo();
-			playVideo(4);
+		if(command == "1번" || command == "일번") {
+			openVideo(0);
+		} else if(command == "2번" || command == "이번") {
+			openVideo(1);
+		} else if(command == "3번" || command == "삼번") {
+			openVideo(2);
+		} else if(command == "4번" || command == "사번") {
+			openVideo(3);
+		} else if(command == "5번" || command == "오번") {
+			openVideo(4);
 		} else {
-			openYoutubeList();
-			defineRequest(command);
+			openYoutubeList(command);
 		}
 	}
 	

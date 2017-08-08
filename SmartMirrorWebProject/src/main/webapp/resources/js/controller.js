@@ -19,7 +19,6 @@ function openCalendar() {
 	});
 }
 
-
 function openMap() {
 	$.ajax({
 		type : "GET",
@@ -66,23 +65,25 @@ function openCamera() {
 	});
 }
 
-function openYoutubeList() {
+function openYoutubeList(command) {
 	$.ajax({
 		type: "GET",
 		url: "/SmartMirrorWebProject/youtubevideolist",
 		dataType: "text",
 		success: function(data) {
+			youtubeSearch(command);
 			$('#content').html(data);
 		}
 	});
 }
 
-function openVideo() {
+function openVideo(number) {
 	$.ajax({
 		type: "GET",
 		url: "/SmartMirrorWebProject/video",
 		dataType: "text",
 		success: function(data) {
+			playVideo(number);
 			$('#content').html(data);
 		}
 	});
@@ -120,11 +121,3 @@ function openAnimation() {
 		  {opacity:1}
 		], 1000);
 }
-
-//function closeAnimation() {
-//var target = document.querySelector('#content');
-//var player = target.animate([
-//	  {opacity:1},
-//	  {opacity:0}
-//	], 1000);
-//}

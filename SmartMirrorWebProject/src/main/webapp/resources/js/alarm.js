@@ -1,4 +1,5 @@
 var audio;
+var time;
 
 $(function(){
 	setInterval(function() {
