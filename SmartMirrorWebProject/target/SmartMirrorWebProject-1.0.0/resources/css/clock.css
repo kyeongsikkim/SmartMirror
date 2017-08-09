@@ -1,0 +1,69 @@
+.container {
+    overflow: hidden;
+}
+
+.clock {
+    color: #fff;
+}
+
+#Date {
+	font-style: bold;
+    font-size: 3vw;
+    text-align: right;
+}
+
+.clockul {
+    list-style: none;
+    text-align: right;
+}
+
+.clockul .clockli {
+	font-style: bold;
+	display: inline;
+    font-size: 9vw;
+    text-align: right;
+}
+.clockul .clocklis {
+	font-style: bold;
+	display: inline;
+    font-size: 4vw;
+    text-align: right;
+    color: #999999;
+}
+
+#point {
+    position: relative;
+}
+
+/* Simple Animation */
+@-webkit-keyframes mymove {
+	0% {
+		opacity: 1.0;
+	}
+	
+	50% {
+	    opacity: 0;
+	    text-shadow: none;
+	}
+	
+	100% {
+	    opacity: 1.0;
+	}	
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    };
+}

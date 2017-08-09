@@ -65,6 +65,21 @@ function openCamera() {
 	});
 }
 
+function openAudio() {
+	$.ajax({
+		type : "GET",
+		url : "/SmartMirrorWebProject/audio",
+		dataType : "text",
+		error : function() {
+			alert('error');
+		},
+		success : function(data) {
+			openAnimation();
+			$('#content').html(data);
+		}
+	});
+}
+
 function openYoutubeList(command) {
 	$.ajax({
 		type: "GET",

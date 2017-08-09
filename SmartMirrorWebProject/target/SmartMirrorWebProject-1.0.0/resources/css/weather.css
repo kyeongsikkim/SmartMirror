@@ -1,0 +1,62 @@
+#weather table {
+	width: 100%;
+}
+
+.iconcell {
+	width:30%;
+	text-align:center;
+}
+
+.currentTd {
+	text-align: right;
+	margin: 0px;
+	padding: 0 0 0 20px;
+}
+
+#weatherLocation {
+	color: white;
+	font-size: 3vw;
+	margin: 0px;
+	padding: 0px;
+}
+
+#temperature {
+	display: inline;
+	text-align: right;
+	color: white;
+	font-size: 6.5vw;
+}
+
+#summary {
+	color: white;
+	font-size: 2.8vw;
+	padding-left: 10px;
+}
+
+#weatherHeader {
+	color: white;
+	font-size: 3vw;
+	margin-top: 30px;
+	padding-left:10px;
+}
+
+/*weather, Headline, Schedule icon*/
+.headericon {
+	display: inline;
+	width: 20px;
+	height: 20px;
+}
+
+#weekdaysWeather {
+	color: white;
+	font-size: 2.2vw;
+	padding-left: 10px;
+}
+
+#weekdaysWeather table td {
+	padding: 0 5px;
+}
+
+#icon {
+	margin: 0px;
+}

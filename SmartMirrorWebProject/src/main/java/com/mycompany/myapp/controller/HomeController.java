@@ -1,18 +1,22 @@
 package com.mycompany.myapp.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.flickr4java.flickr.FlickrException;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
@@ -26,21 +30,29 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.GeocodingResult;
+import com.mycompany.myapp.dto.Music;
+import com.mycompany.myapp.service.Service;
 import com.mycompany.myapp.util.Feed;
 import com.mycompany.myapp.util.FeedMessage;
 import com.mycompany.myapp.util.RSSFeedParser;
 
 @Controller
 public class HomeController {
-
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 	private List<FeedMessage> list;
-
+	private List<Music> musicList;
+	
 	private String apiKey = "04af17713fb5285e5352234c38f805b1";
 	
 	GeoApiContext context = new GeoApiContext.Builder()
 			.apiKey("AIzaSyDoP8zx7GCoyI0BQixAfm-HGzsMldgk6kY")
 			.build();
+	
+	@Autowired
+	private Service service;
+	@Autowired 
+	private ServletContext servletContext;
 	
 	@RequestMapping("/")
 	public String home() throws IOException {
@@ -65,11 +77,6 @@ public class HomeController {
 	@RequestMapping("/camera")
 	public String camera() {
 		return "camera";
-	}
-	
-	@RequestMapping("/weather_View")
-	public String weather_View() {
-		return "weather";
 	}
 
 	@RequestMapping("/getid")
@@ -235,6 +242,11 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
+
+	@RequestMapping("/weather_View")
+	public String weather_View() {
+		return "weather";
+	}
 	
 	@RequestMapping("/youtubevideolist")
 	public String youtube() {
@@ -333,5 +345,57 @@ public class HomeController {
 //		return "movie";
 //	}
 	
+	@RequestMapping("/audio")
+	public String audio() {
+		return "audio";
+	}
+	
+	@RequestMapping("/musiclist")
+	public void musicList(HttpServletResponse response) throws Exception {
+		if(musicList != null) {
+			musicList.clear();;
+		}
+		
+		List<Music> musicList = service.getMusicList();
+		
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("musicList", musicList);
+		String json = jsonObject.toString();
+
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();	
+	}
+	
+	@RequestMapping("/test")
+	public String uploadPage() {
+		return "home";
+	}
+	
+	@RequestMapping(value="/upload", method=RequestMethod.GET)
+	public String uploadGet() {
+		return "upload";
+	}
+	
+	@RequestMapping(value="/upload", method=RequestMethod.POST)
+	public String uploadPost(Music music) throws IllegalStateException, IOException {
+		music.setMfilename(music.getMattach().getOriginalFilename());
+		String filename = music.getMfilename();
+		LOGGER.info(filename);
+		
+		String realPath = servletContext.getRealPath("/resources/music/") + "/" + filename;
+		//String realPath = servletContext.getRealPath("/resources/music/") + filename;
+		music.setMfilepath(realPath);
+		LOGGER.info(realPath);
+		
+		File file = new File(realPath);
+		music.getMattach().transferTo(file);
+		
+		service.musicUpload(music);
+		
+		return "redirect:/test";
+	}
 }
 

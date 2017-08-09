@@ -1,0 +1,13 @@
+#scheduleheader {
+	text-align: right;
+	font-size: 3vw;
+	color: white;
+	margin-top: 30px;
+}
+
+#schedule {
+	text-align: right;
+	color :white;
+	font-size: 2vw;
+	padding: 0.5vw;
+}

@@ -3,6 +3,7 @@ var calendarflag = false;
 var subwayflag = false;
 var videoflag = false;
 var weatherflag = false;
+var audioflag = false;
 
 function handleCommand(command) {
 	if(command == "중지") {
@@ -15,9 +16,10 @@ function handleCommand(command) {
 		subwayflag = false;
 		videoflag = false;
 		weatherflag = false;
+		audioflag = false;
 	}
 	
-	if(!mapflag && !calendarflag && !subwayflag && !videoflag && !weatherflag) {
+	if(!mapflag && !calendarflag && !subwayflag && !videoflag && !weatherflag && !audioflag) {
 		if(command == "명령어") {
 			console.log("명령어");
 			speakText("명령어 목록을 보여드릴게요");
@@ -42,7 +44,7 @@ function handleCommand(command) {
 			subwayflag = true;
 		} else if(command == "유튜브") {
 			console.log("유튜브");
-			speakText("유투브를 실행합니다");
+			speakText("유투브를 실행합게요");
 			openYoutubeList(command);
 			videoflag = true;
 		} else if(command == "날씨") {
@@ -50,6 +52,12 @@ function handleCommand(command) {
 			speakText("날씨를 보여드릴게요");
 			openWeather();
 			weatherflag = true;
+		} else if(command == "음악") {
+			console.log("음악");
+			speakText("mp3를 실행할게요");
+			openAudio();
+			getMusicList();
+			audioflag = true;
 		}
 	}
 	
@@ -118,5 +126,24 @@ function handleCommand(command) {
 	
 	if(weatherflag) {
 		weatherSearch(command);
+	}
+	
+	if(audioflag) {
+		if(command == "리스트") {
+			openList();
+		} else if(command == "다음리스트") {
+			nextList();
+		} else if(command == "이전리스트") {
+			prevList();
+		} else if(command.search("번") > -1) {
+			number = command.replace("번","");
+			play(number);
+		} else if(command == "재생") {
+			play(1);
+		} else if(command == "다음곡") {
+			nextPlay();
+		} else if(command == "이전곡") {
+			prevPlay();
+		}
 	}
 }
