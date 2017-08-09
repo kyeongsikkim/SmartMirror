@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
             //Log.d("MIAPP", account.getPhotoUrl().toString());
 
-            String url = "http://192.168.3.117:8080/SmartMirrorWebProject/File";
+            String url = "http://192.168.3.117:8080/SmartMirrorWebProject/";
             HttpUrl httpUrl = HttpUrl.parse(url).newBuilder()
                     .addQueryParameter("name", aName.toString())
                     .addQueryParameter("id", aId.toString())
@@ -108,18 +108,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 }
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-
-
                 }
             });
-
             Log.i(TAG, "[Name] " + aName);
             Log.i(TAG, "[Id] " + aId);
 
         }else{
             goLogInScreen();
         }
-
     }
 
     private void goLogInScreen() {
@@ -156,6 +152,5 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
 }
