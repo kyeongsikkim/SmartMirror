@@ -1,18 +1,22 @@
 package com.mycompany.myapp.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.flickr4java.flickr.FlickrException;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
@@ -33,6 +37,9 @@ import com.mycompany.myapp.util.RSSFeedParser;
 @Controller
 public class HomeController {
 
+	@Autowired
+	private ServletContext servletContext; 
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 	private List<FeedMessage> list;
 
@@ -333,5 +340,33 @@ public class HomeController {
 //		return "movie";
 //	}
 	
+	
+	//602
+	@RequestMapping("/File")
+	public void File(MultipartFile attach, HttpServletResponse response)
+			throws Exception {
+		LOGGER.info(attach.getOriginalFilename());
+		LOGGER.info(attach.getContentType());
+		LOGGER.info(String.valueOf(attach.getSize()));
+		
+		String savedfilename = attach.getOriginalFilename();
+		
+		String realPath=servletContext.getRealPath("/resources/media/"+savedfilename);
+		//String savedfilepath = "../resources/media/" + savedfilename;
+		
+		attach.transferTo(new File(realPath));
+		
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("fileName", attach.getOriginalFilename());
+		jsonObject.put("fileType", attach.getContentType());
+		jsonObject.put("fileSize", attach.getSize());
+		String json = jsonObject.toString();
+
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();
+	}
 }
 

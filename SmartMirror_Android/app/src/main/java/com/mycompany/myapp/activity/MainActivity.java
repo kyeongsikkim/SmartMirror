@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
             //Log.d("MIAPP", account.getPhotoUrl().toString());
 
-            String url = "http://192.168.3.117:8080/SmartMirrorWebProject/";
+            String url = "http://192.168.3.117:8080/SmartMirrorWebProject/File";
             HttpUrl httpUrl = HttpUrl.parse(url).newBuilder()
                     .addQueryParameter("name", aName.toString())
                     .addQueryParameter("id", aId.toString())

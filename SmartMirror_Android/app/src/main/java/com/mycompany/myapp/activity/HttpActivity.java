@@ -81,7 +81,7 @@ public class HttpActivity extends AppCompatActivity {
         String fileName = paths[paths.length - 1];
         Log.i(TAG, fileName);
 
-        String url = "http://192.168.3.117:8080/SmartMirrorWebProject/";
+        String url = "http://192.168.3.117:8080/SmartMirrorWebProject/File";
         RequestBody requestBody = new MultipartBody.Builder()
                 .addFormDataPart("attach", fileName, RequestBody.create(MultipartBody.FORM, new File(filePath)))
                 .build();
