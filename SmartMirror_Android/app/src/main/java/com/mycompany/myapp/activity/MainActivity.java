@@ -1,4 +1,4 @@
-package com.mycompany.myapp;
+package com.mycompany.myapp.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -20,6 +20,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.mycompany.myapp.R;
 
 import java.io.IOException;
 
