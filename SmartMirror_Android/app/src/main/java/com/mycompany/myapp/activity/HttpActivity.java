@@ -55,6 +55,7 @@ public class HttpActivity extends AppCompatActivity {
     }
 
     public void handleBtnAttach(View v) {
+        Log.i(TAG, "attach");
         if (checkPermission()) {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             intent.setType("audio/*");
@@ -67,8 +68,8 @@ public class HttpActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-                Uri selectedImageUri = data.getData();
-                String realPath = RealPathUtil.getRealPath(this, selectedImageUri);
+                Uri selectedUri = data.getData();
+                String realPath = RealPathUtil.getRealPath(this, selectedUri);
                 txtAttach.setText(realPath);
                 Log.i(TAG, realPath);
             }
@@ -81,7 +82,7 @@ public class HttpActivity extends AppCompatActivity {
         String fileName = paths[paths.length - 1];
         Log.i(TAG, fileName);
 
-        String url = "http://192.168.3.117:8080/SmartMirrorWebProject/File";
+        String url = "http://192.168.3.43:8080/SmartMirrorWebProject/File";
         RequestBody requestBody = new MultipartBody.Builder()
                 .addFormDataPart("attach", fileName, RequestBody.create(MultipartBody.FORM, new File(filePath)))
                 .build();

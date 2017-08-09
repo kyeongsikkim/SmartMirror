@@ -356,7 +356,7 @@ public class HomeController {
 		if(musicList != null) {
 			musicList.clear();;
 		}
-		
+	
 		List<Music> musicList = service.getMusicList();
 		
 		JSONObject jsonObject = new JSONObject();
@@ -370,61 +370,20 @@ public class HomeController {
 		pw.close();	
 	}
 	
-	//602
 	@RequestMapping("/File")
-	public void File(MultipartFile attach, HttpServletResponse response)
-			throws Exception {
-		LOGGER.info(attach.getOriginalFilename());
-		LOGGER.info(attach.getContentType());
-		LOGGER.info(String.valueOf(attach.getSize()));
+	public void File(MultipartFile attach, HttpServletResponse response) throws Exception {
+		Music music = new Music();
 		
-		String savedfilename = attach.getOriginalFilename();
+		String filename = attach.getOriginalFilename();
+		music.setMfilename(filename);
+		music.setMfilepath("/SmartMirrorWebProject/resources/music/" + filename);
 		
-		String realPath=servletContext.getRealPath("/resources/media/"+savedfilename);
-		//String savedfilepath = "../resources/media/" + savedfilename;
+		String realPath = servletContext.getRealPath("/resources/music/");
+		File file = new File(realPath + "/" + filename);
 		
-		attach.transferTo(new File(realPath));
-		
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("fileName", attach.getOriginalFilename());
-		jsonObject.put("fileType", attach.getContentType());
-		jsonObject.put("fileSize", attach.getSize());
-		String json = jsonObject.toString();
-
-		response.setContentType("application/json; charset=UTF-8");
-		PrintWriter pw = response.getWriter();
-		pw.write(json);
-		pw.flush();
-		pw.close();	
-	}
-	
-	@RequestMapping("/test")
-	public String uploadPage() {
-		return "home";
-	}
-	
-	@RequestMapping(value="/upload", method=RequestMethod.GET)
-	public String uploadGet() {
-		return "upload";
-	}
-	
-	@RequestMapping(value="/upload", method=RequestMethod.POST)
-	public String uploadPost(Music music) throws IllegalStateException, IOException {
-		music.setMfilename(music.getMattach().getOriginalFilename());
-		String filename = music.getMfilename();
-		LOGGER.info(filename);
-		
-		String realPath = servletContext.getRealPath("/resources/music/") + "/" + filename;
-		//String realPath = servletContext.getRealPath("/resources/music/") + filename;
-		music.setMfilepath(realPath);
-		LOGGER.info(realPath);
-		
-		File file = new File(realPath);
-		music.getMattach().transferTo(file);
+		attach.transferTo(file);
 		
 		service.musicUpload(music);
-		
-		return "redirect:/test";
 	}
 }
 

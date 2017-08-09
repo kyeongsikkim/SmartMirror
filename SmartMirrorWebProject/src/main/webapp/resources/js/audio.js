@@ -29,29 +29,29 @@ function getMusicList() {
 }
 
 function openList() {
-	document.getElementById('musiclist').innerHtml("");
+	$("#musiclist").html("");
 	if(currPage == maxPage) {
 		for(i=(10*currPage); i<totalMusicNo; i++) {
-			document.getElementById('musiclist').append( (musicList[i].mno + 1) + " " + musicList[i].mfilename + "</br>");
+			$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
 		}
 	} else {
 		for(i=(10*currPage); i<(10*(currPage+1)); i++) {
-			document.getElementById('musiclist').append( (musicList[i].mno + 1) + " " + musicList[i].mfilename + "</br>");
+			$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
 		}
 	}
 }
 
 function nextList() {
-	document.getElementById('musiclist').innerHtml("");
+	$("#musiclist").html("");
 	if(currPage < maxPage) {
 		currPage++;
 		if(currPage == maxPage) {
 			for(i=(10*currPage); i<totalMusicNo; i++) {
-				document.getElementById('musiclist').append( (musicList[i].mno + 1) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
 			}
 		} else {
 			for(i=(10*currPage); i<(10*(currPage+1)); i++) {
-				document.getElementById('musiclist').append( (musicList[i].mno + 1) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
 			}
 		}
 	} else {
@@ -60,16 +60,16 @@ function nextList() {
 }
 
 function prevList() {
-	document.getElementById('musiclist').innerHtml("");
+	$("#musiclist").html("");
 	if(currPage > 0) {
 		currPage--;
 		if(currPage == maxPage) {
 			for(i=(10*currPage); i<totalMusicNo; i++) {
-				document.getElementById('musiclist').append( (musicList[i].mno + 1) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
 			}
 		} else {
 			for(i=(10*currPage); i<(10*(currPage+1)); i++) {
-				document.getElementById('musiclist').append( (musicList[i].mno + 1) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
 			}
 		}
 	} else {
@@ -79,10 +79,10 @@ function prevList() {
 
 function play(number) {
 	currNum = number;
-	filename = musicList[currNum-1].mfilename;
+	filepath = musicList[currNum-1].mfilepath;
 	
 	audio = document.getElementById("audio");
-	audio.src = "/SmartMirrorWebProject/resources/music/" + filename;
+	audio.src = filepath;
 	
 	audio.play();
 }
@@ -90,10 +90,10 @@ function play(number) {
 function nextPlay() {
 	if(currNum < totalMusicNo) {
 		currNum++;
-		filename = musicList[currNum-1].mfilename;
+		filepath = musicList[currNum-1].mfilepath;
 		
 		audio = document.getElementById("audio");
-		audio.src = "/SmartMirrorWebProject/resources/music/" + filename;
+		audio.src = filepath;
 		
 		audio.play();
 	}
@@ -102,10 +102,10 @@ function nextPlay() {
 function prevPlay() {
 	if(currNum > 1) {
 		currNum--;
-		filename = musicList[currNum-1].mfilename;
+		filepath = musicList[currNum-1].mfilepath;
 		
 		audio = document.getElementById("audio");
-		audio.src = "/SmartMirrorWebProject/resources/music/" + filename;
+		audio.src = filepath;
 		
 		audio.play();
 	}
