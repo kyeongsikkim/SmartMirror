@@ -15,15 +15,15 @@ import com.mycompany.myapp.dto.Music;
 @Component
 public class DaoImpl implements Dao {
 
-    List<Music> musicList = new ArrayList<Music>();
-    
+	List<Music> musicList = new ArrayList<Music>();
+	
 	@Override
 	public int musicInsert(Music music) {
 		Connection connection = null;
         PreparedStatement pstmt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.43:3306/smartmirror", "iot1_mirror", "iot12345");
+            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.173:3306/smartmirror", "iot1_mirror", "iot12345");
             pstmt = connection.prepareStatement("insert into music(mfilename,mfilepath) values(?,?);");
             
             String filename = music.getMfilename();
@@ -61,9 +61,13 @@ public class DaoImpl implements Dao {
 		Connection connection = null;
         PreparedStatement pstmt = null;
         
+        if(musicList != null) {
+        	musicList.clear();
+        }
+        
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.43:3306/smartmirror", "iot1_mirror", "iot12345");
+            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.173:3306/smartmirror", "iot1_mirror", "iot12345");
             
             String sql;
             sql = "select * from music";

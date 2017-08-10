@@ -30,28 +30,36 @@ function getMusicList() {
 
 function openList() {
 	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
 	if(currPage == maxPage) {
 		for(i=(10*currPage); i<totalMusicNo; i++) {
-			$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
+			$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
 		}
 	} else {
 		for(i=(10*currPage); i<(10*(currPage+1)); i++) {
-			$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
+			$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
+			$("#rightarrow").html("》");
 		}
 	}
 }
 
 function nextList() {
 	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
 	if(currPage < maxPage) {
 		currPage++;
 		if(currPage == maxPage) {
 			for(i=(10*currPage); i<totalMusicNo; i++) {
-				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
+				$("#leftarrow").html("《");
 			}
 		} else {
 			for(i=(10*currPage); i<(10*(currPage+1)); i++) {
-				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
+				$("#leftarrow").html("《");
+				$("#rightarrow").html("》");
 			}
 		}
 	} else {
@@ -61,15 +69,20 @@ function nextList() {
 
 function prevList() {
 	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
 	if(currPage > 0) {
 		currPage--;
-		if(currPage == maxPage) {
-			for(i=(10*currPage); i<totalMusicNo; i++) {
-				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
+		if(currPage == 0) {
+			for(i=(10*currPage); i<(10*(currPage+1)); i++) {
+				$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
+				$("#rightarrow").html("》");
 			}
 		} else {
 			for(i=(10*currPage); i<(10*(currPage+1)); i++) {
-				$("#musiclist").append((musicList[i].mno) + " " + musicList[i].mfilename + "</br>");
+				$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
+				$("#leftarrow").html("《");
+				$("#rightarrow").html("》");
 			}
 		}
 	} else {

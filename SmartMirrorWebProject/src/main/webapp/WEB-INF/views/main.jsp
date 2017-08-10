@@ -14,10 +14,12 @@
 		<link href="<%=application.getContextPath()%>/resources/css/schedule.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/map.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/weather.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/weather_detail.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/calendar.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/command.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/audio.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/modal.css" rel="stylesheet" type="text/css" />
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
@@ -37,6 +39,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script>
  		<script src="<%=application.getContextPath()%>/resources/js/weather_detail.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/camera.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
@@ -134,9 +137,17 @@
 				</div>
 			</div>
 			
-			<div id="help">"명령어"라고 말해보세요</div>
+			<div id="help">"아리아"를 불러보세요.</div>
 			<div id="content" style="text-align: center;"></div>
 			<div id="speech"></div>
+			
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+			
+			  <!-- Modal content -->
+			  	<img class="modal-content" id="snapshotmodal" width="500px" height="500px">
+			
+			</div>
 		</div>
 	</body>
 </html>

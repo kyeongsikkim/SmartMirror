@@ -1,6 +1,6 @@
 function close() {
 		$('#content').empty(); 
-		$("#help").html("\"명령어\"라고 말해보세요.");
+		$("#help").html("\"아리아\"를 불러보세요.");
 }
 
 function openCalendar() {

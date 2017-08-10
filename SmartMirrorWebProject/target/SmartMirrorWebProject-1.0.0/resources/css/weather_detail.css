@@ -6,6 +6,10 @@
 	display: inline-block;
 }
 
-#tempMaxMinBox {
+.weatherdetail {
 	display: inline-block;
+	width: 40vw;
+	height: 70vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }

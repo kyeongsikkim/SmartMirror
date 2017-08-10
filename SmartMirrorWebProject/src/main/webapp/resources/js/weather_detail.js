@@ -12,10 +12,8 @@ function weatherSearch(weatherInfo) {
 		success: function(data) {
 			
 			$('#city').html(weatherInfo);
-			$('#weatherStatus').html(data.summary);
-			$('#tempMax').html(data.tempMax);
-			$('#tempMin').html(data.tempMin);
-			$('#weatherTemperature').html(data.temp);
+			$('#weatherStatus').html(data.icon);
+			$('#weatherTemperature').html(data.temp + "°");
 			latitude = data.latitude;
 			longitude = data.longitude;
 			
@@ -84,8 +82,10 @@ function jsonFlickrApi(data){
 	    //var randomPhotoId = parseInt(data.photos.total);
 		  console.log(data);
 	    var photo = data.photos.photo[Math.floor(Math.random()*parseInt(data.photos.photo.length))];
-	    document.querySelector(".weather_detail").style.background = "url('" + photo.url_l + "')";
+	    document.querySelector(".weatherdetail").style.background = "url('" + photo.url_l + "')";
+	    document.querySelector(".weatherdetail").style.backgroundSize = "cover";
 	  } else {
-		  document.querySelector(".weather_detail").style.background = "url('https://fourtonfish.com/tutorials/weather-web-app/images/default.jpg')";
+		  document.querySelector(".weatherdetail").style.background = "url('https://fourtonfish.com/tutorials/weather-web-app/images/default.jpg')";
+		  document.querySelector(".weatherdetail").style.backgroundSize = "cover";
 	  }
 }

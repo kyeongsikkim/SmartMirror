@@ -1,10 +1,15 @@
 package com.mycompany.myapp.controller;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -16,7 +21,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.flickr4java.flickr.FlickrException;
@@ -79,7 +83,39 @@ public class HomeController {
 	public String camera() {
 		return "camera";
 	}
+	
+	@RequestMapping("/snapshot")
+	public void snapshot(HttpServletResponse response) throws Exception {
+		URL url = new URL("http://192.168.3.173:50001/?action=snapshot");
+		InputStream is = new BufferedInputStream(url.openStream());
+		
+		String filePath = servletContext.getRealPath("/resources/photo/");
+		String fileName = new Date().toString() + ".jpg";
+		FileOutputStream fos = new FileOutputStream(filePath + "/" + fileName);
+		//FileOutputStream fos = new FileOutputStream("C://Temp/photo.jpg");
+		
+		int readBytes = -1;
+		byte[] cbuf = new byte[1024];
+		while(true) {
+			readBytes = is.read(cbuf);
+			if(readBytes == -1) break;
+			fos.write(cbuf, 0, readBytes);
+		}
+		
+		is.close();
+		fos.close();
+		
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("filename", fileName);
+		String json = jsonObject.toString();
 
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();
+	}
+	
 	@RequestMapping("/getid")
 	public void getId(String name, String id, HttpServletResponse response) throws IOException {
 		LOGGER.info(name);
@@ -354,10 +390,10 @@ public class HomeController {
 	@RequestMapping("/musiclist")
 	public void musicList(HttpServletResponse response) throws Exception {
 		if(musicList != null) {
-			musicList.clear();;
+			musicList.clear();
 		}
 	
-		List<Music> musicList = service.getMusicList();
+		musicList = service.getMusicList();
 		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("musicList", musicList);
@@ -370,8 +406,8 @@ public class HomeController {
 		pw.close();	
 	}
 	
-	@RequestMapping("/File")
-	public void File(MultipartFile attach, HttpServletResponse response) throws Exception {
+	@RequestMapping("/musicfile")
+	public void musicFile(MultipartFile attach, HttpServletResponse response) throws Exception {
 		Music music = new Music();
 		
 		String filename = attach.getOriginalFilename();
@@ -386,4 +422,3 @@ public class HomeController {
 		service.musicUpload(music);
 	}
 }
-

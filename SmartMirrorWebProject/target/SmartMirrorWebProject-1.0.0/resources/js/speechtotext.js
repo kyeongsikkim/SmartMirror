@@ -25,6 +25,7 @@ $(function() {
 				//console.log(command);
 				startCommand = false;
 				handleCommand(command);
+				$("#speech").html(command);
 			}
 		}
 	});

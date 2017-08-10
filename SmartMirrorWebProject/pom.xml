@@ -267,6 +267,12 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>5.1.43</version>
 		</dependency>
+		<!-- Raspi Cam -->
+		<dependency>
+		    <groupId>de.sciss</groupId>
+		    <artifactId>jrpicam</artifactId>
+		    <version>0.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
