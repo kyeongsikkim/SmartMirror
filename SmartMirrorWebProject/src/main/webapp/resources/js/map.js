@@ -12,6 +12,16 @@ function initMap() {
     });
     geocoder = new google.maps.Geocoder();
   }
+function subwayMap(x,y) {
+	console.log(x);
+	console.log(y);
+    var uluru = {lat: x, lng: y};
+    subwaymap = new google.maps.Map(document.getElementById('subwaymap'), {
+      zoom: 18,
+      center: uluru
+    });
+  }
+
 
 function setMap(data) {
 	address = data;

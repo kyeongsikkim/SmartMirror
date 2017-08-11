@@ -19,6 +19,7 @@
 		<link href="<%=application.getContextPath()%>/resources/css/calendar.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/command.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/audio.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/subway.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/modal.css" rel="stylesheet" type="text/css" />
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
@@ -40,6 +41,7 @@
  		<script src="<%=application.getContextPath()%>/resources/js/weather_detail.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/camera.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/subway.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {

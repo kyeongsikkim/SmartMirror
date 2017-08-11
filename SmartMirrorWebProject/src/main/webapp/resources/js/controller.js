@@ -128,6 +128,18 @@ function openBoxOffice() {
 		}
 	});
 }
+function openSubway() {
+	$.ajax({
+		type : "GET",
+		url : "/SmartMirrorWebProject/subway",
+		error : function() {
+			alert('error');
+		},
+		success : function(data) {
+			$('#content').html(data);
+		}
+	});
+}
 
 function openAnimation() {
 	var target = document.querySelector('#content');
