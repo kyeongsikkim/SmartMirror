@@ -6,7 +6,7 @@ $(function(){
 	subwayMap(${x},${y});
 });
 </script>
-
+   <!-- 안녕 -->
 
 	<h2>지하철 정보</h2>
 	<br>
@@ -86,13 +86,13 @@ $(function(){
 	</div>
 	
 	<div>
-		<div style="background-color:${currColor};text-align: center;display:inline-block;position:relative;left:5%;width:28%;height:120px;border-radius:20px;text-overflow: ellipsis;
+		<div style="background-color:${currColor};text-align: center;display:inline-block;position:relative;left:3%;width:30%;height:120px;border-radius:20px;text-overflow: ellipsis;
 	                     overflow: hidden;white-space: nowrap;">
 		<span style="font-size:60px;color:white;font-weight:bold;">${beforeStation}</span></div>
-		<div style="background-color:${currColor};text-align: center;display:inline-block;position:relative;left:38%;width:28%;height:120px;border-radius:20px;text-overflow: ellipsis;
+		<div style="background-color:${currColor};text-align: center;display:inline-block;position:relative;left:35%;width:30%;height:120px;border-radius:20px;text-overflow: ellipsis;
 	                     overflow: hidden;white-space: nowrap;">
 			<span style="font-size:60px;color:white;font-weight:bold;">${afterStation}</span></div>
-		<div style="background-color:white;text-align: center;border:thick solid ${currColor};display:inline-block;position:relative;left:-24.5%;top:10px;width:35%;height:160px;border-radius:30px;	text-overflow: ellipsis;
+		<div style="background-color:white;text-align: center;border:thick solid ${currColor};display:inline-block;position:relative;left:-29%;top:10px;width:35%;height:160px;border-radius:30px;	text-overflow: ellipsis;
 	                     overflow: hidden;white-space: nowrap;  ">
 		<span style="font-size:80px;color:black;padding-top: 10px;font-weight:bold;">${currStation}</span></div>
 	</div>
@@ -100,19 +100,19 @@ $(function(){
 	
 	<table style="width:90%;border:0px;text-align:left; margin-left: 100px">
 	  <tr >
-        <td class=td style="text-align: right">${upperTime1}</td>
+        <td class=td style="text-align: right;color:#999999">${upperTime1}</td>
        <td class=centertd>||</td>
-       <td class=td style="text-align:left;">${downTime1}</td>
+       <td class=td style="text-align:left;color:#999999">${downTime1}</td>
       </tr>
       <tr>
-        <td class=td style="text-align: right">${upperTime2}</td>
+        <td class=td style="text-align: right;color:#999999">${upperTime2}</td>
        <td  class=centertd>||</td>
-        <td class=td style="text-align:left;">${downTime2}</td>
+        <td class=td style="text-align:left;color:#999999">${downTime2}</td>
       </tr>
       <tr>
-          <td class=td style="text-align: right">${upperTime3}</td>
+          <td class=td style="text-align: right;color:#999999">${upperTime3}</td>
          <td class=centertd>||</td>
-          <td class=td style="text-align:left;">${downTime3}</td>
+          <td class=td style="text-align:left;color:#999999">${downTime3}</td>
       
   </table>
 <h2>출구정보</h2>

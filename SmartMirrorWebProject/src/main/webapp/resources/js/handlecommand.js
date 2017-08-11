@@ -76,45 +76,47 @@ function handleCommand(command) {
 
 	if(subwayflag) {
 		if(command=="1" || command=="1호선"){
-			changeLine(command);
+			changeLine(1);
 		}else if(command=="2" || command=="2호선"){
-			changeLine(command);
+			changeLine(2);
 		}else if(command=="3" || command=="3호선"){
-			changeLine(command);
+			changeLine(3);
 		}else if(command=="4" || command=="4호선"){
-			changeLine(command);
+			changeLine(4);
 		}else if(command=="5" || command=="5호선"){
-			changeLine(command);
+			changeLine(5);
 		}else if(command=="6" || command=="6호선"){
-			changeLine(command);
+			changeLine(6);
 		}else if(command=="7" || command=="7호선"){
-			changeLine(command);
+			changeLine(7);
 		}else if(command=="8" || command=="8호선"){
-			changeLine(command);
+			changeLine(8);
 		}else if(command=="9" || command=="9호선"){
-			changeLine(command);
+			changeLine(9);
 		}else if(command=="공항철도" || command=="공항철도호선"){
-			changeLine(command);
+			changeLine(A);
 		}else if(command=="분당" || command=="분당선"){
-			changeLine(command);
+			changeLine(B);
+		}else if(command=="에버라인" || command=="에버라인선"){
+			changeLine(E);
 		}else if(command=="경춘" || command=="경춘선"){
-			changeLine(command);
+			changeLine(G);
 		}else if(command=="인천1" || command=="인천1선"){
-			changeLine(command);
+			changeLine(I);
 		}else if(command=="인천2" || command=="인천2선"){
-			changeLine(command);
+			changeLine(I2);
 		}else if(command=="경의중앙" || command=="경의중앙선"){
-			changeLine(command);
+			changeLine(K);
 		}else if(command=="경강" || command=="경강선"){
-			changeLine(command);
+			changeLine(KK);
 		}else if(command=="신분당" || command=="신분당선"){
-			changeLine(command);
+			changeLine(S);
 		}else if(command=="수인" || command=="수인선"){
-			changeLine(command);
+			changeLine(SU);
 		}else if(command=="의정부" || command=="의정부선"){
-			changeLine(command);
+			changeLine(U);
 		}else{
-			
+			changeStation(command);
 			}
 		
 	}

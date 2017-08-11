@@ -446,7 +446,7 @@ public class HomeController {
 		return "subway";
 	}
 
-	@RequestMapping("/subwaysearch")
+	@RequestMapping("/subwaySearch")
 	public String subwaySearch(String station, String line, Model model) {
 		/////////////////////////////////////// 요일
 		/////////////////////////////////////// ////////////////////////////////////////////////////////
