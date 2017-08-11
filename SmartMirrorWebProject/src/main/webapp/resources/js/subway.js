@@ -12,6 +12,7 @@ function changeStation(station){
 			}
 		})
 	}
+
 function changeLine(line){
 	console.log(currStation);
 		console.log(line);

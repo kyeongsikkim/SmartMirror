@@ -1,35 +1,127 @@
-.radiusNm{
-border-radius:50%;
-width:80px;
-height:80px;
-font-size:50px;
-color:white;
-text-align:center;
-display:table-cell;
-vertical-align:middle;
+.radiusNm {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
 
+.radiusSt {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	display: table-cell;
+	vertical-align: middle;
 }
-.radiusSt{
-border-radius:50%;
-width:80px;
-height:80px;
-font-size:18px;
-color:white;
-text-align:center;
-padding: 10px;
-display:table-cell;
-vertical-align:middle;
-}
-.td{
-border-bottom: 5px solid red;
-font-size: 45px; 
-font-weight:bold;
-width:30%
 
+.tdR {
+	border-bottom: 5px solid red;
+	font-size: 3.5vw;
+	font-weight: bold;
+	width: 48%;
+	color: #999999;
+	text-align: right;
+	padding-right: 5px;
 }
-.centertd{
-width: 35%;
-text-align:center;
-border-bottom: 5px solid red;
- font-size:45px;
+
+.tdL {
+	border-bottom: 5px solid red;
+	font-size: 3.5vw;
+	font-weight: bold;
+	width: 48%;
+	color: #999999;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.centertd {
+	width: 10%;
+	text-align: center;
+	width: 4%;
+	border-bottom: 4px solid red;
+	font-size: 5vw;
+}
+
+.beforeStationDiv {
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	left: 2%;
+	width: 30%;
+	border-radius: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 5px 0;
+}
+
+.currStationDiv {
+	background-color: white;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	z-index: 9999;
+	top: 10px;
+	width: 35%;
+	border-radius: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 5px 0;
+}
+
+.afterStationDiv {
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	right: 2%;
+	width: 30%;
+	border-radius: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 5px 0;
+}
+
+.beforeStationSpan {
+	font-size: 3.6vw;
+	color: white;
+	font-weight: bold;
+}
+
+.afterStationSpan {
+	font-size: 3.6vw;
+	color: white;
+	font-weight: bold
+}
+
+.currStationSpan {
+	font-size: 5.4vw;
+	color: black;
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+.timetable {
+	width: 84%;
+	border: 0px;
+	margin: 0 8%;
+}
+
+.timetable tr {
+	width: 100%;
+}
+
+#subwaymap {
+	margin-top: 30px;
+	display: inline-block;
+	width: 85vw;
+	height: 30vw;
 }

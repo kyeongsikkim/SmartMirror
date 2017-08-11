@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.mycompany.myapp.dao.Dao;
 import com.mycompany.myapp.dto.Music;
+import com.mycompany.myapp.dto.Photo;
 
 @Component
 public class ServiceImpl implements Service {
@@ -21,5 +22,10 @@ public class ServiceImpl implements Service {
 	@Override
 	public List<Music> getMusicList() {
 		return dao.getMusicList();
+	}
+
+	@Override
+	public void photoUpload(Photo photo) {
+		dao.photoInsert(photo);
 	}
 }

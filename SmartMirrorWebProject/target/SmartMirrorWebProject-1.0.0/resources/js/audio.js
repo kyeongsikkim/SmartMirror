@@ -91,6 +91,11 @@ function prevList() {
 }
 
 function play(number) {
+	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
+	$("#musiclist").html("<video width=\"90%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
+	
 	currNum = number;
 	filepath = musicList[currNum-1].mfilepath;
 	
@@ -101,6 +106,11 @@ function play(number) {
 }
 
 function nextPlay() {
+	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
+	$("#musiclist").html("<video width=\"90%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
+	
 	if(currNum < totalMusicNo) {
 		currNum++;
 		filepath = musicList[currNum-1].mfilepath;
@@ -113,6 +123,11 @@ function nextPlay() {
 }
 
 function prevPlay() {
+	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
+	$("#musiclist").html("<video width=\"90%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
+	
 	if(currNum > 1) {
 		currNum--;
 		filepath = musicList[currNum-1].mfilepath;
@@ -129,5 +144,9 @@ function resume() {
 }
 
 function pause() {
+	$("#musiclist").html("");
+	$("#leftarrow").html("");
+	$("#rightarrow").html("");
+	
 	audio.pause();
 }

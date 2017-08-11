@@ -75,7 +75,49 @@ function handleCommand(command) {
 	}
 
 	if(subwayflag) {
-		
+		if(command=="1" || command=="1호선"){
+			changeLine(1);
+		}else if(command=="2" || command=="2호선"){
+			changeLine(2);
+		}else if(command=="3" || command=="3호선"){
+			changeLine(3);
+		}else if(command=="4" || command=="4호선"){
+			changeLine(4);
+		}else if(command=="5" || command=="5호선"){
+			changeLine(5);
+		}else if(command=="6" || command=="6호선"){
+			changeLine(6);
+		}else if(command=="7" || command=="7호선"){
+			changeLine(7);
+		}else if(command=="8" || command=="8호선"){
+			changeLine(8);
+		}else if(command=="9" || command=="9호선"){
+			changeLine(9);
+		}else if(command=="공항철도" || command=="공항철도호선"){
+			changeLine("A");
+		}else if(command=="분당" || command=="분당선"){
+			changeLine("B");
+		}else if(command=="에버라인" || command=="에버라인선"){
+			changeLine("E");
+		}else if(command=="경춘" || command=="경춘선"){
+			changeLine("G");
+		}else if(command=="인천1" || command=="인천1선"){
+			changeLine("I");
+		}else if(command=="인천2" || command=="인천2선"){
+			changeLine("I2");
+		}else if(command=="경의중앙" || command=="경의중앙선"){
+			changeLine("K");
+		}else if(command=="경강" || command=="경강선"){
+			changeLine("KK");
+		}else if(command=="신분당" || command=="신분당선"){
+			changeLine("S");
+		}else if(command=="수인" || command=="수인선"){
+			changeLine("SU");
+		}else if(command=="의정부" || command=="의정부선"){
+			changeLine("U");
+		}else{
+			changeStation(command);
+		}
 	}
 	
 	if(videoflag) {
@@ -150,7 +192,8 @@ function handleCommand(command) {
 			cameraflag = true;
 		} else if(command == "지하철") {
 			console.log("지하철");
-			speakText("지하철 노선도를 보여드릴게요");
+			speakText("지하철 노선도를 보여드릴게요  원하시는 역을 말해주세요");
+			openSubway();
 			subwayflag = true;
 		} else if(command == "유튜브") {
 			console.log("유튜브");

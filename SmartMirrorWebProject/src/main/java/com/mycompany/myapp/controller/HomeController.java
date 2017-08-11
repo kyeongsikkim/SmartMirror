@@ -44,6 +44,7 @@ import com.google.maps.GeocodingApi;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.GeocodingResult;
 import com.mycompany.myapp.dto.Music;
+import com.mycompany.myapp.dto.Photo;
 import com.mycompany.myapp.service.Service;
 import com.mycompany.myapp.util.Feed;
 import com.mycompany.myapp.util.FeedMessage;
@@ -102,26 +103,28 @@ public class HomeController {
 
 	@RequestMapping("/snapshot")
 	public void snapshot(HttpServletResponse response) throws Exception {
-		URL url = new URL("http://192.168.3.173:50001/?action=snapshot");
-		InputStream is = new BufferedInputStream(url.openStream());
-
+		URL url = new URL("http://192.168.3.221:50001/?action=snapshot");
 		String filePath = servletContext.getRealPath("/resources/photo/");
 		String fileName = new Date().toString() + ".jpg";
+		
+		Photo photo = new Photo();
+		photo.setPfilename(fileName);
+		photo.setPfilepath("/SmartMirrorWebProject/resources/photo/" + fileName);
+		
+		InputStream is = new BufferedInputStream(url.openStream());
 		FileOutputStream fos = new FileOutputStream(filePath + "/" + fileName);
-		// FileOutputStream fos = new FileOutputStream("C://Temp/photo.jpg");
-
+		
 		int readBytes = -1;
 		byte[] cbuf = new byte[1024];
-		while (true) {
+		while(true) {
 			readBytes = is.read(cbuf);
-			if (readBytes == -1)
-				break;
+			if(readBytes == -1) break;
 			fos.write(cbuf, 0, readBytes);
 		}
-
+		
 		is.close();
 		fos.close();
-
+		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("filename", fileName);
 		String json = jsonObject.toString();
@@ -131,8 +134,51 @@ public class HomeController {
 		pw.write(json);
 		pw.flush();
 		pw.close();
+		
+		service.photoUpload(photo);
 	}
 
+
+	@RequestMapping("/audio")
+	public String audio() {
+		return "audio";
+	}
+
+	@RequestMapping("/musicfile")
+	public void musicFile(MultipartFile attach, HttpServletResponse response) throws Exception {
+		Music music = new Music();
+
+		String filename = attach.getOriginalFilename();
+		music.setMfilename(filename);
+		music.setMfilepath("/SmartMirrorWebProject/resources/music/" + filename);
+
+		String realPath = servletContext.getRealPath("/resources/music/");
+		File file = new File(realPath + "/" + filename);
+
+		attach.transferTo(file);
+
+		service.musicUpload(music);
+	}
+
+	@RequestMapping("/musiclist")
+	public void musicList(HttpServletResponse response) throws Exception {
+		if (musicList != null) {
+			musicList.clear();
+		}
+
+		musicList = service.getMusicList();
+
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("musicList", musicList);
+		String json = jsonObject.toString();
+
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();
+	}
+	
 	@RequestMapping("/getid")
 	public void getId(String name, String id, HttpServletResponse response) throws IOException {
 		LOGGER.info(name);
@@ -400,46 +446,6 @@ public class HomeController {
 	//
 	// return "movie";
 	// }
-
-	@RequestMapping("/audio")
-	public String audio() {
-		return "audio";
-	}
-
-	@RequestMapping("/musiclist")
-	public void musicList(HttpServletResponse response) throws Exception {
-		if (musicList != null) {
-			musicList.clear();
-		}
-
-		musicList = service.getMusicList();
-
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("musicList", musicList);
-		String json = jsonObject.toString();
-
-		response.setContentType("application/json; charset=UTF-8");
-		PrintWriter pw = response.getWriter();
-		pw.write(json);
-		pw.flush();
-		pw.close();
-	}
-
-	@RequestMapping("/musicfile")
-	public void musicFile(MultipartFile attach, HttpServletResponse response) throws Exception {
-		Music music = new Music();
-
-		String filename = attach.getOriginalFilename();
-		music.setMfilename(filename);
-		music.setMfilepath("/SmartMirrorWebProject/resources/music/" + filename);
-
-		String realPath = servletContext.getRealPath("/resources/music/");
-		File file = new File(realPath + "/" + filename);
-
-		attach.transferTo(file);
-
-		service.musicUpload(music);
-	}
 
 	@RequestMapping("/subway")
 	public String subway() {

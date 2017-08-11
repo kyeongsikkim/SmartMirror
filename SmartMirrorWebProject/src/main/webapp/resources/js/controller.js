@@ -128,6 +128,7 @@ function openBoxOffice() {
 		}
 	});
 }
+
 function openSubway() {
 	$.ajax({
 		type : "GET",
@@ -136,6 +137,7 @@ function openSubway() {
 			alert('error');
 		},
 		success : function(data) {
+			openAnimation();
 			$('#content').html(data);
 		}
 	});

@@ -20,6 +20,7 @@ $(function() {
 			//console.log("미러");
 			speakText("네 말씀하세요");
 			startCommand = true;
+			$("#help").html("");
 		} else {
 			if(startCommand == true) {
 				//console.log(command);
