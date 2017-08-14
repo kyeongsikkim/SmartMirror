@@ -103,7 +103,7 @@ public class HomeController {
 
 	@RequestMapping("/snapshot")
 	public void snapshot(HttpServletResponse response) throws Exception {
-		URL url = new URL("http://192.168.3.221:50001/?action=snapshot");
+		URL url = new URL("http://localhost:50001/?action=snapshot");
 		String filePath = servletContext.getRealPath("/resources/photo/");
 		String fileName = new Date().toString() + ".jpg";
 		

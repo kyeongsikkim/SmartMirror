@@ -24,7 +24,7 @@ public class DaoImpl implements Dao {
         PreparedStatement pstmt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.221:3306/smartmirror", "iot1_mirror", "iot12345");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartmirror", "iotuser", "iot12345");
             pstmt = connection.prepareStatement("insert into music(mfilename,mfilepath) values(?,?);");
             
             String filename = music.getMfilename();
@@ -68,7 +68,7 @@ public class DaoImpl implements Dao {
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.221:3306/smartmirror", "iot1_mirror", "iot12345");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartmirror", "iotuser", "iot12345");
             
             String sql;
             sql = "select * from music";
@@ -114,7 +114,7 @@ public class DaoImpl implements Dao {
         PreparedStatement pstmt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.3.221:3306/smartmirror", "iot1_mirror", "iot12345");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartmirror", "iotuser", "iot12345");
             pstmt = connection.prepareStatement("insert into photo(pfilename,pfilepath) values(?,?);");
             
             String filename = photo.getPfilename();
