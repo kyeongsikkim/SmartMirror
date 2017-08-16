@@ -189,7 +189,6 @@
       };
 
       recognition.onerror = function(event) {
-    	console.log("error");
     	console.log(event.error);
         invokeCallbacks(callbacks.error, event);
         switch (event.error) {

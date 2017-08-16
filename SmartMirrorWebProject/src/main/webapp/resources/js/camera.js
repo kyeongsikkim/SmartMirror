@@ -13,9 +13,9 @@ function snapshot() {
 			
 			modal = document.getElementById('myModal');
 			$("#snapshotmodal").attr("src", filepath);
-			setTimeout(modalOpen, 2000);
+			setTimeout(modalOpen, 500);
 			
-			setTimeout(modalHide, 5000);
+			setTimeout(modalHide, 3500);
 		}
 	});
 }

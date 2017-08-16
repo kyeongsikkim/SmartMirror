@@ -65,7 +65,7 @@
 					<div id="weather">
 						<table>
 							<tr>
-								<td class="iconcell"><canvas id="icon" width="110" height="110"></canvas></td>
+								<td id="iconcell"></td>
 								<td class="currentTd"><div id="weatherLocation">Seoul　</div><div id="temperature"></div></td>
 							</tr>
 						</table>
@@ -77,42 +77,42 @@
 							<tr></tr>
 							<tr>
 								<td><span id="weekday1"></span></td>
-								<td><span><canvas id="iconW1" width="40px" height="40px"></canvas></span></td>
+								<td id="iconW1"></td>
 								<td><span id="tempMax1"></span></td>
 								<td><span>/</span></td>
 								<td><span id="tempMin1"></span></td>
 							</tr>
 							<tr>
 								<td><span id="weekday2"></span></td>
-								<td><span><canvas id="iconW2" width="40px" height="40px"></canvas></span></td>
+								<td id="iconW2"></td>
 								<td><span id="tempMax2"></span></td>
 								<td><span>/</span></td>
 								<td><span id="tempMin2"></span></td>
 							</tr>
 							<tr>
 								<td><span id="weekday3"></span></td>
-								<td><span><canvas id="iconW3" width="40px" height="40px"></canvas></span></td>
+								<td id="iconW3"></td>
 								<td><span id="tempMax3"></span></td>
 								<td><span>/</span></td>
 								<td><span id="tempMin3"></span></td>
 							</tr>
 							<tr>
 								<td><span id="weekday4"></span></td>
-								<td><span><canvas id="iconW4" width="40px" height="40px"></canvas></span></td>
+								<td id="iconW4"></td>
 								<td><span id="tempMax4"></span></td>
 								<td><span>/</span></td>
 								<td><span id="tempMin4"></span></td>
 							</tr>
 							<tr>
 								<td><span id="weekday5"></span></td>
-								<td><span><canvas id="iconW5" width="40px" height="40px"></canvas></span></td>
+								<td id="iconW5"></td>
 								<td><span id="tempMax5"></span></td>
 								<td><span>/</span></td>
 								<td><span id="tempMin5"></span></td>
 							</tr>
 							<tr>
 								<td><span id="weekday6"></span></td>
-								<td><span><canvas id="iconW6" width="40px" height="40px"></canvas></span></td>
+								<td id="iconW6"></td>
 								<td><span id="tempMax6"></span></td>
 								<td><span>/</span></td>
 								<td><span id="tempMin6"></span></td>
@@ -145,6 +145,7 @@
 			</div>
 			
 			<div id="help">"아리아"를 불러보세요.</div>
+			<div id="ready"></div>
 			<div id="content" style="text-align: center;"></div>
 			<div id="speech"></div>
 			

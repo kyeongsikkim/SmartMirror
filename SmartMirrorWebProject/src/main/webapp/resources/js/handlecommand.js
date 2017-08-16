@@ -69,8 +69,8 @@ function handleCommand(command) {
 	
 	if(cameraflag) {
 		if(command == "사진") {
-			speakText("하나 둘 셋    김치");
-			snapshot();
+			speakText("하나아아 두우우울 세에에엣 김치");
+			setTimeout(snapshot, 2000);
 		}
 	}
 

@@ -3,9 +3,11 @@ var startCommand;
 $(function() {
 	annyang.addCallback("start", function(){
 		console.log("start");
+		$("#ready").html("ready");
 	});
 	annyang.addCallback("error", function() {
 		//console.log("error");
+		$("#ready").html("");
 	});
 	annyang.addCallback("end", function(){
 		//console.log("end");
@@ -47,10 +49,10 @@ $(function() {
 		//console.log("errorPermissionDenied");
 	});
 	
-	annyang.start({autoRestart: true , continuous: true});
+	annyang.start({autoRestart: true , continuous: false});
 });
 
 function restart() {
 	annyang.abort();
-	annyang.start({autoRestart: true , continuous: true});
+	annyang.start({autoRestart: true , continuous: false});
 }

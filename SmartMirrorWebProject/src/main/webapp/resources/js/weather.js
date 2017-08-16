@@ -28,39 +28,36 @@ function weatherDefault() {
 			$('#weekday5').html(data.week5);
 			$('#weekday6').html(data.week6);
 
-			var icons = new Skycons({
-				"color" : "white"
-			});
 			switch(data.icon) {
 			case "rain":
-				icons.add(document.getElementById("icon"), Skycons.RAIN);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='110%'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("icon"), Skycons.SNOW);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='110%'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("icon"), Skycons.SLEET);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='110%'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("icon"), Skycons.WIND);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='110%'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("icon"), Skycons.FOG);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='110%'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("icon"), Skycons.CLOUDY);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='110%'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("icon"), Skycons.CLEAR_DAY);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='110%'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("icon"), Skycons.CLEAR_NIGHT);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='110%'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("icon"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='110%'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("icon"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='110%'>");
 				break;
 			}
 
@@ -68,202 +65,201 @@ function weatherDefault() {
 
 			switch(data.iconW1) {
 			case "rain":
-				icons.add(document.getElementById("iconW1"), Skycons.RAIN);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW1"), Skycons.SNOW);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW1"), Skycons.SLEET);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW1"), Skycons.WIND);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW1"), Skycons.FOG);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW1"), Skycons.CLOUDY);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW1"), Skycons.CLEAR_DAY);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW1"), Skycons.CLEAR_NIGHT);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW1"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW1"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW2) {
 			case "rain":
-				icons.add(document.getElementById("iconW2"), Skycons.RAIN);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW2"), Skycons.SNOW);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW2"), Skycons.SLEET);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW2"), Skycons.WIND);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW2"), Skycons.FOG);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW2"), Skycons.CLOUDY);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW2"), Skycons.CLEAR_DAY);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW2"), Skycons.CLEAR_NIGHT);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW2"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW2"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW3) {
 			case "rain":
-				icons.add(document.getElementById("iconW3"), Skycons.RAIN);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW3"), Skycons.SNOW);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW3"), Skycons.SLEET);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW3"), Skycons.WIND);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW3"), Skycons.FOG);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW3"), Skycons.CLOUDY);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW3"), Skycons.CLEAR_DAY);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW3"), Skycons.CLEAR_NIGHT);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW3"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW3"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW4) {
 			case "rain":
-				icons.add(document.getElementById("iconW4"), Skycons.RAIN);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW4"), Skycons.SNOW);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW4"), Skycons.SLEET);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW4"), Skycons.WIND);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW4"), Skycons.FOG);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW4"), Skycons.CLOUDY);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW4"), Skycons.CLEAR_DAY);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW4"), Skycons.CLEAR_NIGHT);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW4"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW4"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW5) {
 			case "rain":
-				icons.add(document.getElementById("iconW5"), Skycons.RAIN);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW5"), Skycons.SNOW);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW5"), Skycons.SLEET);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW5"), Skycons.WIND);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW5"), Skycons.FOG);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW5"), Skycons.CLOUDY);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW5"), Skycons.CLEAR_DAY);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW5"), Skycons.CLEAR_NIGHT);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW5"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW5"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW6) {
 			case "rain":
-				icons.add(document.getElementById("iconW6"), Skycons.RAIN);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW6"), Skycons.SNOW);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW6"), Skycons.SLEET);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW6"), Skycons.WIND);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW6"), Skycons.FOG);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW6"), Skycons.CLOUDY);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW6"), Skycons.CLEAR_DAY);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW6"), Skycons.CLEAR_NIGHT);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW6"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW6"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
-			icons.play();
 		}
 	});
 }
@@ -308,242 +304,237 @@ function drawIcon() {
 			alert('error');
 		},
 		success : function(data) {
-			var icons = new Skycons({
-				"color" : "white"
-			});
 			
-			console.log("pass");
 			switch(data.icon) {
 			case "rain":
-				icons.add(document.getElementById("icon"), Skycons.RAIN);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='110%'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("icon"), Skycons.SNOW);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='110%'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("icon"), Skycons.SLEET);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='110%'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("icon"), Skycons.WIND);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='110%'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("icon"), Skycons.FOG);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='110%'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("icon"), Skycons.CLOUDY);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='110%'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("icon"), Skycons.CLEAR_DAY);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='110%'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("icon"), Skycons.CLEAR_NIGHT);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='110%'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("icon"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='110%'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("icon"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconcell").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='110%'>");
 				break;
 			}
 			
 			switch(data.iconW1) {
 			case "rain":
-				icons.add(document.getElementById("iconW1"), Skycons.RAIN);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW1"), Skycons.SNOW);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW1"), Skycons.SLEET);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW1"), Skycons.WIND);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW1"), Skycons.FOG);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW1"), Skycons.CLOUDY);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW1"), Skycons.CLEAR_DAY);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW1"), Skycons.CLEAR_NIGHT);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW1"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW1"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW1").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW2) {
 			case "rain":
-				icons.add(document.getElementById("iconW2"), Skycons.RAIN);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW2"), Skycons.SNOW);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW2"), Skycons.SLEET);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW2"), Skycons.WIND);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW2"), Skycons.FOG);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW2"), Skycons.CLOUDY);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW2"), Skycons.CLEAR_DAY);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW2"), Skycons.CLEAR_NIGHT);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW2"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW2"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW2").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW3) {
 			case "rain":
-				icons.add(document.getElementById("iconW3"), Skycons.RAIN);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW3"), Skycons.SNOW);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW3"), Skycons.SLEET);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW3"), Skycons.WIND);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW3"), Skycons.FOG);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW3"), Skycons.CLOUDY);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW3"), Skycons.CLEAR_DAY);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW3"), Skycons.CLEAR_NIGHT);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW3"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW3"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW3").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW4) {
 			case "rain":
-				icons.add(document.getElementById("iconW4"), Skycons.RAIN);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW4"), Skycons.SNOW);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW4"), Skycons.SLEET);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW4"), Skycons.WIND);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW4"), Skycons.FOG);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW4"), Skycons.CLOUDY);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW4"), Skycons.CLEAR_DAY);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW4"), Skycons.CLEAR_NIGHT);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW4"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW4"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW4").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW5) {
 			case "rain":
-				icons.add(document.getElementById("iconW5"), Skycons.RAIN);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW5"), Skycons.SNOW);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW5"), Skycons.SLEET);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW5"), Skycons.WIND);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW5"), Skycons.FOG);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW5"), Skycons.CLOUDY);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW5"), Skycons.CLEAR_DAY);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW5"), Skycons.CLEAR_NIGHT);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW5"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW5"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW5").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
 			
 			switch(data.iconW6) {
 			case "rain":
-				icons.add(document.getElementById("iconW6"), Skycons.RAIN);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/rainy.svg' width='50px'>");
 				break;
 			case "snow":
-				icons.add(document.getElementById("iconW6"), Skycons.SNOW);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/snowy.svg' width='50px'>");
 				break;
 			case "sleet":
-				icons.add(document.getElementById("iconW6"), Skycons.SLEET);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/sleet.svg' width='50px'>");
 				break;
 			case "wind":
-				icons.add(document.getElementById("iconW6"), Skycons.WIND);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "fog":
-				icons.add(document.getElementById("iconW6"), Skycons.FOG);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "cloudy":
-				icons.add(document.getElementById("iconW6"), Skycons.CLOUDY);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudy.svg' width='50px'>");
 				break;
 			case "clear-day":
-				icons.add(document.getElementById("iconW6"), Skycons.CLEAR_DAY);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/day.svg' width='50px'>");
 				break;
 			case "clear-night":
-				icons.add(document.getElementById("iconW6"), Skycons.CLEAR_NIGHT);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/night.svg' width='50px'>");
 				break;
 			case "partly-cloudy-day":
-				icons.add(document.getElementById("iconW6"), Skycons.PARTLY_CLOUDY_DAY);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudyday.svg' width='50px'>");
 				break;
 			case "partly-cloudy-night":
-				icons.add(document.getElementById("iconW6"), Skycons.PARTLY_CLOUDY_NIGHT);
+				$("#iconW6").html("<img src='/SmartMirrorWebProject/resources/images/cloudynight.svg' width='50px'>");
 				break;
 			}
-			icons.play();
 		}
 	});
 }
