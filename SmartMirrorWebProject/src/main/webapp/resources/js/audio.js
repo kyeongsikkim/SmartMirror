@@ -24,6 +24,11 @@ function getMusicList() {
 			currPage = 0;
 			maxPage = parseInt(totalMusicNo/10);
 			currNum = 1;
+			
+			audio = document.getElementById("audio");
+			audio.onended = function() {
+				nextPlay();
+			}
 		}
 	});
 }
@@ -32,6 +37,7 @@ function openList() {
 	$("#musiclist").html("");
 	$("#leftarrow").html("");
 	$("#rightarrow").html("");
+	$("#equalizer").html("");
 	if(currPage == maxPage) {
 		for(i=(10*currPage); i<totalMusicNo; i++) {
 			$("#musiclist").append((musicList[i].mno) + ". " + musicList[i].mfilename + "<br/><br/>");
@@ -94,12 +100,11 @@ function play(number) {
 	$("#musiclist").html("");
 	$("#leftarrow").html("");
 	$("#rightarrow").html("");
-	$("#musiclist").html("<video width=\"90%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
+	$("#equalizer").html("<video width=\"100%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
 	
 	currNum = number;
 	filepath = musicList[currNum-1].mfilepath;
 	
-	audio = document.getElementById("audio");
 	audio.src = filepath;
 	
 	audio.play();
@@ -109,13 +114,12 @@ function nextPlay() {
 	$("#musiclist").html("");
 	$("#leftarrow").html("");
 	$("#rightarrow").html("");
-	$("#musiclist").html("<video width=\"90%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
+	$("#equalizer").html("<video width=\"100%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
 	
 	if(currNum < totalMusicNo) {
 		currNum++;
 		filepath = musicList[currNum-1].mfilepath;
 		
-		audio = document.getElementById("audio");
 		audio.src = filepath;
 		
 		audio.play();
@@ -126,13 +130,12 @@ function prevPlay() {
 	$("#musiclist").html("");
 	$("#leftarrow").html("");
 	$("#rightarrow").html("");
-	$("#musiclist").html("<video width=\"90%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
+	$("#equalizer").html("<video width=\"100%\" autoplay loop><source src=\"/SmartMirrorWebProject/resources/media/equalizer.mp4\" type=\"video/mp4\"></video>");
 	
 	if(currNum > 1) {
 		currNum--;
 		filepath = musicList[currNum-1].mfilepath;
 		
-		audio = document.getElementById("audio");
 		audio.src = filepath;
 		
 		audio.play();

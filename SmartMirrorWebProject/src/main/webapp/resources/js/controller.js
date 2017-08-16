@@ -1,6 +1,7 @@
 function close() {
-		$('#content').empty(); 
+		$("#content").empty(); 
 		$("#help").html("\"아리아\"를 불러보세요.");
+		$("#speech").html("");
 }
 
 function openCalendar() {
@@ -9,11 +10,11 @@ function openCalendar() {
 		url : "/SmartMirrorWebProject/calendar",
 		dataType : "text",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
 			initCalendar();
 		}
 	});
@@ -25,11 +26,11 @@ function openMap() {
 		url : "/SmartMirrorWebProject/map",
 		dataType : "text",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
 			initMap();
 		}
 	});
@@ -41,11 +42,11 @@ function openCommand() {
 		url : "/SmartMirrorWebProject/command",
 		dataType : "text",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }
@@ -56,11 +57,11 @@ function openCamera() {
 		url : "/SmartMirrorWebProject/camera",
 		dataType : "text",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }
@@ -71,11 +72,12 @@ function openAudio() {
 		url : "/SmartMirrorWebProject/audio",
 		dataType : "text",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
+			setTimeout(openList, 1000);
 		}
 	});
 }
@@ -87,7 +89,7 @@ function openYoutubeList(command) {
 		dataType: "text",
 		success: function(data) {
 			youtubeSearch(command);
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }
@@ -99,7 +101,7 @@ function openVideo(number) {
 		dataType: "text",
 		success: function(data) {
 			playVideo(number);
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }
@@ -110,7 +112,7 @@ function openWeather() {
 		url: "/SmartMirrorWebProject/weather_View",
 		dataType: "text",
 		success: function(data) {
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }
@@ -120,11 +122,11 @@ function openBoxOffice() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/movie",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }
@@ -134,11 +136,11 @@ function openSubway() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/subway",
 		error : function() {
-			alert('error');
+			alert("error");
 		},
 		success : function(data) {
 			openAnimation();
-			$('#content').html(data);
+			$("#content").html(data);
 		}
 	});
 }

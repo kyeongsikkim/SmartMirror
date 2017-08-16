@@ -143,12 +143,9 @@
 			<div id="content" style="text-align: center;"></div>
 			<div id="speech"></div>
 			
-			<!-- The Modal -->
+			<!-- Modal -->
 			<div id="myModal" class="modal">
-			
-			  <!-- Modal content -->
-			  	<img class="modal-content" id="snapshotmodal" width="500px" height="500px">
-			
+			  	<img class="modal-content" id="snapshotmodal" width="640px" height="480px">
 			</div>
 		</div>
 	</body>

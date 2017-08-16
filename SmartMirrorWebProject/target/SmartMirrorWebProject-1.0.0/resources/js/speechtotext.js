@@ -25,8 +25,8 @@ $(function() {
 			if(startCommand == true) {
 				//console.log(command);
 				startCommand = false;
-				handleCommand(command);
 				$("#speech").html(command);
+				handleCommand(command);
 			}
 		}
 	});
