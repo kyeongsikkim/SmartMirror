@@ -7,7 +7,7 @@ $(function() {
 	});
 	annyang.addCallback("error", function() {
 		//console.log("error");
-		$("#ready").html("");
+		$("#ready").html("error");
 	});
 	annyang.addCallback("end", function(){
 		//console.log("end");

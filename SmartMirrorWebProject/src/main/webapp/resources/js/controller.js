@@ -1,5 +1,6 @@
 function close() {
 		$("#content").empty(); 
+		$("#camera").empty();
 		$("#help").html("\"아리아\"를 불러보세요.");
 		$("#speech").html("");
 }
@@ -61,7 +62,7 @@ function openCamera() {
 		},
 		success : function(data) {
 			openAnimation();
-			$("#content").html(data);
+			$("#camera").html(data);
 		}
 	});
 }

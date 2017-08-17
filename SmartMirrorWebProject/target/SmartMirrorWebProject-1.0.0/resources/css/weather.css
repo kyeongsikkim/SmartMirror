@@ -2,15 +2,15 @@
 	width: 100%;
 }
 
-.iconcell {
-	width:30%;
+#iconcell {
+	width:50%;
 	text-align:center;
 }
 
 .currentTd {
 	text-align: right;
 	margin: 0px;
-	padding: 0 0 0 20px;
+	padding: 0 0 0 10px;
 }
 
 #weatherLocation {

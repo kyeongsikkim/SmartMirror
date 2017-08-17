@@ -8,14 +8,12 @@ function snapshot() {
 			alert('error');
 		},
 		success : function(data) {
-			filename = data.filename;
-			filepath = "/SmartMirrorWebProject/resources/photo/" + filename;
-			
 			modal = document.getElementById('myModal');
-			$("#snapshotmodal").attr("src", filepath);
-			setTimeout(modalOpen, 500);
-			
-			setTimeout(modalHide, 3500);
+			modal.innerHTML='';
+			modal.innerHTML='<img class="modal-content" src="SmartMirrorWebProject/snapshotdisplay?filename=' + data.filename + '" width="640px" height="480px">';
+			setTimeout(modalOpen, 2000);
+			//modalOpen();
+			setTimeout(modalHide, 4000);
 		}
 	});
 }

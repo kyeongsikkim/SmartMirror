@@ -69,8 +69,8 @@ function handleCommand(command) {
 	
 	if(cameraflag) {
 		if(command == "사진") {
-			speakText("하나아아 두우우울 세에에엣 김치");
-			setTimeout(snapshot, 2000);
+			speakText("3초 뒤에 촬영합니다");
+			setTimeout(snapshot, 2500);
 		}
 	}
 
@@ -192,7 +192,7 @@ function handleCommand(command) {
 			cameraflag = true;
 		} else if(command == "지하철") {
 			console.log("지하철");
-			speakText("지하철 노선도를 보여드릴게요  원하시는 역을 말해주세요");
+			speakText("원하시는 역을 말해주세요");
 			openSubway();
 			subwayflag = true;
 		} else if(command == "유튜브") {

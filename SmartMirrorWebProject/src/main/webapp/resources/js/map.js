@@ -2,6 +2,7 @@ var map;
 var geocoder;
 var address;
 var currzoom;
+var marker;
 
 function initMap() {
     var uluru = {lat: 37.4950883, lng: 127.1223549};
@@ -29,10 +30,14 @@ function setMap(data) {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
-    geocoder.geocode({'address': address}, function(results, status) {
+    if(marker != null) {
+    	marker.setMap(null);
+    	marker = null;
+    }
+	geocoder.geocode({'address': address}, function(results, status) {
       if (status === 'OK') {
         resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
+        marker = new google.maps.Marker({
           map: resultsMap,
           position: results[0].geometry.location
         });

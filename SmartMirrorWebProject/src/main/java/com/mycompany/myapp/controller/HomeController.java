@@ -3,11 +3,14 @@ package com.mycompany.myapp.controller;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -28,6 +31,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -56,6 +61,9 @@ public class HomeController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 	private List<FeedMessage> list;
 	private List<Music> musicList;
+	//////////////////////////////////////////////////////////////////////
+	private String fileName;
+	private String filePath;
 	/////////////////////////////////////////////////////////////////////////
 	BufferedReader in;
 	URL url;
@@ -104,8 +112,8 @@ public class HomeController {
 	@RequestMapping("/snapshot")
 	public void snapshot(HttpServletResponse response) throws Exception {
 		URL url = new URL("http://localhost:50001/?action=snapshot");
-		String filePath = servletContext.getRealPath("/resources/photo/");
-		String fileName = new Date().toString() + ".jpg";
+		filePath = servletContext.getRealPath("/resources/photo/");
+		fileName = new Date().toString() + ".jpg";
 		
 		Photo photo = new Photo();
 		photo.setPfilename(fileName);
@@ -138,6 +146,29 @@ public class HomeController {
 		service.photoUpload(photo);
 	}
 
+	@RequestMapping("/snapshotdisplay")
+	public void snapshotdisplay(String filename, HttpServletResponse response, @RequestHeader("User-Agent") String userAgent) throws Exception {
+		String encodingFileName;
+		if(userAgent.contains("MSIE") || userAgent.contains("Trident") || userAgent.contains("Edge")) {
+			encodingFileName = URLEncoder.encode(filename, "UTF-8");
+		} else {
+			encodingFileName = new String(filename.getBytes("UTF-8"), "ISO-8859-1");					
+		}
+		
+		response.addHeader("Content-Disposition", "attachment; filename=\"" + encodingFileName + "\"");
+		response.addHeader("Content-Type", "image/jpeg");
+		
+		File file = new File(filePath + "/" + filename);
+		long fileSize = file.length();
+		response.addHeader("Content-Length", String.valueOf(fileSize));
+		
+		OutputStream os = response.getOutputStream();
+		FileInputStream fis = new FileInputStream(file);
+		FileCopyUtils.copy(fis, os);
+		os.flush();
+		fis.close();
+		os.close();
+	}
 
 	@RequestMapping("/audio")
 	public String audio() {

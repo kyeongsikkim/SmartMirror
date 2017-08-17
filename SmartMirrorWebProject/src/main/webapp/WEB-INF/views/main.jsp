@@ -42,8 +42,8 @@
 		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/camera.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/subway.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script>
+		<!-- <script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script> -->
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
@@ -71,7 +71,7 @@
 						</table>
 					</div>
 					<div id="summary"></div>
-					<p id="weatherHeader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/weather.png"/> Weekly Weather</p>
+					<p id="weatherHeader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/weekly.png"/> Weekly Weather</p>
 					<div id="weekdaysWeather">
 						<table>
 							<tr></tr>
@@ -137,9 +137,9 @@
 					<div id="rssfeed"></div>
 					<!-- schedule -->
 					<p id="scheduleheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/calendar.png" /> Schedule</p>
-					<div id="schedule">
-					<span id=innerTemperature style="height: 200px"></span>
-					<span id=innerHumid  style="height: 200px"></span>
+					<div id="camera">
+					<!-- <span id=innerTemperature style="height: 200px"></span>
+					<span id=innerHumid  style="height: 200px"></span> -->
 					</div>
 				</div>
 			</div>
@@ -150,9 +150,7 @@
 			<div id="speech"></div>
 			
 			<!-- Modal -->
-			<div id="myModal" class="modal">
-			  	<img class="modal-content" id="snapshotmodal" width="640px" height="480px">
-			</div>
+			<div id="myModal" class="modal"></div>
 		</div>
 	</body>
 </html>
