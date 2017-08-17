@@ -5,9 +5,9 @@ $(function() {
 		var pir=data.pirValue;
 		console.log(pir);
 		if(pir==1){
-			
+			$("#pirtest").html("here");
 		}else{
-			
+			$("#pirtest").html("no");
 		}
 	};
 });

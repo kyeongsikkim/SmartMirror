@@ -29,7 +29,7 @@ public class HumitureSensorHandler extends TextWebSocketHandler implements Appli
 	@PostConstruct
 	public void init() {
 		coapClient = new CoapClient();
-		coapClient.setURI("coap://192.168.3.41/humituresensor");
+		coapClient.setURI("coap://localhost:5683/humituresensor");
 		coapObserveRelation = coapClient.observe(new CoapHandler() {			
 			@Override
 			public void onLoad(CoapResponse response) {

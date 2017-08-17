@@ -31,7 +31,7 @@ public class PirSensorHandler extends TextWebSocketHandler implements Applicatio
 	@PostConstruct
 	public void init() {
 		coapClient = new CoapClient();
-		coapClient.setURI("coap://192.168.3.41/pirsensor");
+		coapClient.setURI("coap://localhost:5683/pirsensor");
 		coapObserveRelation = coapClient.observe(new CoapHandler() {			
 			@Override
 			public void onLoad(CoapResponse response) {

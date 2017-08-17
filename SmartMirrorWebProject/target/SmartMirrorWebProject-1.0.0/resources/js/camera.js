@@ -8,7 +8,6 @@ function snapshot() {
 			alert('error');
 		},
 		success : function(data) {
-			
 			modal = document.getElementById('myModal');
 			modal.innerHTML='';
 			modal.innerHTML='<img class="modal-content" src="SmartMirrorWebProject/snapshotdisplay?filename=' + data.filename + '" width="640px" height="480px">';

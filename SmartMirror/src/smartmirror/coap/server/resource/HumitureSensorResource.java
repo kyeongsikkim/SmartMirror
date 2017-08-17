@@ -5,10 +5,8 @@
  */
 package smartmirror.coap.server.resource;
 
-import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 import hardware.sensor.HumitureSensor;
-import hardware.sensor.PirSensor;
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.coap.CoAP;
 import org.eclipse.californium.core.server.resources.CoapExchange;

@@ -42,8 +42,8 @@
 		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/camera.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/subway.js" type="text/javascript"></script>
-		<!-- <script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script> -->
+		<script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
@@ -138,8 +138,7 @@
 					<!-- schedule -->
 					<p id="scheduleheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/calendar.png" /> Schedule</p>
 					<div id="camera">
-					<!-- <span id=innerTemperature style="height: 200px"></span>
-					<span id=innerHumid  style="height: 200px"></span> -->
+						<div id="pirtest" style="color: white; font-size: 18px;"></div>
 					</div>
 				</div>
 			</div>
