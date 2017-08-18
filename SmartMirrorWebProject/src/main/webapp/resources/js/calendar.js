@@ -395,6 +395,6 @@ function createCalendar(calendar, element, adjuster, specific) {
 	}
 }
 
-var element = document.getElementById('caleandar');
+var element = document.getElementById('calendar');
 var obj = new Calendar();
 createCalendar(obj, element);

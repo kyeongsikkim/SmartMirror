@@ -11,6 +11,7 @@ $(function() {
 	});
 	annyang.addCallback("end", function(){
 		//console.log("end");
+		noAnimationIcon();
 	});
 	annyang.addCallback("soundstart", function(){
 		//console.log("soundstart");
@@ -57,24 +58,31 @@ function restart() {
 	annyang.start({autoRestart: true , continuous: false});
 }
 
-var icon = document.getElementById('recording');
-var intervalId;
+var icon;
+var iconIntervalId;
+var player;
 
 function animationIcon() {
-	icon.src = "/SmartMirrorWebProject/resources/images/microphone";
+	icon = document.getElementById('recording');
+	icon.src = "/SmartMirrorWebProject/resources/images/microphone.png";
 	var target = document.querySelector('#recording');
 	
+	if(iconIntervalId != null) {
+		clearInterval(iconIntervalId);
+	}
+	
 	intervalId = setInterval(function() {
-		var player = target.animate([
-			{opacity:1}, {opacity:0.1}
-		], 500);
-	}, 7000);
+		player = target.animate([
+			{opacity:1}, {opacity:0}
+		], 1500);
+	}, 1800);
 }
 
 function noAnimationIcon() {
-	if(intervalId != null) {
-		clearInterval(intervalId);
+	if(iconIntervalId != null) {
+		clearInterval(iconIntervalId);
 	}
 	
-	icon.src = "/SmartMirrorWebProject/resources/images/microphonex";
+	icon = document.getElementById('recording');
+	icon.src = "/SmartMirrorWebProject/resources/images/microphonex.png";
 }
