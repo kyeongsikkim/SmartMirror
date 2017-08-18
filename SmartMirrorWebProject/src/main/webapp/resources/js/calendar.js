@@ -1,4 +1,6 @@
 var count = 0;
+var currMonth;
+
 var Calendar = function(model, options, date) {
 	// Default Values
 	this.Options = {
@@ -28,7 +30,7 @@ var Calendar = function(model, options, date) {
 	this.Today.Month = this.Today.getMonth();
 	this.Today.Year = this.Today.getFullYear();
 	if (date) {
-		this.Selected = date
+		this.Selected = date;
 	}
 	this.Selected.Month = this.Selected.getMonth();
 	this.Selected.Year = this.Selected.getFullYear();
@@ -50,20 +52,26 @@ var Calendar = function(model, options, date) {
 
 function createCalendar(calendar, element, adjuster, specific) {
 	if (typeof specific !== 'undefined') {
-		var newDate = new Date(calendar.Today.Year, specific - 1, 1);
-		calendar = new Calendar(calendar.Model, calendar.Options, newDate);
+		console.log("특정 달");
+		currMonth = specific - 1;
+		var newDate = new Date(calendar.Today.Year, currMonth, 1);
+		calendar = new Calendar(calendar.Model, currMonth.Options, newDate);
 		element.innerHTML = '';
 	} else {
 		if (typeof adjuster !== 'undefined') {
 			if (adjuster == 0) {
-				var newDate = new Date(calendar.Today.Year,
-						calendar.Today.Month + adjuster, 1);
+				console.log("현재 달");
+				currMonth = calendar.Selected.getMonth();
+				var newDate = new Date(calendar.Selected.getFullYear(),
+						currMonth + adjuster, 1);
 				calendar = new Calendar(calendar.Model, calendar.Options,
 						newDate);
 				element.innerHTML = '';
 			} else {
+				console.log("이전, 다음달");
+				currMonth = currMonth + adjuster;
 				var newDate = new Date(calendar.Selected.Year,
-						calendar.Selected.Month + adjuster, 1);
+						currMonth, 1);
 				calendar = new Calendar(calendar.Model, calendar.Options,
 						newDate);
 				element.innerHTML = '';
@@ -378,23 +386,31 @@ function createCalendar(calendar, element, adjuster, specific) {
 	AddLabels();
 	AddDays();
 
-	function initCalendar() {
-		createCalendar(calendar, element, 0);
-	}
-
-	function nextCalendar() {
-		createCalendar(calendar, element, 1);
-	}
-
-	function prevCalendar() {
-		createCalendar(calendar, element, -1);
-	}
-
-	function specificCalendar(month) {
-		createCalendar(calendar, element, 0, month);
-	}
 }
 
-var element = document.getElementById('calendar');
-var obj = new Calendar();
-createCalendar(obj, element);
+var element;
+var obj;
+
+function initCalendar() {
+	obj = new Calendar();
+	element = document.getElementById('calendar');
+	createCalendar(obj, element, 0);
+}
+
+function thisCalendar() {
+	createCalendar(obj, element, 0);
+}
+
+function nextCalendar() {
+	createCalendar(obj, element, 1);
+}
+
+function prevCalendar() {
+	createCalendar(obj, element, -1);
+}
+
+function specificCalendar(month) {
+	createCalendar(obj, element, 0, month);
+}
+
+
