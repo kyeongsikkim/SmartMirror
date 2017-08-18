@@ -41,7 +41,7 @@ function handleCommand(command) {
 		} else if(command == "이전달") {
 			prevCalendar();
 		} else if(command == "이번달") {
-			thisCalendar();
+			specificCalendar(new Date().getMonth()+1);
 		} else if(command == "1월") {
 			specificCalendar(1);
 		} else if(command == "2월") {
