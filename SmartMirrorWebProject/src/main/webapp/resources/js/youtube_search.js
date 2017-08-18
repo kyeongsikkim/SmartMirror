@@ -1,4 +1,5 @@
 var playParameter;
+var youtubeList;
 
 // Search
 function youtubeSearch(command) {
@@ -24,12 +25,12 @@ function youtubeSearch(command) {
 
 //Play
 function playVideo(number) {
-	$.ajax({
-		url:"https://www.googleapis.com/youtube/v3/search?part=snippet&q="+playParameter+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
-		success: function(data) {
-			console.log(data.items[number].id.videoId);
+//	$.ajax({
+//		url:"https://www.googleapis.com/youtube/v3/search?part=snippet&q="+playParameter+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
+//		success: function(data) {
+//			console.log(data.items[number].id.videoId);
 //			$('#video').attr('src','//www.youtube.com/embed/'+data.items[number].id.videoId+'?autoplay=1');
-			document.getElementById("video").src = '//www.youtube.com/embed/'+data.items[number].id.videoId+'?autoplay=1';
-		}
-	});
+	document.getElementById("video").src = '//www.youtube.com/embed/'+youtubeList.items[number].id.videoId+'?autoplay=1';
+//		}
+//	});
 }

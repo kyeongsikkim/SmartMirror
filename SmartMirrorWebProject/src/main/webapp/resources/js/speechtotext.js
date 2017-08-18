@@ -60,26 +60,23 @@ function restart() {
 
 var icon;
 var iconIntervalId;
-var player;
 
 function animationIcon() {
 	icon = document.getElementById('recording');
 	icon.src = "/SmartMirrorWebProject/resources/images/microphone.png";
-	var target = document.querySelector('#recording');
 	
 	if(iconIntervalId != null) {
 		clearInterval(iconIntervalId);
 	}
 	
-	intervalId = setInterval(function() {
-		player = target.animate([
-			{opacity:1}, {opacity:0}
-		], 1500);
+	iconIntervalId = setInterval(function() {
+		$('#recording').animate( {opacity: 0} , 750).animate( {opacity: 1} , 750);
 	}, 1800);
 }
 
 function noAnimationIcon() {
 	if(iconIntervalId != null) {
+		$('#recording').stop(true, true);
 		clearInterval(iconIntervalId);
 	}
 	

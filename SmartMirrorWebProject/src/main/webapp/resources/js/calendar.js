@@ -55,7 +55,7 @@ function createCalendar(calendar, element, adjuster, specific) {
 		console.log("특정 달");
 		currMonth = specific - 1;
 		var newDate = new Date(calendar.Today.Year, currMonth, 1);
-		calendar = new Calendar(calendar.Model, currMonth.Options, newDate);
+		calendar = new Calendar(calendar.Model, calendar.Options, newDate);
 		element.innerHTML = '';
 	} else {
 		if (typeof adjuster !== 'undefined') {

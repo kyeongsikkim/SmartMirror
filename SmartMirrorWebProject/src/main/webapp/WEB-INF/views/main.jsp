@@ -22,6 +22,7 @@
 		<link href="<%=application.getContextPath()%>/resources/css/subway.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/modal.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/theme2.css"rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/youtube.css"rel="stylesheet" type="text/css" />
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
@@ -139,12 +140,12 @@
 					<!-- Temperature & Humidity -->
 					<div style="text-align: right;margin: 30px 5px 0 0;">
 						<div class="sensorboxT">
-							<p class="sensorheader" id="temp"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/thermometer.png" /> Temp.</p>
-							<p class="sensorcontent">25º</p>
+							<p class="sensorheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/thermometer.png" /> Temp.</p>
+							<p class="sensorcontent" id="temp"></p>
 						</div>
 						<div class="sensorboxH">
-							<p class="sensorheader" id="humidity"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/humidity.png" /> Humidity</p>
-							<p class="sensorcontent">70%</p>
+							<p class="sensorheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/humidity.png" /> Humidity</p>
+							<p class="sensorcontent" id="humidity"></p>
 						</div>
 					</div>
 					<!-- camera -->
