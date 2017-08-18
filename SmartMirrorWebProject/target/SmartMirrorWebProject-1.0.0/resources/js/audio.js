@@ -26,9 +26,12 @@ function getMusicList() {
 			currNum = 1;
 			
 			audio = document.getElementById("audio");
+			audio.volume = 0.7;
 			audio.onended = function() {
 				nextPlay();
 			}
+			
+			openList();
 		}
 	});
 }

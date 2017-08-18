@@ -25,9 +25,9 @@ function handleCommand(command) {
 	}
 	
 	if(mapflag) {
-		if(command == "확대") {
+		if(command == "크게") {
 			zoomIn();
-		} else if(command == "축소") {
+		} else if(command == "작게" || command == "잘게" || command == "자게") {
 			zoomOut();
 		} else {
 			setMap(command);

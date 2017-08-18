@@ -5,7 +5,7 @@ body {
 }
 
 .row {
-	margin-top: 20px;	
+	margin-top: 10px;	
 }
 
 .col-xs-4 {
@@ -31,20 +31,17 @@ body {
 	margin-top: 15px;
 }
 
-#ready {
+#status {
 	width: 100%;
-	color: white;
-	font-size: 1vh;
 	text-align: center;
 	margin-top: 5px;
 }
 
 #speech {
-	width: 100%;
 	color: white;
 	font-size: 1vh;
-	text-align: center;
-	margin-top: 50px;
+	display: inline-block;
+	margin-right: 10px;
 }
 
 #content {
@@ -56,4 +53,16 @@ body {
 	padding-top: 15px;
 	padding-right: 10px;
 	text-align: right;
+}
+
+/*weather, Headline, Schedule icon*/
+.headericon {
+	display: inline;
+	width: 26px;
+	height: 34px;
+	padding-bottom: 8px;
+}
+
+#recording {
+	display: inline-block;
 }

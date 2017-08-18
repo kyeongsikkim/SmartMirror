@@ -1,4 +1,4 @@
-6/* The Modal (background) */
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -17,6 +17,6 @@
 .modal-content {
 	display: inline-block;
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 90% auto; /* 15% from the top and centered */
     border: 1px solid #888;
 }
