@@ -40,6 +40,8 @@ function handleCommand(command) {
 			nextCalendar();
 		} else if(command == "이전달") {
 			prevCalendar();
+		} else if(command == "이번달") {
+			thisCalendar();
 		} else if(command == "1월") {
 			specificCalendar(1);
 		} else if(command == "2월") {
