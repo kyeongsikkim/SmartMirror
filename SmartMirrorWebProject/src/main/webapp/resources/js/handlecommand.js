@@ -41,7 +41,7 @@ function handleCommand(command) {
 		} else if(command == "이전달") {
 			prevCalendar();
 		} else if(command == "이번달") {
-			thisCalendar();
+			specificCalendar(new Date().getMonth()+1);
 		} else if(command == "1월") {
 			specificCalendar(1);
 		} else if(command == "2월") {
@@ -204,7 +204,7 @@ function handleCommand(command) {
 			videoflag = true;
 		} else if(command == "날씨") {
 			console.log("날씨");
-			speakText("날씨를 보여드릴게요");
+			speakText("원하시는 지역을 말씀해주세요");
 			openWeather();
 			weatherflag = true;
 		} else if(command == "음악") {

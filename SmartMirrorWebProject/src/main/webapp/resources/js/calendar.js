@@ -1,6 +1,3 @@
-var count = 0;
-var currMonth;
-
 var Calendar = function(model, options, date) {
 	// Default Values
 	this.Options = {
@@ -51,27 +48,24 @@ var Calendar = function(model, options, date) {
 };
 
 function createCalendar(calendar, element, adjuster, specific) {
+	//cal =obj, el=el adjus=1;
 	if (typeof specific !== 'undefined') {
-		console.log("특정 달");
-		currMonth = specific - 1;
-		var newDate = new Date(calendar.Today.Year, currMonth, 1);
+		var newDate = new Date(calendar.Today.Year, specific - 1, 1);
+		calendar.Selected.Month= specific - 1;
 		calendar = new Calendar(calendar.Model, calendar.Options, newDate);
 		element.innerHTML = '';
 	} else {
 		if (typeof adjuster !== 'undefined') {
 			if (adjuster == 0) {
-				console.log("현재 달");
-				currMonth = calendar.Selected.getMonth();
-				var newDate = new Date(calendar.Selected.getFullYear(),
-						currMonth + adjuster, 1);
+				var newDate = new Date(calendar.Today.Year,
+						calendar.Today.Month + adjuster, 1);
 				calendar = new Calendar(calendar.Model, calendar.Options,
 						newDate);
 				element.innerHTML = '';
 			} else {
-				console.log("이전, 다음달");
-				currMonth = currMonth + adjuster;
+				calendar.Selected.Month+=adjuster;
 				var newDate = new Date(calendar.Selected.Year,
-						currMonth, 1);
+						calendar.Selected.Month, 1);
 				calendar = new Calendar(calendar.Model, calendar.Options,
 						newDate);
 				element.innerHTML = '';
