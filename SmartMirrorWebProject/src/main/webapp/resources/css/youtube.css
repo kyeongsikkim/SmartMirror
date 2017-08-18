@@ -1,0 +1,57 @@
+.videoWrapper {
+line-height: 50px;
+}
+
+.videoWrapper span {
+display: inline-block;
+vertical-align: top;
+padding-top: 50px;
+}
+
+.videoWrapper embed,
+.videoWrapper object {
+position : absolute;
+width: 100%;
+height: 100%;
+}
+
+#title1 {
+width: 100px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: white;
+}
+
+#title2 {
+width: 100px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: white;
+background-color: black;
+}
+
+#title3 {
+width: 100px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: white;
+}
+
+#title4{
+width: 100px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: white;
+}
+
+#title5{
+width: 100px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: white;
+}
