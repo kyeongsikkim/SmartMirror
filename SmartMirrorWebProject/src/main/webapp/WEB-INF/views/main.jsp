@@ -11,7 +11,7 @@
 		
 		<link href="<%=application.getContextPath()%>/resources/css/clock.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/rssfeed.css" rel="stylesheet" type="text/css" />
-		<link href="<%=application.getContextPath()%>/resources/css/schedule.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/sensor.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/map.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/weather.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/weather_detail.css" rel="stylesheet" type="text/css" />
@@ -133,20 +133,27 @@
 						</ul>
 					</div>
 					<!-- rssfeed -->
-					<p id="rssheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/newspaper.png" /> Today's Headline</p>
+					<p id="rssheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/news.png" /> Today's Headline</p>
 					<div id="rssfeed"></div>
-					<!-- schedule -->
-					<p id="scheduleheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/calendar.png" /> Schedule</p>
-					<div id="camera">
-						<div id="pirtest" style="color: white; font-size: 18px;"></div>
+					<!-- Temperature & Humidity -->
+					<div style="text-align: right;margin: 30px 5px 0 0;">
+						<div class="sensorboxT">
+							<p class="sensorheader" id="temp"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/thermometer.png" /> Temp.</p>
+							<p class="sensorcontent">25º</p>
+						</div>
+						<div class="sensorboxH">
+							<p class="sensorheader" id="humidity"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/humidity.png" /> Humidity</p>
+							<p class="sensorcontent">70%</p>
+						</div>
 					</div>
+					<!-- camera -->
+					<div id="camera"></div>
 				</div>
 			</div>
 			
+			<div id="status"><img id="recording" width="40px" height="40px"><p id="speech"></p></div>
 			<div id="help">"아리아"를 불러보세요.</div>
-			<div id="ready"></div>
 			<div id="content" style="text-align: center;"></div>
-			<div id="speech"></div>
 			
 			<!-- Modal -->
 			<div id="myModal" class="modal"></div>

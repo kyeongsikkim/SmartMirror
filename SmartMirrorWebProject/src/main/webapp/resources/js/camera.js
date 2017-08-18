@@ -10,7 +10,7 @@ function snapshot() {
 		success : function(data) {
 			modal = document.getElementById('myModal');
 			modal.innerHTML='';
-			modal.innerHTML='<img class="modal-content" src="SmartMirrorWebProject/snapshotdisplay?filename=' + data.filename + '" width="640px" height="480px">';
+			modal.innerHTML='<img class="modal-content" src="SmartMirrorWebProject/snapshotdisplay?filename=' + data.filename + '" width="512px" height="384px">';
 			setTimeout(modalOpen, 2000);
 			//modalOpen();
 			setTimeout(modalHide, 4000);

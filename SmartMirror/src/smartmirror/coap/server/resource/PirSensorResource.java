@@ -35,7 +35,7 @@ public class PirSensorResource extends CoapResource {
 							currStatus="here";
 						else currStatus="no";
 						changed();
-						Thread.sleep(1000);
+						Thread.sleep(5000);
 					} catch(Exception e) {
 						logger.info(e.toString());
 					}
