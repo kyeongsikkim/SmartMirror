@@ -10,9 +10,6 @@ function openCalendar() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/calendar",
 		dataType : "text",
-		error : function() {
-			alert("error");
-		},
 		success : function(data) {
 			openAnimation();
 			$("#content").html(data);
@@ -26,9 +23,6 @@ function openMap() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/map",
 		dataType : "text",
-		error : function() {
-			alert("error");
-		},
 		success : function(data) {
 			openAnimation();
 			$("#content").html(data);
@@ -42,9 +36,6 @@ function openCommand() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/command",
 		dataType : "text",
-		error : function() {
-			alert("error");
-		},
 		success : function(data) {
 			openAnimation();
 			$("#content").html(data);
@@ -57,9 +48,6 @@ function openCamera() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/camera",
 		dataType : "text",
-		error : function() {
-			alert("error");
-		},
 		success : function(data) {
 			openAnimation();
 			$("#camera").html(data);
@@ -72,9 +60,6 @@ function openAudio() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/audio",
 		dataType : "text",
-		error : function() {
-			alert("error");
-		},
 		success : function(data) {
 			openAnimation();
 			$("#content").html(data);
@@ -122,9 +107,6 @@ function openBoxOffice() {
 	$.ajax({
 		type : "GET",
 		url : "/SmartMirrorWebProject/movie",
-		error : function() {
-			alert("error");
-		},
 		success : function(data) {
 			openAnimation();
 			$("#content").html(data);

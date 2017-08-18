@@ -4,9 +4,6 @@ function snapshot() {
 	$.ajax({
 		type : "GET",
 		url : "/SmartMirrorWebProject/snapshot",
-		error : function() {
-			alert('error');
-		},
 		success : function(data) {
 			modal = document.getElementById('myModal');
 			modal.innerHTML='';

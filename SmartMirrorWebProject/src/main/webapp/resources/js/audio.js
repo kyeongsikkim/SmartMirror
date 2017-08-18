@@ -11,9 +11,6 @@ function getMusicList() {
 	$.ajax({
 		type : "GET",
 		url : "/SmartMirrorWebProject/musiclist",
-		error : function() {
-			alert('error');
-		},
 		success : function(data) {
 			if(musicList != null) {
 				musicList = null;
