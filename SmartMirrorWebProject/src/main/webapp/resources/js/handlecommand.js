@@ -202,7 +202,7 @@ function handleCommand(command) {
 			videoflag = true;
 		} else if(command == "날씨") {
 			console.log("날씨");
-			speakText("날씨를 보여드릴게요");
+			speakText("원하시는 지역을 말씀해주세요");
 			openWeather();
 			weatherflag = true;
 		} else if(command == "음악") {
