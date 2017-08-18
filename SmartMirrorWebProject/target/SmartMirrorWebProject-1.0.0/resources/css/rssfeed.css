@@ -1,0 +1,16 @@
+#rssheader {
+	text-align: right;
+	color: white;
+	font-size: 3vw;
+	padding: 0 0.5vw;
+}
+
+#rssfeed {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: right;
+	color: white;
+	font-size: 2vw;
+	padding: 0.5vw;
+}

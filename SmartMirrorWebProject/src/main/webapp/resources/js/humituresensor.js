@@ -6,6 +6,9 @@ $(function () {
 		var temperature=data.temperature;
 		var humid=data.humid;
 		
+		console.log("온도" + temperature);
+		console.log("습도" + humid);
+		
 		$("#temp").html(temperature + "℃");
 		$("#humidity").html(humid+ "%");
 	};
