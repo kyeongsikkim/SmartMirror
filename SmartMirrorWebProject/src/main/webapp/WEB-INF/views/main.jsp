@@ -9,6 +9,7 @@
 		<link href="<%=application.getContextPath()%>/resources/bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<script src="<%=application.getContextPath()%>/resources/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
 		
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link href="<%=application.getContextPath()%>/resources/css/clock.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/rssfeed.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/sensor.css" rel="stylesheet" type="text/css" />
@@ -21,6 +22,7 @@
 		<link href="<%=application.getContextPath()%>/resources/css/audio.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/subway.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/modal.css" rel="stylesheet" type="text/css" />
+		<link href="<%=application.getContextPath()%>/resources/css/demo.css"rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/theme2.css"rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/youtube.css"rel="stylesheet" type="text/css" />
 		
