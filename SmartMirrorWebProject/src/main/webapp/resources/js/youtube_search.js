@@ -3,7 +3,7 @@ var youtubeList;
 
 // Search
 function youtubeSearch(command) {
-	playParameter = command;
+	// playParameter = command;
 	$.ajax({
 		url: "https://www.googleapis.com/youtube/v3/search?part=snippet&order=videoCount&maxResults=3&q="+command+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
 		success: function(data) {
@@ -20,13 +20,12 @@ function youtubeSearch(command) {
 
 //Play
 function playVideo(number) {
-	console.log(youtubeListId[1]);
 //	$.ajax({
 //		url:"https://www.googleapis.com/youtube/v3/search?part=snippet&q="+playParameter+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
 //		success: function(data) {
 //			console.log(data.items[number].id.videoId);
 //			$('#video').attr('src','//www.youtube.com/embed/'+data.items[number].id.videoId+'?autoplay=1');
-	document.getElementById("video").src = '//www.youtube.com/embed/'+youtubeList.items[2].id.videoId+'?rel=0&vq=small&autoplay=1';
+	document.getElementById("video").src = '//www.youtube.com/embed/'+youtubeList.items[number].id.videoId+'?rel=0&vq=small&autoplay=1';
 //		}
 //	});
 }
