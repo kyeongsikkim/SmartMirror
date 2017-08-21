@@ -65,7 +65,7 @@ public class HomeController {
 	private Service service;
 	//////////////////////////////////////////////////////////////////////
 	private String apiKey = "04af17713fb5285e5352234c38f805b1";
-	
+	/////////////////////////////////////////////////////////////////////////
 	GeoApiContext context = new GeoApiContext.Builder()
 			.apiKey("AIzaSyDoP8zx7GCoyI0BQixAfm-HGzsMldgk6kY")
 			.build();
@@ -195,11 +195,12 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
+	
 	@RequestMapping("/weatherDefault")
 	public String weatherDefault() {
 		return "weatherdefault";
 	}
-	
+
 	@RequestMapping("/weather_View")
 	public String weather_View() {
 		return "weather";
@@ -228,14 +229,14 @@ public class HomeController {
 
 	@RequestMapping("/weather")
 	public void weather(HttpServletResponse response) throws IOException, ApiException, InterruptedException {
-		
+
 		JSONObject jsonObject = new JSONObject();
 
 		GeocodingResult[] results = GeocodingApi.geocode(context, "서울").await();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String latitude = gson.toJson(results[0].geometry.location.lat);
 		String longitude = gson.toJson(results[0].geometry.location.lng);
-		
+
 		ForecastIO fio = new ForecastIO(apiKey);
 		fio.setUnits(ForecastIO.UNITS_SI);
 		fio.setLang(ForecastIO.LANG_ENGLISH);
@@ -352,7 +353,7 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
-	
+
 	@RequestMapping("/youtubevideolist")
 	public String youtube() {
 		return "youtubeplaylist";
@@ -362,16 +363,16 @@ public class HomeController {
 	public String video() {
 		return "video";
 	}
-	
+
 	@RequestMapping("/weather_detail")
 	public void weather_detail(String address, HttpServletResponse response) throws URISyntaxException, FlickrException, ApiException, InterruptedException, IOException {
-		
+
 		JSONObject jsonObject = new JSONObject();
 		GeocodingResult[] results = GeocodingApi.geocode(context, address).await();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String lat = gson.toJson(results[0].geometry.location.lat);
 		String lng = gson.toJson(results[0].geometry.location.lng);
-		
+
 		ForecastIO fio = new ForecastIO(apiKey);
 		fio.setUnits(ForecastIO.UNITS_SI);
 		fio.setLang(ForecastIO.LANG_ENGLISH);
@@ -385,7 +386,7 @@ public class HomeController {
 		String summary = hourly.getSummary();
 		double wind = fdp.windSpeed();
 		double precip = fdp.precipProbability();
-		
+
 		String iconR = icon.substring(1, icon.length() - 1);
 
 		FIODaily daily = new FIODaily(fio);
@@ -465,14 +466,14 @@ public class HomeController {
 		if (daily.days() < 0) {
 			jsonObject.put("icon", "No data available");
 		}
-		
+
 		for (int i = 0; i < daily.days(); i++) {
 			daily.getDay(i).setTimezone("Asia/Seoul");
 			tempMax[i] = daily.getDay(i).temperatureMax();
 			tempMin[i] = daily.getDay(i).temperatureMin();
 			iconW[i] = daily.getDay(i).icon().substring(1, daily.getDay(i).icon().length() - 1);
 		}
-		
+
 		jsonObject.put("temp", (int)temp);
 		jsonObject.put("icon", iconR);
 		jsonObject.put("summary", summary);
@@ -480,14 +481,14 @@ public class HomeController {
 		jsonObject.put("longitude", lng);
 		jsonObject.put("wind", wind);
 		jsonObject.put("precip", precip*100);
-		
+
 		for (int i = 1; i < 7; i++) {
 			jsonObject.put("tempMax" + i, (int)tempMax[i]);
 			jsonObject.put("tempMin" + i, (int)tempMin[i]);
 			jsonObject.put("iconW" + i, iconW[i]);
 			jsonObject.put("week" + i, weekList[i]);
 		}
-		
+
 		String json = jsonObject.toString();
 
 		response.setContentType("application/json; charset=UTF-8");
