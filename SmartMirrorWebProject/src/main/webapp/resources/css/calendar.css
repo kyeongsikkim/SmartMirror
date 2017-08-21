@@ -1,6 +1,13 @@
+body{
+  font-family: Calibri, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .cld-main {
 	width: 450px;
 	background-color:#434D66;
+	color: #fff;
+  font-size: 18pt;
 }
 
 .cld-main a {
