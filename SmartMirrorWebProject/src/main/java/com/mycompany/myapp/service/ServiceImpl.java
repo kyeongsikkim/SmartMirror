@@ -7,7 +7,6 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -70,7 +69,6 @@ public class ServiceImpl implements Service {
 				Line.add("해당하는 역이 없습니다.");
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -97,7 +95,6 @@ public class ServiceImpl implements Service {
 			json = in.readLine();
 			jsonObject = new JSONObject(json);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -272,7 +269,6 @@ public class ServiceImpl implements Service {
 			in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			json = in.readLine();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -312,7 +308,6 @@ public class ServiceImpl implements Service {
 			in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			json = in.readLine();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -352,7 +347,6 @@ public class ServiceImpl implements Service {
 			in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			json = in.readLine();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)

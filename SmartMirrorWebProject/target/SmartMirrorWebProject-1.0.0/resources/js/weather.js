@@ -4,20 +4,20 @@ function weatherDefault() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/weather",
 		success : function(data) {
-			$('#temperature').html(data.temp + "°");
+			$('#temperature').html(data.temp + "℃");
 			$('#summary').html(data.summary);
-			$('#tempMax1').html(data.tempMax1);
-			$('#tempMax2').html(data.tempMax2);
-			$('#tempMax3').html(data.tempMax3);
-			$('#tempMax4').html(data.tempMax4);
-			$('#tempMax5').html(data.tempMax5);
-			$('#tempMax6').html(data.tempMax6);
-			$('#tempMin1').html(data.tempMin1);
-			$('#tempMin2').html(data.tempMin2);
-			$('#tempMin3').html(data.tempMin3);
-			$('#tempMin4').html(data.tempMin4);
-			$('#tempMin5').html(data.tempMin5);
-			$('#tempMin6').html(data.tempMin6);
+			$('#tempMax1').html(data.tempMax1 + "º");
+			$('#tempMax2').html(data.tempMax2 + "º");
+			$('#tempMax3').html(data.tempMax3 + "º");
+			$('#tempMax4').html(data.tempMax4 + "º");
+			$('#tempMax5').html(data.tempMax5 + "º");
+			$('#tempMax6').html(data.tempMax6 + "º");
+			$('#tempMin1').html(data.tempMin1 + "º");
+			$('#tempMin2').html(data.tempMin2 + "º");
+			$('#tempMin3').html(data.tempMin3 + "º");
+			$('#tempMin4').html(data.tempMin4 + "º");
+			$('#tempMin5').html(data.tempMin5 + "º");
+			$('#tempMin6').html(data.tempMin6 + "º");
 			$('#weekday1').html(data.week1);
 			$('#weekday2').html(data.week2);
 			$('#weekday3').html(data.week3);
@@ -266,20 +266,20 @@ function refresh() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/weather",
 		success : function(data) {
-			$('#temperature').html(data.temp + "°");
+			$('#temperature').html(data.temp + "℃");
 			$('#summary').html(data.summary);
-			$('#tempMax1').html(data.tempMax1);
-			$('#tempMax2').html(data.tempMax2);
-			$('#tempMax3').html(data.tempMax3);
-			$('#tempMax4').html(data.tempMax4);
-			$('#tempMax5').html(data.tempMax5);
-			$('#tempMax6').html(data.tempMax6);
-			$('#tempMin1').html(data.tempMin1);
-			$('#tempMin2').html(data.tempMin2);
-			$('#tempMin3').html(data.tempMin3);
-			$('#tempMin4').html(data.tempMin4);
-			$('#tempMin5').html(data.tempMin5);
-			$('#tempMin6').html(data.tempMin6);
+			$('#tempMax1').html(data.tempMax1 + "º");
+			$('#tempMax2').html(data.tempMax2 + "º");
+			$('#tempMax3').html(data.tempMax3 + "º");
+			$('#tempMax4').html(data.tempMax4 + "º");
+			$('#tempMax5').html(data.tempMax5 + "º");
+			$('#tempMax6').html(data.tempMax6 + "º");
+			$('#tempMin1').html(data.tempMin1 + "º");
+			$('#tempMin2').html(data.tempMin2 + "º");
+			$('#tempMin3').html(data.tempMin3 + "º");
+			$('#tempMin4').html(data.tempMin4 + "º");
+			$('#tempMin5').html(data.tempMin5 + "º");
+			$('#tempMin6').html(data.tempMin6 + "º");
 			$('#weekday1').html(data.week1);
 			$('#weekday2').html(data.week2);
 			$('#weekday3').html(data.week3);

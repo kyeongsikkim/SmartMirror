@@ -7,14 +7,12 @@ function weatherSearch(weatherInfo) {
 	console.log(weatherInfo);
 	$.ajax({
 		type: "POST",
-		url: "/SmartMirrorWebProjectTest/weather_detail",
+		url: "/SmartMirrorWebProject/weather_detail",
 		data: json,
 		success: function(data) {
 			
 			latitude = data.latitude;
 			longitude = data.longitude;
-			
-			loadBackground(data.latitude, data.longitude, weatherTag);
 			
 			$('#city').html(weatherInfo);
 			$('#weatherStatus').html(data.summary);
@@ -338,6 +336,8 @@ function weatherSearch(weatherInfo) {
 			
 			icons.play();
 			
+			loadBackground(data.latitude, data.longitude, weatherTag);
+
 			$('#tempMaxD1').html(data.tempMax1);
 			$('#tempMaxD2').html(data.tempMax2);
 			$('#tempMaxD3').html(data.tempMax3);

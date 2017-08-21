@@ -20,8 +20,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,7 +50,7 @@ import com.mycompany.myapp.util.RSSFeedParser;
 @Controller
 public class HomeController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
+	//private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 	private List<FeedMessage> list;
 	private List<Music> musicList;
 	//////////////////////////////////////////////////////////////////////
