@@ -8,6 +8,7 @@ function changeStation(station){
 			url:"/SmartMirrorWebProject/subwaySearch",
 			data:params,
 			success:function(result){
+				console.log(result);
 				$("#content").html(result);
 			}
 		})

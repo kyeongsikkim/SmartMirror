@@ -1,8 +1,9 @@
 .cld-main{
-  width: 400px;
+  width: 450px;
 }
 .cld-main a{
   color: #0080FF;
+  font-weight: bold;
 }
 .cld-main svg{
   fill: #0080FF;
@@ -14,6 +15,9 @@
     max-width: 300px;
     margin: auto;
     overflow: hidden;
+    margin-top:20px;
+     margin-bottom: 40px;
+    font-size: 20pt;
   }
   .cld-datetime .today{
     position: relative;
@@ -60,15 +64,17 @@
     color: #fff;
   }
   .cld-day.disableDay{
-    opacity: 0.5;
+    opacity: 0.8;
   }
   .cld-day.nextMonth, .cld-day.prevMonth{
-    opacity: 0.33;
+    opacity: 0.6;
   }
     .cld-number{
       position: relative;
       margin: 0;
       padding: 10px;
+      font-weight: bold;
+       font-size: 15pt;
     }
       .cld-title{
         position: absolute;
@@ -97,14 +103,4 @@
 
         border-bottom: 7.5px solid #ccc;
       }
-      .cld-number.eventday{
-        font-weight: bold;
-        color: #0080FF;
-      }
-      .cld-number.eventday:hover{
-        cursor: pointer;
-        background: #eee;
-      }
-      .today .cld-number.eventday:hover{
-        background: #005EFF;
-      }
+      
