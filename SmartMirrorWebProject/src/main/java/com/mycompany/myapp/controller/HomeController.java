@@ -75,9 +75,9 @@ public class HomeController {
 		return "main";
 	}
 
-	@RequestMapping("/calander")
+	@RequestMapping("/calendar")
 	public String calander() {
-		return "calander";
+		return "calendar";
 	}
 
 	@RequestMapping("/map")
