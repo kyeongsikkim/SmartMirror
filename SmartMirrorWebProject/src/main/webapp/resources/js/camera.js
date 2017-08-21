@@ -8,9 +8,15 @@ function snapshot() {
 			modal = document.getElementById('myModal');
 			modal.innerHTML='';
 			modal.innerHTML='<img class="modal-content" src="SmartMirrorWebProject/snapshotdisplay?filename=' + data.filename + '" width="512px" height="384px">';
-			setTimeout(modalOpen, 2000);
+			setTimeout(function() {
+				$("#camera").empty();
+				modalOpen();
+			}, 2000);
 			//modalOpen();
-			setTimeout(modalHide, 4000);
+			setTimeout(function() {
+				modalHide();
+				openCamera();
+			}, 4000);
 		}
 	});
 }

@@ -41,7 +41,7 @@ public class HumitureSensorResource extends CoapResource{
 						temperature=value[0];
 						humid=value[1];
 						changed();
-						Thread.sleep(10000);
+						Thread.sleep(60000);
 					} catch(Exception e) {
 						logger.info(e.toString());
 					}
