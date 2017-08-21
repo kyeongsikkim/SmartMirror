@@ -3,11 +3,18 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+#calendar {
+	text-align: center;	
+}
+
 .cld-main {
-	width: 450px;
-	background-color:#434D66;
+	width: 90%;
+	height:50vh;
+	background-color:#2d3333;
 	color: #fff;
-  font-size: 18pt;
+    font-size: 25pt;
+    display: inline-block;
+    padding:0 5px;
 }
 
 .cld-main a {
@@ -22,20 +29,17 @@ body{
 .cld-datetime {
 	position: relative;
 	width: 66%;
-	min-width: 100px;
-	max-width: 300px;
 	margin: auto;
 	overflow: hidden;
-	margin-top: 20px;
-	margin-bottom: 40px;
-	font-size: 20pt;
+	font-size: 5vw;
+	height: 25%
 }
 
 .cld-datetime .today {
 	position: relative;
 	float: left;
-	width: calc(100% - 40px);
-	margin: auto;
+	width: calc(100% - 80px);
+	margin: 20px auto;
 	text-align: center;
 }
 
@@ -69,15 +73,21 @@ body{
 	padding-left: 0;
 }
 
-.cld-label, .cld-day {
+.cld-label {
 	box-sizing: border-box;
 	display: inline-block;
 	width: 14.28%;
 	text-align: center;
+	height: 10%;
 }
 
 .cld-day {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 14.28%;
+	text-align: center;
 	border: 1px solid #eee;
+	height: 10%;
 }
 
 .cld-day.today .cld-number {
@@ -90,7 +100,7 @@ body{
 }
 
 .cld-day.nextMonth, .cld-day.prevMonth {
-	opacity: 0.4;
+	opacity: 0.3;
 }
 
 .cld-number {
@@ -98,7 +108,6 @@ body{
 	margin: 0;
 	padding: 10px;
 	font-weight: bold;
-	font-size: 15pt;
 }
 
 .cld-title {
@@ -112,7 +121,6 @@ body{
 	white-space: nowrap;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-	font-size: 12px;
 }
 
 .cld-number:hover .cld-title {
