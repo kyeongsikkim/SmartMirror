@@ -14,8 +14,6 @@ function weatherSearch(weatherInfo) {
 			latitude = data.latitude;
 			longitude = data.longitude;
 			
-			loadBackground(data.latitude, data.longitude, weatherTag);
-			
 			$('#city').html(weatherInfo);
 			$('#weatherStatus').html(data.summary);
 			$('#tempMax').html(data.tempMax);
@@ -338,6 +336,8 @@ function weatherSearch(weatherInfo) {
 			
 			icons.play();
 			
+			loadBackground(data.latitude, data.longitude, weatherTag);
+
 			$('#tempMaxD1').html(data.tempMax1);
 			$('#tempMaxD2').html(data.tempMax2);
 			$('#tempMaxD3').html(data.tempMax3);
