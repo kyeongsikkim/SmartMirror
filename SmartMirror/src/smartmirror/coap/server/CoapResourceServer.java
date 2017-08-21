@@ -20,7 +20,7 @@ public class CoapResourceServer {
 	private static final Logger logger = LoggerFactory.getLogger(CoapResourceServer.class);	
 	private CoapServer coapServer;
 	
-	//static block(californium의 자체 로그 출력 금지) 스태틱은 로딩될때 
+	//static block
 	static {
 		CaliforniumLogger.initialize();
 		CaliforniumLogger.setLevel(Level.OFF);
@@ -37,22 +37,16 @@ public class CoapResourceServer {
 			}
 		}
 		
-		/////////////////////////////////////리소스 추가
 		coapServer.add(new PirSensorResource());
 		coapServer.add(new HumitureSensorResource());
-
-	
-		
 	}
 	
 	//Method
 	public void start() {
-		logger.info("실행");
 		coapServer.start();
 	}
 	
 	public void stop() {
-		logger.info("실행");
 		coapServer.stop();
 		coapServer.destroy();
 	}

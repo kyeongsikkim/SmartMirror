@@ -64,12 +64,6 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.10</version>
 		</dependency>
-		<!-- websocket -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-websocket</artifactId>
-		    <version>4.3.8.RELEASE</version>
-		</dependency>	
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

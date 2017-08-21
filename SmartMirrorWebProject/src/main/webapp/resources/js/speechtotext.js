@@ -26,10 +26,12 @@ $(function() {
 			$("#help").html("");
 		} else {
 			if(startCommand == true) {
-				//console.log(command);
-				startCommand = false;
+				console.log(command);
 				$("#speech").html(command);
 				handleCommand(command);
+				if(command == "중지") {
+					startCommand = false;
+				}
 			}
 		}
 	});
