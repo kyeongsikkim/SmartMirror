@@ -3,9 +3,9 @@ var youtubeList;
 
 // Search
 function youtubeSearch(command) {
-	playParameter = command;
+	// playParameter = command;
 	$.ajax({
-		url: "https://www.googleapis.com/youtube/v3/search?part=snippet&order=videoCount&maxResults=5&q="+command+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
+		url: "https://www.googleapis.com/youtube/v3/search?part=snippet&order=videoCount&maxResults=3&q="+command+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
 		success: function(data) {
 			youtubeList = data;
 			document.getElementById("video1").src = '//www.youtube.com/embed/'+data.items[0].id.videoId+'?rel=0&vq=small&autoplay=0';
@@ -14,19 +14,11 @@ function youtubeSearch(command) {
 			$('#title2').html(data.items[1].snippet.title);
 			document.getElementById("video3").src = '//www.youtube.com/embed/'+data.items[2].id.videoId+'?rel=0&vq=small&autoplay=0';
 			$('#title3').html(data.items[2].snippet.title);
-			
 		}
 	});
 }
 
 //Play
 function playVideo(number) {
-//	$.ajax({
-//		url:"https://www.googleapis.com/youtube/v3/search?part=snippet&q="+playParameter+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
-//		success: function(data) {
-//			console.log(data.items[number].id.videoId);
-//			$('#video').attr('src','//www.youtube.com/embed/'+data.items[number].id.videoId+'?autoplay=1');
 	document.getElementById("video").src = '//www.youtube.com/embed/'+youtubeList.items[number].id.videoId+'?rel=0&vq=small&autoplay=1';
-//		}
-//	});
 }
