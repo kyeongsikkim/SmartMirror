@@ -1,9 +1,6 @@
-#calendar {
-	background-color: #566C82;
-}
-
 .cld-main {
 	width: 450px;
+	background-color:#434D66;
 }
 
 .cld-main a {
@@ -59,7 +56,6 @@
 }
 
 .cld-nav svg:hover {
-	
 }
 
 .cld-labels, .cld-days {
@@ -87,7 +83,7 @@
 }
 
 .cld-day.nextMonth, .cld-day.prevMonth {
-	opacity: 0.6;
+	opacity: 0.4;
 }
 
 .cld-number {
