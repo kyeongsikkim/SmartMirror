@@ -3,9 +3,6 @@ function weatherDefault() {
 	$.ajax({
 		type : "GET",
 		url : "/SmartMirrorWebProject/weather",
-		error : function() {
-			alert('error');
-		},
 		success : function(data) {
 			$('#temperature').html(data.temp + "°");
 			$('#summary').html(data.summary);
@@ -268,9 +265,6 @@ function refresh() {
 	$.ajax({
 		type : "GET",
 		url : "/SmartMirrorWebProject/weather",
-		error : function() {
-			alert('error');
-		},
 		success : function(data) {
 			$('#temperature').html(data.temp + "°");
 			$('#summary').html(data.summary);
@@ -300,9 +294,6 @@ function drawIcon() {
 	$.ajax({
 		type : "GET",
 		url : "/SmartMirrorWebProject/weather",
-		error : function() {
-			alert('error');
-		},
 		success : function(data) {
 			
 			switch(data.icon) {

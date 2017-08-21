@@ -37,10 +37,6 @@
 			<td>사진</td>
 		</tr>
 		<tr>
-			<td>영화순위</td>
-			<td></td>
-		</tr>
-		<tr>
 			<td>알람중지</td>
 			<td></td>
 		</tr>

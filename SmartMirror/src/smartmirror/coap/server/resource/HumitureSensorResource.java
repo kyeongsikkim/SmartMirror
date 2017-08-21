@@ -24,8 +24,8 @@ public class HumitureSensorResource extends CoapResource{
 	private HumitureSensor humitureSensor;
 	private double temperature;
 	private double humid;
+	
 	//constructor
-
 	public HumitureSensorResource() {
 		super("humituresensor");
 		setObservable(true);
@@ -35,7 +35,6 @@ public class HumitureSensorResource extends CoapResource{
 		Thread thread = new Thread() {
 			@Override
 			public void run() {
-			
 				while(true) {
 					try {
 						double[] value = humitureSensor.getValue();

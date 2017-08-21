@@ -16,7 +16,6 @@ public class PirSensorResource extends CoapResource {
 	private PirSensor pirSensor;
 	private String currStatus;
 	
-	
 	//Constructor
 	public PirSensorResource() throws Exception {
 		super("pirsensor");
@@ -27,7 +26,6 @@ public class PirSensorResource extends CoapResource {
 		Thread thread = new Thread() {
 			@Override
 			public void run() {
-			
 				while(true) {
 					try {
 						PinState pinState = pirSensor.getStatus();
@@ -43,22 +41,9 @@ public class PirSensorResource extends CoapResource {
 			}
 		};
 		thread.start();
-//		trackingSensor.setGpioPinlistenerDigtal(new GpioPinListenerDigital() {
-//			@Override
-//			public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-//				PinState pinState=event.getState();
-//				if(pinState==PinState.HIGH){
-//					BuzzerResource.getInstance().off();
-//				}else{
-//					BuzzerResource.getInstance().on();
-//				}
-//			}
-//		});
 	}
 	
 	//Method
-
-	
 	@Override
 	public void handleGET(CoapExchange exchange) {
 		JSONObject responseJsonObject = new JSONObject();
