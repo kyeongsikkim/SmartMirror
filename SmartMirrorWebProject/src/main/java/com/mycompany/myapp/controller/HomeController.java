@@ -497,9 +497,13 @@ public class HomeController {
 		String[] findStation;
 		List<String> location = new ArrayList<>();
 		String currLine = line;
-
+		
+		if(station.substring(station.length()-1).equals("역")){
+			station=station.substring(0,station.length()-1);
+			System.out.println(station);
+		}
 		SBNS = service.SearchInfoBySubwayNameService(station);
-
+     
 		for (int i = 1; i < SBNS.size(); i += 2) {
 			if (SBNS.get(i).equals("A")) {
 				lineNm.add("공항철도");
