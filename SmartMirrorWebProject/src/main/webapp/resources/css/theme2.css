@@ -1,5 +1,5 @@
 .cld-main{
-  width: 430px;
+  width: 450px;
 }
 .cld-main a{
   color: #0080FF;
@@ -15,6 +15,7 @@
     max-width: 300px;
     margin: auto;
     overflow: hidden;
+    margin-top:20px;
      margin-bottom: 40px;
     font-size: 20pt;
   }
