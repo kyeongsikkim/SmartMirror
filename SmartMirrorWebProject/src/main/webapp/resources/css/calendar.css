@@ -32,7 +32,8 @@ body{
 	margin: auto;
 	overflow: hidden;
 	font-size: 5vw;
-	height: 25%
+	height: 25%;
+	margin-top:10px;
 }
 
 .cld-datetime .today {
@@ -45,9 +46,8 @@ body{
 
 .cld-nav {
 	position: relative;
-	width: 20px;
 	height: 20px;
-	margin-top: 2px;
+	margin-top: 18px;
 }
 
 .cld-nav:hover {
