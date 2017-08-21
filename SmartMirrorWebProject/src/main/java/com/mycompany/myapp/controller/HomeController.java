@@ -34,6 +34,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.flickr4java.flickr.FlickrException;
@@ -166,21 +167,26 @@ public class HomeController {
 	public String audio() {
 		return "audio";
 	}
-
-	@RequestMapping("/musicfile")
-	public void musicFile(MultipartFile attach, HttpServletResponse response) throws Exception {
-		Music music = new Music();
-
-		String filename = attach.getOriginalFilename();
-		music.setMfilename(filename);
-		music.setMfilepath("/SmartMirrorWebProject/resources/music/" + filename);
-
+	
+	@RequestMapping(value="/upload", method=RequestMethod.GET)
+	public String uploadGet() {
+		return "upload";
+	}
+	
+	@RequestMapping(value="/upload", method=RequestMethod.POST)
+	public String uploadPost(Music music) throws IllegalStateException, IOException {
+		music.setMfilename(music.getMattach().getOriginalFilename());
+		music.setMfilepath("/SmartMirrorWebProject/resources/music/" + music.getMattach().getOriginalFilename());
+		
+		String fileName = music.getMfilename();
 		String realPath = servletContext.getRealPath("/resources/music/");
-		File file = new File(realPath + "/" + filename);
-
-		attach.transferTo(file);
-
+		
+		File file = new File(realPath + "/" + fileName);
+		music.getMattach().transferTo(file);
+		
 		service.musicUpload(music);
+		
+		return "upload";
 	}
 
 	@RequestMapping("/musiclist")
@@ -193,22 +199,6 @@ public class HomeController {
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("musicList", musicList);
-		String json = jsonObject.toString();
-
-		response.setContentType("application/json; charset=UTF-8");
-		PrintWriter pw = response.getWriter();
-		pw.write(json);
-		pw.flush();
-		pw.close();
-	}
-	
-	@RequestMapping("/getid")
-	public void getId(String name, String id, HttpServletResponse response) throws IOException {
-		LOGGER.info(name);
-		LOGGER.info(id);
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("name", name);
-		jsonObject.put("id", id);
 		String json = jsonObject.toString();
 
 		response.setContentType("application/json; charset=UTF-8");
