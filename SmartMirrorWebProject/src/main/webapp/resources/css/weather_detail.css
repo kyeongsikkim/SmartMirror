@@ -8,8 +8,14 @@
 
 .weatherdetail {
 	display: inline-block;
-	width: 40vw;
+	width: 50vw;
 	height: 70vw;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+}
+
+.weatherWeekday {
+	display: inline-block;
+	width: 20%;
+	height: 30%;
 }
