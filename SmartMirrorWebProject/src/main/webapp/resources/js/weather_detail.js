@@ -7,7 +7,7 @@ function weatherSearch(weatherInfo) {
 	console.log(weatherInfo);
 	$.ajax({
 		type: "POST",
-		url: "/SmartMirrorWebProjectTest/weather_detail",
+		url: "/SmartMirrorWebProject/weather_detail",
 		data: json,
 		success: function(data) {
 			
