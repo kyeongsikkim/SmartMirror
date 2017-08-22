@@ -4,7 +4,6 @@ var weatherTag;
 
 function weatherSearch(weatherInfo) {
 	var json = { "address" : weatherInfo };
-	console.log(weatherInfo);
 	$.ajax({
 		type: "POST",
 		url: "/SmartMirrorWebProject/weather_detail",

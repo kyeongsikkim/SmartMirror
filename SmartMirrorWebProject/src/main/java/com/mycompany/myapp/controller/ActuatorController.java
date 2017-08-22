@@ -26,7 +26,7 @@ public class ActuatorController {
 		String reqJson = jsonObject.toString();
 
 		CoapClient coapClient = new CoapClient();
-		coapClient.setURI("coap://192.168.3.44/rgbled");
+		coapClient.setURI("coap://192.168.43.166/rgbled");
 		CoapResponse coapResponse = coapClient.post(reqJson, MediaTypeRegistry.APPLICATION_JSON);
 		String resJson = coapResponse.getResponseText();
 		coapClient.shutdown();

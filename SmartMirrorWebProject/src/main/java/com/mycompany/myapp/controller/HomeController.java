@@ -503,7 +503,7 @@ public class HomeController {
 
 	@RequestMapping("/subwaySearch")
 	public String subwaySearch(String station, String line, Model model) {
-		/////////////////////////////////////// 요일
+		/////////////////////////////////////// �슂�씪
 		/////////////////////////////////////// ////////////////////////////////////////////////////////
 		Calendar today = Calendar.getInstance();
 		int day = today.get(Calendar.DAY_OF_WEEK);
@@ -524,7 +524,7 @@ public class HomeController {
 		List<String> location = new ArrayList<>();
 		String currLine = line;
 
-		if(station.substring(station.length()-1).equals("역")){
+		if(station.substring(station.length()-1).equals("�뿭")){
 			station=station.substring(0,station.length()-1);
 			System.out.println(station);
 		}
@@ -532,27 +532,27 @@ public class HomeController {
 
 		for (int i = 1; i < SBNS.size(); i += 2) {
 			if (SBNS.get(i).equals("A")) {
-				lineNm.add("공항철도");
+				lineNm.add("怨듯빆泥좊룄");
 			} else if (SBNS.get(i).equals("B")) {
-				lineNm.add("분당");
+				lineNm.add("遺꾨떦");
 			} else if (SBNS.get(i).equals("E")) {
-				lineNm.add("에버라인");
+				lineNm.add("�뿉踰꾨씪�씤");
 			} else if (SBNS.get(i).equals("G")) {
-				lineNm.add("경춘");
+				lineNm.add("寃쎌텣");
 			} else if (SBNS.get(i).equals("I")) {
-				lineNm.add("인천1");
+				lineNm.add("�씤泥�1");
 			} else if (SBNS.get(i).equals("I2")) {
-				lineNm.add("인천2");
+				lineNm.add("�씤泥�2");
 			} else if (SBNS.get(i).equals("K")) {
-				lineNm.add("경의중앙");
+				lineNm.add("寃쎌쓽以묒븰");
 			} else if (SBNS.get(i).equals("KK")) {
-				lineNm.add("경강");
+				lineNm.add("寃쎄컯");
 			} else if (SBNS.get(i).equals("S")) {
-				lineNm.add("신분당");
+				lineNm.add("�떊遺꾨떦");
 			} else if (SBNS.get(i).equals("SU")) {
-				lineNm.add("수인");
+				lineNm.add("�닔�씤");
 			} else if (SBNS.get(i).equals("U")) {
-				lineNm.add("의정부");
+				lineNm.add("�쓽�젙遺�");
 			} else {
 				lineNm.add(SBNS.get(i));
 			}
@@ -561,27 +561,27 @@ public class HomeController {
 		if (currLine == null) {
 			currLine = SBNS.get(1);
 		} else {
-			if (currLine.equals("공항철도")) {
+			if (currLine.equals("怨듯빆泥좊룄")) {
 				currLine = "A";
-			} else if (currLine.equals("분당")) {
+			} else if (currLine.equals("遺꾨떦")) {
 				currLine = "B";
-			} else if (currLine.equals("에버라인")) {
+			} else if (currLine.equals("�뿉踰꾨씪�씤")) {
 				currLine = "E";
-			} else if (currLine.equals("경춘")) {
+			} else if (currLine.equals("寃쎌텣")) {
 				currLine = "G";
-			} else if (currLine.equals("인천1")) {
+			} else if (currLine.equals("�씤泥�1")) {
 				currLine = "I";
-			} else if (currLine.equals("인천1")) {
+			} else if (currLine.equals("�씤泥�1")) {
 				currLine = "I2";
-			} else if (currLine.equals("경의중앙")) {
+			} else if (currLine.equals("寃쎌쓽以묒븰")) {
 				currLine = "K";
-			} else if (currLine.equals("경강")) {
+			} else if (currLine.equals("寃쎄컯")) {
 				currLine = "KK";
-			} else if (currLine.equals("신분당")) {
+			} else if (currLine.equals("�떊遺꾨떦")) {
 				currLine = "S";
-			} else if (currLine.equals("수인")) {
+			} else if (currLine.equals("�닔�씤")) {
 				currLine = "SU";
-			} else if (currLine.equals("의정부")) {
+			} else if (currLine.equals("�쓽�젙遺�")) {
 				currLine = "U";
 			}
 		}

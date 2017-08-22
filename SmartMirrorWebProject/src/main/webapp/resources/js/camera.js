@@ -12,7 +12,7 @@ function snapshot() {
 				$("#camera").empty();
 				modalOpen();
 			}, 2000);
-			//modalOpen();
+			
 			setTimeout(function() {
 				modalHide();
 				openCamera();
