@@ -44,9 +44,11 @@ public class ServiceImpl implements Service {
 		dao.photoInsert(photo);
 	}
 
+	////////////////////////////////////////// 이름으로 검색하기 ////////////////
 	@Override
 	public List<String> SearchInfoBySubwayNameService(String inputStation) {
 		List<String> Line = new ArrayList<>();
+		List<String> code = new ArrayList<>();
 		try {
 			encodingName = URLEncoder.encode(inputStation, "UTF-8");
 			url = new URL(
@@ -69,6 +71,7 @@ public class ServiceImpl implements Service {
 				Line.add("해당하는 역이 없습니다.");
 			}
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -82,6 +85,7 @@ public class ServiceImpl implements Service {
 		return Line;
 	}
 
+////////////////앞뒤 전역 찾아내기////////////////////////////
 	@Override
 	public String[] findStation(String lineNum, String inputStation) {
 		String[] station = new String[2];
@@ -95,6 +99,7 @@ public class ServiceImpl implements Service {
 			json = in.readLine();
 			jsonObject = new JSONObject(json);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -219,6 +224,7 @@ public class ServiceImpl implements Service {
 											.equals(head + String.valueOf(Integer.parseInt(code) + 1))
 											|| findStation.getJSONObject(i).getString("FR_CODE").equals(
 													head.toLowerCase() + String.valueOf(Integer.parseInt(code) + 1))) {
+
 										if (station[1] != null) {
 											station[1] += "/" + findStation.getJSONObject(i).getString("STATION_NM");
 										} else {
@@ -244,19 +250,23 @@ public class ServiceImpl implements Service {
 							}
 						}
 					}
+					if (findStation.getJSONObject(k).getString("FR_CODE").charAt(1) == '3'
+							&& findStation.getJSONObject(k).getString("LINE_NUM").equals("K")) {
+						String temp;
+						temp = station[1];
+						station[1] = station[0];
+						station[0] = temp;
+					}
 				}
-				if(findStation.getJSONObject(k).getString("FR_CODE").charAt(1)=='3' &&findStation.getJSONObject(k).getString("LINE_NUM").equals("K")){
-					String temp;
-					temp=station[1];
-					station[1]=station[0];
-					station[0]=temp;
-				}
+
 			}
+
 		}
 		return station;
 	}
 
 	@Override
+	//////////////////////////////////////////// 하행선////////////////////////////////////////////////////
 	public List<String> downLine(String code, String subwayday) {
 		List<String> downTime = new ArrayList<>();
 
@@ -269,6 +279,7 @@ public class ServiceImpl implements Service {
 			in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			json = in.readLine();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -296,6 +307,7 @@ public class ServiceImpl implements Service {
 		return downTime;
 	}
 
+	///////////////////////////////////////////////// 상행선//////////////////////////////////////////////////////////////////////////////////////////////////////
 	@Override
 	public List<String> upperLine(String code, String subwayday) {
 		List<String> upperTime = new ArrayList<>();
@@ -308,6 +320,7 @@ public class ServiceImpl implements Service {
 			in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			json = in.readLine();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -336,6 +349,7 @@ public class ServiceImpl implements Service {
 	}
 
 	@Override
+	/////////////////// 지하철 역으로 좌표 얻어내기/////////
 	public List<String> location(String code) {
 		List<String> location = new ArrayList<>();
 		try {
@@ -347,6 +361,7 @@ public class ServiceImpl implements Service {
 			in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			json = in.readLine();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (in != null)
@@ -368,5 +383,4 @@ public class ServiceImpl implements Service {
 		}
 		return location;
 	}
-
 }
