@@ -60,10 +60,12 @@ function openAudio() {
 		type : "GET",
 		url : "/SmartMirrorWebProject/audio",
 		dataType : "text",
+		error : function() {
+			alert("error");
+		},
 		success : function(data) {
 			openAnimation();
 			$("#content").html(data);
-			setTimeout(openList, 1000);
 		}
 	});
 }

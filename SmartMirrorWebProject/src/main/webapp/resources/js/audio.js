@@ -22,6 +22,9 @@ function getMusicList() {
 			maxPage = parseInt(totalMusicNo/10);
 			currNum = 1;
 		
+			console.log(musicList);
+			console.log(totalMusicNo);
+			
 			openList();
 			
 			audio = document.getElementById("audio");
