@@ -4,11 +4,11 @@
 
 .clock {
     color: #fff;
+    padding-top: 16px;
 }
 
 #Date {
-	font-style: bold;
-    font-size: 3vw;
+    font-size: 4vw;
     text-align: right;
 }
 
@@ -18,13 +18,11 @@
 }
 
 .clockul .clockli {
-	font-style: bold;
 	display: inline;
-    font-size: 9vw;
+    font-size: 10vw;
     text-align: right;
 }
 .clockul .clocklis {
-	font-style: bold;
 	display: inline;
     font-size: 4vw;
     text-align: right;

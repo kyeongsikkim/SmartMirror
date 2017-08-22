@@ -3,11 +3,21 @@ $(function() {
 	ws.onmessage = function(event) {
 		var data = JSON.parse(event.data);
 		var pir=data.pirValue;
-		console.log(pir);
+		var count = 0;
+		
+		var container = document.getElementById('mainContainer');
 		if(pir==1){
-			//$("#pirtest").html("here");
+			if(container.style.display == "none") {
+				container.style.display = "block";
+			}
 		}else{
-			//$("#pirtest").html("no");
+			count++;
+			if(count == 5) {
+				if(container.style.display == "block") {
+					container.style.display = "none";
+				}
+				count = 0;
+			}
 		}
 	};
 });

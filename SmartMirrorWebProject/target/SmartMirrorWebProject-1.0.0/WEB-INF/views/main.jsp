@@ -10,6 +10,12 @@
 		<script src="<%=application.getContextPath()%>/resources/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
 		
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lemon" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Round" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Patrick+Hand" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amaranth" />
+		
 		<link href="<%=application.getContextPath()%>/resources/css/clock.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/rssfeed.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/sensor.css" rel="stylesheet" type="text/css" />
@@ -60,7 +66,7 @@
 		</script>
 	</head>
 	<body>
-		<div>
+		<div id="mainContainer">
 			<div class="row">
 				<div class="col-xs-4">
 					<!-- weather -->
@@ -68,7 +74,7 @@
 						<table>
 							<tr>
 								<td id="iconcell"></td>
-								<td class="currentTd"><div id="weatherLocation">Seoul　</div><div id="temperature"></div></td>
+								<td class="currentTd"><div id="weatherLocation">Seoul</div><div id="temperature"></div></td>
 							</tr>
 						</table>
 					</div>
@@ -138,7 +144,7 @@
 					<p id="rssheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/news.png" /> Today's Headline</p>
 					<div id="rssfeed"></div>
 					<!-- Temperature & Humidity -->
-					<div style="text-align: right;margin: 30px 5px 0 0;">
+					<div style="text-align: right;margin: 40px 5px 0 0;">
 						<div class="sensorboxT">
 							<p class="sensorheader"><img class="headericon" src="<%=application.getContextPath()%>/resources/images/thermometer.png" /> Temp.</p>
 							<p class="sensorcontent" id="temp"></p>
@@ -153,7 +159,7 @@
 				</div>
 			</div>
 			
-			<div id="status"><img id="recording" width="40px" height="40px"><p id="speech"></p></div>
+			<div id="status"><img id="recording" width="50px" height="50px"><p id="speech"></p></div>
 			<div id="help">"아리아"를 불러보세요.</div>
 			<div id="content" style="text-align: center;"></div>
 			

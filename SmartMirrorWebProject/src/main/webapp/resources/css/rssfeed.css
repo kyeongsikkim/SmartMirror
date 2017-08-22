@@ -1,8 +1,9 @@
 #rssheader {
 	text-align: right;
 	color: white;
-	font-size: 3vw;
+	font-size: 4.2vw;
 	padding: 0 0.5vw;
+	margin-top: 20px;
 }
 
 #rssfeed {

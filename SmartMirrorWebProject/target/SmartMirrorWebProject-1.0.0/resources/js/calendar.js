@@ -222,10 +222,10 @@ function createCalendar(calendar, element, adjuster, specific) {
 			var label = document.createElement('li');
 			label.className += "cld-label";
 			if(i==0) {
-				label.style.color = "rgba(255,100,100,0.8)";
+				label.style.color = "rgba(255,60,60,0.8)";
 			}
 			if(i==6) {
-				label.style.color =  "rgba(100,100,255,0.8)";
+				label.style.color =  "rgba(60,60,255,0.8)";
 			}
 			label.innerHTML = labelsList[i];
 			labels.appendChild(label);

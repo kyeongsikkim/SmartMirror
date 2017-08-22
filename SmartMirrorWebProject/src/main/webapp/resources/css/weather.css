@@ -24,30 +24,31 @@
 	display: inline;
 	text-align: right;
 	color: white;
-	font-size: 6vw;
+	font-size: 7vw;
 }
 
 #summary {
 	color: white;
-	font-size: 2.8vw;
+	font-size: 3.2vw;
 	padding-left: 10px;
+	line-height: 30px;
 }
 
 #weatherHeader {
 	color: white;
-	font-size: 3vw;
-	margin: 30px 0 0 0;
+	font-size: 4.2vw;
+	margin: 40px 0 0 0;
 	padding-left:10px;
 }
 
 #weekdaysWeather {
 	color: white;
-	font-size: 2.5vw;
+	font-size: 3vw;
 	padding-left: 10px;
 }
 
 #weekdaysWeather table td {
-	padding: 0 5px;
+	padding: 5px 7px;
 }
 
 #icon {

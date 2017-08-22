@@ -21,14 +21,14 @@ function getMusicList() {
 			currPage = 0;
 			maxPage = parseInt(totalMusicNo/10);
 			currNum = 1;
+		
+			openList();
 			
 			audio = document.getElementById("audio");
 			audio.volume = 0.7;
 			audio.onended = function() {
 				nextPlay();
 			}
-			
-			openList();
 		}
 	});
 }

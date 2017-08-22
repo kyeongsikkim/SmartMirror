@@ -2,10 +2,12 @@ body {
 	background-color: black;
 	overflow: hidden;
 	padding: 0 15px;
+	font-family: Amaranth;
+	font-variant: small-caps;
 }
 
 .row {
-	margin-top: 10px;	
+	margin-top: 10px;
 }
 
 .col-xs-4 {
@@ -46,7 +48,7 @@ body {
 
 #content {
 	margin-top: 5px;
-	text-align:center;
+	text-align: center;
 }
 
 #camera {

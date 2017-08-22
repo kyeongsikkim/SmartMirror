@@ -1,20 +1,15 @@
-body{
-  font-family: Calibri, sans-serif;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
 #calendar {
 	text-align: center;	
+	margin-top:10px;
 }
 
 .cld-main {
 	width: 90%;
-	height:50vh;
 	background-color:#2d3333;
 	color: #fff;
-    font-size: 25pt;
+    font-size: 30pt;
     display: inline-block;
-    padding:0 5px;
+    padding:0 10px 10px 10px;
 }
 
 .cld-main a {
@@ -32,7 +27,6 @@ body{
 	margin: auto;
 	overflow: hidden;
 	font-size: 5vw;
-	height: 25%;
 	margin-top:10px;
 }
 
@@ -78,7 +72,6 @@ body{
 	display: inline-block;
 	width: 14.28%;
 	text-align: center;
-	height: 10%;
 }
 
 .cld-day {
@@ -87,7 +80,8 @@ body{
 	width: 14.28%;
 	text-align: center;
 	border: 1px solid #eee;
-	height: 10%;
+	height: 100px;
+	padding-top: 8px;
 }
 
 .cld-day.today .cld-number {
@@ -100,7 +94,7 @@ body{
 }
 
 .cld-day.nextMonth, .cld-day.prevMonth {
-	opacity: 0.3;
+	opacity: 0.1;
 }
 
 .cld-number {
