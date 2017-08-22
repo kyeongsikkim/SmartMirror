@@ -205,6 +205,8 @@ function handleCommand(command) {
 			videoflag = true;
 		} else if(command == "날씨") {
 			console.log("날씨");
+			openWeather();
+			weatherSearch("송파구");
 			speakText("원하시는 지역을 말씀해주세요");
 			weatherflag = true;
 		} else if(command == "음악") {
