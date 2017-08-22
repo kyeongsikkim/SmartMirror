@@ -87,20 +87,20 @@ public class HomeController {
 	public String camera() {
 		return "camera";
 	}
-	
+
 	@RequestMapping("/snapshot")
 	public void snapshot(HttpServletResponse response) throws Exception {
 		URL url = new URL("http://localhost:50001/?action=snapshot");
 		filePath = servletContext.getRealPath("/resources/photo/");
 		fileName = new Date().toString() + ".jpg";
-		
+
 		Photo photo = new Photo();
 		photo.setPfilename(fileName);
 		photo.setPfilepath("/SmartMirrorWebProject/resources/photo/" + fileName);
-		
+
 		InputStream is = new BufferedInputStream(url.openStream());
 		FileOutputStream fos = new FileOutputStream(filePath + "/" + fileName);
-		
+
 		int readBytes = -1;
 		byte[] cbuf = new byte[1024];
 		while(true) {
@@ -108,10 +108,10 @@ public class HomeController {
 			if(readBytes == -1) break;
 			fos.write(cbuf, 0, readBytes);
 		}
-		
+
 		is.close();
 		fos.close();
-		
+
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("filename", fileName);
 		String json = jsonObject.toString();
@@ -121,7 +121,7 @@ public class HomeController {
 		pw.write(json);
 		pw.flush();
 		pw.close();
-		
+
 		service.photoUpload(photo);
 	}
 
@@ -131,16 +131,16 @@ public class HomeController {
 		if(userAgent.contains("MSIE") || userAgent.contains("Trident") || userAgent.contains("Edge")) {
 			encodingFileName = URLEncoder.encode(filename, "UTF-8");
 		} else {
-			encodingFileName = new String(filename.getBytes("UTF-8"), "ISO-8859-1");					
+			encodingFileName = new String(filename.getBytes("UTF-8"), "ISO-8859-1");
 		}
-		
+
 		response.addHeader("Content-Disposition", "attachment; filename=\"" + encodingFileName + "\"");
 		response.addHeader("Content-Type", "image/jpeg");
-		
+
 		File file = new File(filePath + "/" + filename);
 		long fileSize = file.length();
 		response.addHeader("Content-Length", String.valueOf(fileSize));
-		
+
 		OutputStream os = response.getOutputStream();
 		FileInputStream fis = new FileInputStream(file);
 		FileCopyUtils.copy(fis, os);
@@ -153,25 +153,25 @@ public class HomeController {
 	public String audio() {
 		return "audio";
 	}
-	
+
 	@RequestMapping(value="/upload", method=RequestMethod.GET)
 	public String uploadGet() {
 		return "upload";
 	}
-	
+
 	@RequestMapping(value="/upload", method=RequestMethod.POST)
 	public String uploadPost(Music music) throws IllegalStateException, IOException {
 		music.setMfilename(music.getMattach().getOriginalFilename());
 		music.setMfilepath("/SmartMirrorWebProject/resources/music/" + music.getMattach().getOriginalFilename());
-		
+
 		String fileName = music.getMfilename();
 		String realPath = servletContext.getRealPath("/resources/music/");
-		
+
 		File file = new File(realPath + "/" + fileName);
 		music.getMattach().transferTo(file);
-		
+
 		service.musicUpload(music);
-		
+
 		return "upload";
 	}
 
@@ -192,11 +192,6 @@ public class HomeController {
 		pw.write(json);
 		pw.flush();
 		pw.close();
-	}
-	
-	@RequestMapping("/weatherDefault")
-	public String weatherDefault() {
-		return "weatherdefault";
 	}
 
 	@RequestMapping("/weather_View")
@@ -495,7 +490,7 @@ public class HomeController {
 		pw.flush();
 		pw.close();
 	}
-	
+
 	@RequestMapping("/subway")
 	public String subway() {
 		return "subway";
@@ -523,13 +518,13 @@ public class HomeController {
 		String[] findStation;
 		List<String> location = new ArrayList<>();
 		String currLine = line;
-		
+
 		if(station.substring(station.length()-1).equals("역")){
 			station=station.substring(0,station.length()-1);
 			System.out.println(station);
 		}
 		SBNS = service.SearchInfoBySubwayNameService(station);
-     
+
 		for (int i = 1; i < SBNS.size(); i += 2) {
 			if (SBNS.get(i).equals("A")) {
 				lineNm.add("공항철도");

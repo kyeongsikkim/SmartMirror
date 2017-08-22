@@ -206,7 +206,6 @@ function handleCommand(command) {
 		} else if(command == "날씨") {
 			console.log("날씨");
 			speakText("원하시는 지역을 말씀해주세요");
-			openWeatherDefault();
 			weatherflag = true;
 		} else if(command == "음악") {
 			console.log("음악");

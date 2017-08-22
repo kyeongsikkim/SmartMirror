@@ -105,17 +105,6 @@ function openWeather() {
 	});
 }
 
-function openWeatherDefault() {
-	$.ajax({
-		type: "GET",
-		url: "/SmartMirrorWebProject/weatherDefault",
-		dataType: "text",
-		success: function(data) {
-			$("#content").html(data);
-		}
-	});
-}
-
 function openBoxOffice() {
 	$.ajax({
 		type : "GET",
