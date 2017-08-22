@@ -146,9 +146,9 @@ function handleCommand(command) {
 	if(audioflag) {
 		if(command == "리스트") {
 			openList();
-		} else if(command == "다음리스트") {
+		} else if(command == "다음페이지") {
 			nextList();
-		} else if(command == "이전리스트") {
+		} else if(command == "이전페이지") {
 			prevList();
 		} else if(command == "재생") {
 			if(pauseflag == false) {
