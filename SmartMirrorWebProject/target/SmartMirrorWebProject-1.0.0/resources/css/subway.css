@@ -1,4 +1,5 @@
 .radiusNm {
+	font-family: '08SeoulNamsanB';
 	border-radius: 50%;
 	width: 60px;
 	height: 60px;
@@ -10,6 +11,7 @@
 }
 
 .radiusSt {
+	font-family: '08SeoulNamsanB';
 	border-radius: 50%;
 	width: 60px;
 	height: 60px;
@@ -24,21 +26,19 @@
 .tdR {
 	border-bottom: 5px solid red;
 	font-size: 3.5vw;
-	font-weight: bold;
 	width: 48%;
 	color: #999999;
 	text-align: right;
-	padding-right: 5px;
+	padding-right: 15px;
 }
 
 .tdL {
 	border-bottom: 5px solid red;
 	font-size: 3.5vw;
-	font-weight: bold;
 	width: 48%;
 	color: #999999;
 	text-align: left;
-	padding-left: 5px;
+	padding-left: 15px;
 }
 
 .centertd {
@@ -91,18 +91,21 @@
 }
 
 .beforeStationSpan {
+	font-family: '08SeoulNamsanB';
 	font-size: 3.6vw;
 	color: white;
 	font-weight: bold;
 }
 
 .afterStationSpan {
+	font-family: '08SeoulNamsanB';
 	font-size: 3.6vw;
 	color: white;
 	font-weight: bold
 }
 
 .currStationSpan {
+	font-family: '08SeoulNamsanB';
 	font-size: 5.4vw;
 	color: black;
 	padding-top: 20px;
@@ -110,6 +113,7 @@
 }
 
 .timetable {
+	font-family: '08SeoulNamsanB';
 	width: 84%;
 	border: 0px;
 	margin: 0 8%;

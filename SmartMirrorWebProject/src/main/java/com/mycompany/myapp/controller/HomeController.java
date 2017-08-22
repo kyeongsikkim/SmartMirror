@@ -74,8 +74,13 @@ public class HomeController {
 	}
 
 	@RequestMapping("/calendar")
-	public String calander() {
+	public String calendar() {
 		return "calendar";
+	}
+	
+	@RequestMapping("/command")
+	public String command() {
+		return "command";
 	}
 
 	@RequestMapping("/map")

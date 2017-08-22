@@ -1,14 +1,15 @@
 #command {
+	font-family: '08SeoulNamsanB';
 	display: inline-block;
 	padding-top: 25px;
 	color: white;
-	font-size: 15px;
+	font-size: 2vw;
 }
 
 #command table {
 	text-align: center;
 	color: white;
-	font-size: 20px;
+	font-size: 3vw;
 }
 
 .commandtitle {

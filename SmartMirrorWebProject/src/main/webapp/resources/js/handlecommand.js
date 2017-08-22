@@ -174,7 +174,7 @@ function handleCommand(command) {
 	}
 	
 	if(!mapflag && !calendarflag && !cameraflag && !subwayflag && !videoflag && !weatherflag && !audioflag) {
-		if(command == "명령어") {
+		if(command == "명령어" || command == "명명어") {
 			console.log("명령어");
 			speakText("명령어 목록을 보여드릴게요");
 			openCommand();
@@ -215,6 +215,15 @@ function handleCommand(command) {
 			openAudio();
 			getMusicList();
 			audioflag = true;
+		} else if(command == "형광등") {
+			speakText("형광등을 켜드릴께요");
+			lightOn();
+		} else if(command == "취침등") {
+			speakText("취침등을 켜드릴께요");
+			sleepLightOn();
+		} else if(command == "불꺼") {
+			speakText("불을 꺼드릴게요");
+			sleepLightOff();
 		}
 	}
 }

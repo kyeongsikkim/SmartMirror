@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <div id="command">
-	<div style="text-align: left;">
+	<div style="text-align: left;padding-left: 10px;">
 		* 모든 명령어는 '아리아'를 부른 후에 실행할 수 있습니다<br/>
 		* 다른 기능을 실행하려면 먼저 '중지'를 통해 나간 후에 실행해야 합니다<br/>
 		* '네 말씀하세요'라는 음성이 나오지 않을 시, '아리아'를 한 번 더 불러주세요<br/><br/>
@@ -13,7 +13,7 @@
 		</tr>
 		<tr>
 			<td>지도</td>
-			<td>확대 / 축소 / OOO(지역명)</td>
+			<td>크게 / 작게 / OOO(지역명)</td>
 		</tr>
 		<tr>
 			<td>달력</td>
@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<td>음악</td>
-			<td>리스트 / 이전리스트 / 다음리스트 / OO번<br />재생 / 일시정지 / 다음곡 / 이전곡
+			<td>리스트 / 이전페이지 / 다음페이지 / OO번<br />재생 / 일시정지 / 다음(곡) / 이전(곡)
 			</td>
 		</tr>
 		<tr>
@@ -30,15 +30,15 @@
 		</tr>
 		<tr>
 			<td>지하철</td>
-			<td>OOO(역이름) / 호선 이름</td>
+			<td>역 이름 / 호선 이름</td>
+		</tr>
+		<tr>
+			<td>날씨</td>
+			<td>지역 이름</td>
 		</tr>
 		<tr>
 			<td>카메라</td>
 			<td>사진</td>
-		</tr>
-		<tr>
-			<td>알람중지</td>
-			<td></td>
 		</tr>
 		<tr>
 			<td>중지</td>

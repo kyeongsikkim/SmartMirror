@@ -1,3 +1,8 @@
+@font-face {
+    font-family: '08SeoulNamsanB';
+    src: url(../fonts/08SeoulNamsanB.ttf);
+}
+
 body {
 	background-color: black;
 	overflow: hidden;
@@ -26,6 +31,7 @@ body {
 }
 
 #help {
+	font-family: '08SeoulNamsanB';
 	width: 100%;
 	color: white;
 	font-size: 2vh;
@@ -40,6 +46,7 @@ body {
 }
 
 #speech {
+	font-family: '08SeoulNamsanB';
 	color: white;
 	font-size: 1vh;
 	display: inline-block;
@@ -57,11 +64,11 @@ body {
 	text-align: right;
 }
 
-/*weather, Headline, Schedule icon*/
+/*weather, Headline, Temp., Humidity icon*/
 .headericon {
 	display: inline;
-	width: 26px;
-	height: 34px;
+	width: 4vw;
+	height: 4.1vw;
 	padding-bottom: 8px;
 }
 
