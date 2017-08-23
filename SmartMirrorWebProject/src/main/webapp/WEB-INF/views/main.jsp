@@ -9,7 +9,6 @@
 		<link href="<%=application.getContextPath()%>/resources/bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<script src="<%=application.getContextPath()%>/resources/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
 		
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amaranth" />
 		
 		<link href="<%=application.getContextPath()%>/resources/css/clock.css" rel="stylesheet" type="text/css" />
@@ -24,7 +23,7 @@
 		<link href="<%=application.getContextPath()%>/resources/css/audio.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/subway.css" rel="stylesheet" type="text/css" />
 		<link href="<%=application.getContextPath()%>/resources/css/modal.css" rel="stylesheet" type="text/css" />
-		<link href="<%=application.getContextPath()%>/resources/css/youtube.css"rel="stylesheet" type="text/css" />
+		<!-- <link href="<%=application.getContextPath()%>/resources/css/youtube.css"rel="stylesheet" type="text/css" /> -->
 		
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_eWR0fsrBZhick4j6UVdqsImC7NfW4U"></script>
 		<script src="http://code.responsivevoice.org/responsivevoice.js" type="text/javascript"></script>
@@ -39,9 +38,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/controller.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/map.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/weather.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>	
 		<script src="<%=application.getContextPath()%>/resources/js/calendar.js" type="text/javascript"></script>	
-		<script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script>
  		<script src="<%=application.getContextPath()%>/resources/js/weather_detail.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/audio.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/camera.js" type="text/javascript"></script>
@@ -49,16 +46,18 @@
 		<script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/actuator.js" type="text/javascript"></script>
+		<!-- <script src="<%=application.getContextPath()%>/resources/js/youtube_search.js" type="text/javascript"></script> -->
+		<!-- <script src="<%=application.getContextPath()%>/resources/js/alarm.js" type="text/javascript"></script>	 -->
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
 				//News Setting
 				requestNews();
-				setInterval(requestNews, 1200000);
+				//setInterval(requestNews, 1200000);
 				//Weather Setting
 				weatherDefault();
-				setInterval(refresh, 1200000);
-				setInterval(drawIcon, 1200000);
+				//setInterval(refresh, 1200000);
+				//setInterval(drawIcon, 1200000);
 			});
 		</script>
 	</head>

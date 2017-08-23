@@ -27,10 +27,6 @@
 			<td>지역 이름</td>
 		</tr>
 		<tr>
-			<td>(유투브)</td>
-			<td>OOOO유튜브</td>
-		</tr>
-		<tr>
 			<td>지도</td>
 			<td>크게 / 작게 / OOO(지역명)</td>
 		</tr>
