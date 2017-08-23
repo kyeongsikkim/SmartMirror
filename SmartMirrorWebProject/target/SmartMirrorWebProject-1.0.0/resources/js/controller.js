@@ -81,13 +81,13 @@ function openYoutubeList(command) {
 	});
 }
 
-function openVideo(number) {
+function openVideo() {
 	$.ajax({
 		type: "GET",
 		url: "/SmartMirrorWebProject/video",
 		dataType: "text",
 		success: function(data) {
-			playVideo(number);
+			// playVideo(number);
 			$("#content").html(data);
 		}
 	});

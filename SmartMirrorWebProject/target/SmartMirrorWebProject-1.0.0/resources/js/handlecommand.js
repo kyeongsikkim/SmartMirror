@@ -9,6 +9,8 @@ var audioflag = false;
 var pauseflag = false;
 
 function handleCommand(command) {
+	var script = command.replace( / /gi ,"");
+
 	if(command == "중지") {
 		speakText("종료합니다");
 		close();
@@ -137,7 +139,6 @@ function handleCommand(command) {
 	}
 	
 	if(weatherflag) {
-		openWeather();
 		weatherSearch(command);
 	}
 	
@@ -192,10 +193,14 @@ function handleCommand(command) {
 			speakText("원하시는 역을 말해주세요");
 			openSubway();
 			subwayflag = true;
-		} else if(command == "유튜브") {
-			speakText("유투브를 실행합게요");
-			openYoutubeList("자바");
-			videoflag = true;
+		} else if(script.search("유튜브") > -1) {
+			var youtubeInfo = script.replace("유튜브", "");
+			speakText("유투브를 실행할게요");
+			// openYoutubeList("자바");
+			openVideo();
+			playVideo(youtubeInfo);
+
+			// videoflag = true;
 		} else if(command == "날씨") {
 			openWeather();
 			weatherSearch("송파구");

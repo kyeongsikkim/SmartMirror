@@ -17,11 +17,11 @@ function youtubeSearch(command) {
 }
 
 //Play
-function playVideo(number) {
+function playVideo(youtubeInfo) {
 	$.ajax({
-		url: "https://www.googleapis.com/youtube/v3/search?part=snippet&order=videoCount&maxResults=3&q="+playParameter+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
+		url: "https://www.googleapis.com/youtube/v3/search?part=snippet&order=videoCount&maxResults=3&q="+youtubeInfo+"&type=video&videoCaption=closedCaption&key=AIzaSyDSBgGx_mh_ZzOA14ftGFo2yEEzjBEMQiM",
 		success: function(data) {
-			document.getElementById("video").src = '//www.youtube.com/embed/'+data.items[number].id.videoId+'?rel=0&vq=small&autoplay=1';
+			document.getElementById("video").src = '//www.youtube.com/embed/'+data.items[0].id.videoId+'?rel=0&vq=light&autoplay=1';
 		}
 	});
 }
