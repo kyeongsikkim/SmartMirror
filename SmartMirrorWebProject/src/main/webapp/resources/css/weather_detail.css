@@ -1,10 +1,11 @@
 #city {
 	color: white;
-	font-size: 9vw;
+	font-family: '08SeoulNamsanB';
+	font-size: 4.5vw;
 }
 
 #weatherInfoBox {
- 	margin-top: 30%; 
+ 	margin-top: 45px;
  	margin-bottom: 30%;
 /* 	background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)); */
 /*     background: rgba(255, 255, 255, 0.5); */
@@ -16,6 +17,7 @@
 
 #summaryBox {
 	display: inline-block;
+	font-variant: normal;
 }
 
 #weatherBox {
@@ -28,17 +30,17 @@
 }
 
 #weatherTemperature, #weatherWind, #weatherPrecip {
-	font-size: 2vw;
+	font-size: 3vw;
 }
 
-.weatherdetail {
+/*.weatherdetail {
 	text-align: center;
 	display: inline-block;
 	width: 60vw;
 	height: 80vw; 
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-}
+}*/
 
 .weatherWeekday {
 	display: inline-block;

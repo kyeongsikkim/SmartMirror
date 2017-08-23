@@ -10,10 +10,6 @@
 		<script src="<%=application.getContextPath()%>/resources/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
 		
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono" />
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lemon" />
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Round" />
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Patrick+Hand" />
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amaranth" />
 		
 		<link href="<%=application.getContextPath()%>/resources/css/clock.css" rel="stylesheet" type="text/css" />
@@ -52,7 +48,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/subway.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/light.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/actuator.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {

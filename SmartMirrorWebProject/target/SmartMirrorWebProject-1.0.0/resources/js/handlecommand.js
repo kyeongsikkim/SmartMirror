@@ -10,7 +10,6 @@ var pauseflag = false;
 
 function handleCommand(command) {
 	if(command == "중지") {
-		console.log("중지");
 		speakText("종료합니다");
 		close();
 		
@@ -35,7 +34,6 @@ function handleCommand(command) {
 	}
 	
 	if(calendarflag) {
-		console.log(command);
 		if(command == "다음달") {
 			nextCalendar();
 		} else if(command == "이전달") {
@@ -175,41 +173,35 @@ function handleCommand(command) {
 	
 	if(!mapflag && !calendarflag && !cameraflag && !subwayflag && !videoflag && !weatherflag && !audioflag) {
 		if(command == "명령어" || command == "명명어") {
-			console.log("명령어");
 			speakText("명령어 목록을 보여드릴게요");
 			openCommand();
 		} else if(command == "지도") {
-			console.log("지도");
 			speakText("지도를 보여드릴게요");
 			openMap();
 			mapflag = true;
 		} else if(command == "달력") {
-			console.log("달력");
 			speakText("달력을 보여드릴게요");
 			openCalendar();
 			calendarflag = true;
 		} else if(command == "카메라") {
-			console.log("카메라");
+			$("#content").empty(); 
 			speakText("카메라를 보여드릴게요");
 			openCamera();
 			cameraflag = true;
 		} else if(command == "지하철") {
-			console.log("지하철");
 			speakText("원하시는 역을 말해주세요");
 			openSubway();
 			subwayflag = true;
 		} else if(command == "유튜브") {
-			console.log("유튜브");
 			speakText("유투브를 실행합게요");
 			openYoutubeList("자바");
 			videoflag = true;
 		} else if(command == "날씨") {
-			console.log("날씨");
+			openWeather();
+			weatherSearch("송파구");
 			speakText("원하시는 지역을 말씀해주세요");
-			openWeatherDefault();
 			weatherflag = true;
 		} else if(command == "음악") {
-			console.log("음악");
 			speakText("엠피쓰리를 실행할게요");
 			openAudio();
 			getMusicList();
@@ -223,6 +215,18 @@ function handleCommand(command) {
 		} else if(command == "불꺼") {
 			speakText("불을 꺼드릴게요");
 			sleepLightOff();
+		} else if(command == "선풍기켜") {
+			speakText("선풍기를 켜드릴게요");
+			fanOn();
+		} else if(command == "선풍기꺼") {
+			speakText("선풍기를 꺼드릴게요");
+			fanOff();
+		} else if(command == "창문열어") {
+			speakText("창문을 열어드릴게요");
+			windowOpen();
+		} else if(command == "창문닫아") {
+			speakText("창문을 닫아드릴게요");
+			windowClose();
 		}
 	}
 }

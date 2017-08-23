@@ -1,7 +1,6 @@
 function close() {
 		$("#content").empty(); 
 		$("#camera").empty();
-		$("#help").html("\"아리아\"를 불러보세요.");
 		$("#speech").html("");
 }
 
@@ -98,17 +97,6 @@ function openWeather() {
 	$.ajax({
 		type: "GET",
 		url: "/SmartMirrorWebProject/weather_View",
-		dataType: "text",
-		success: function(data) {
-			$("#content").html(data);
-		}
-	});
-}
-
-function openWeatherDefault() {
-	$.ajax({
-		type: "GET",
-		url: "/SmartMirrorWebProject/weatherDefault",
 		dataType: "text",
 		success: function(data) {
 			$("#content").html(data);

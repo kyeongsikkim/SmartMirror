@@ -1,21 +1,48 @@
 #city {
-	/* display: inline-block; */
+	color: white;
+	font-size: 9vw;
+}
+
+#weatherInfoBox {
+ 	margin-top: 30%; 
+ 	margin-bottom: 30%;
+/* 	background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)); */
+/*     background: rgba(255, 255, 255, 0.5); */
+}
+
+.weatherBackground {
+	color: white;
 }
 
 #summaryBox {
 	display: inline-block;
 }
 
+#weatherBox {
+	margin: auto;
+	text-align: center;
+}
+
+#weatherStatus {
+	font-size: 4.5vw;
+}
+
+#weatherTemperature, #weatherWind, #weatherPrecip {
+	font-size: 2vw;
+}
+
 .weatherdetail {
+	text-align: center;
 	display: inline-block;
-	width: 120vw;
-	height: 70vw;
+	width: 60vw;
+	height: 80vw; 
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
 .weatherWeekday {
 	display: inline-block;
-	width: 20%;
-	height: 30%;
+	color: white;
+	padding: 0 5px 0 0;
+	font-size: 2.5vw;
 }

@@ -11,12 +11,28 @@
 			<td class="commandtitle">명령어</td>
 		</tr>
 		<tr>
-			<td>지도</td>
-			<td>크게 / 작게 / OOO(지역명)</td>
+			<td>지하철</td>
+			<td>역 이름 / 호선 이름</td>
 		</tr>
 		<tr>
 			<td>달력</td>
 			<td>다음달 / 이전달 / 0월(1~12)</td>
+		</tr>
+		<tr>
+			<td>카메라</td>
+			<td>사진</td>
+		</tr>
+		<tr>
+			<td>날씨</td>
+			<td>지역 이름</td>
+		</tr>
+		<tr>
+			<td>유투브</td>
+			<td>OOO(검색어) / O번(1~5번)</td>
+		</tr>
+		<tr>
+			<td>지도</td>
+			<td>크게 / 작게 / OOO(지역명)</td>
 		</tr>
 		<tr>
 			<td>음악</td>
@@ -24,20 +40,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td>유투브</td>
-			<td>OOO(검색어) / O번(1~5번)</td>
-		</tr>
-		<tr>
-			<td>지하철</td>
-			<td>역 이름 / 호선 이름</td>
-		</tr>
-		<tr>
-			<td>날씨</td>
-			<td>지역 이름</td>
-		</tr>
-		<tr>
-			<td>카메라</td>
-			<td>사진</td>
+			<td>(제어)</td>
+			<td>형광등 / 취침등 / 불꺼<br/>선풍기켜 / 선풍기꺼<br/>창문열어 / 창문닫아</td>
 		</tr>
 		<tr>
 			<td>중지</td>

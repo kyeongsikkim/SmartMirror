@@ -139,7 +139,6 @@ function handleCommand(command) {
 	}
 	
 	if(weatherflag) {
-		openWeather();
 		weatherSearch(command);
 	}
 	
@@ -221,6 +220,18 @@ function handleCommand(command) {
 		} else if(command == "불꺼") {
 			speakText("불을 꺼드릴게요");
 			sleepLightOff();
+		} else if(command == "선풍기켜") {
+			speakText("선풍기를 켜드릴게요");
+			fanOn();
+		} else if(command == "선풍기꺼") {
+			speakText("선풍기를 꺼드릴게요");
+			fanOff();
+		} else if(command == "창문열어") {
+			speakText("창문을 열어드릴게요");
+			windowOpen();
+		} else if(command == "창문닫아") {
+			speakText("창문을 닫아드릴게요");
+			windowClose();
 		}
 	}
 }

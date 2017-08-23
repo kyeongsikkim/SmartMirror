@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <div id="command">
 	<div style="text-align: left;padding-left: 10px;">
-		* 모든 명령어는 '아리아'를 부른 후에 실행할 수 있습니다<br/>
 		* 다른 기능을 실행하려면 먼저 '중지'를 통해 나간 후에 실행해야 합니다<br/>
 		* '네 말씀하세요'라는 음성이 나오지 않을 시, '아리아'를 한 번 더 불러주세요<br/><br/>
 	</div>

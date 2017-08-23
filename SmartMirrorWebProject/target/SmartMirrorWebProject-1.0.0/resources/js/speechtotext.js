@@ -26,11 +26,11 @@ $(function() {
 			$("#help").html("");
 		} else {
 			if(startCommand == true) {
-				console.log(command);
 				$("#speech").html(command);
 				handleCommand(command);
-				if(command == "중지") {
+				if(command == "중지" || command == "형광등" || command == "취침등" || command == "불켜") {
 					startCommand = false;
+					$("#help").html("\"아리아\"를 불러보세요.");
 				}
 			}
 		}
