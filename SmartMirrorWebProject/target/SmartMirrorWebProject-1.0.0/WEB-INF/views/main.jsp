@@ -48,7 +48,7 @@
 		<script src="<%=application.getContextPath()%>/resources/js/subway.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/humituresensor.js" type="text/javascript"></script>
 		<script src="<%=application.getContextPath()%>/resources/js/pirsensor.js" type="text/javascript"></script>
-		<script src="<%=application.getContextPath()%>/resources/js/light.js" type="text/javascript"></script>
+		<script src="<%=application.getContextPath()%>/resources/js/actuator.js" type="text/javascript"></script>
 		<!-- Rss & Weather execute and refresh -->
 		<script>
 			$(function() {
